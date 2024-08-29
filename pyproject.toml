@@ -1,0 +1,20 @@
+[project]
+name = "spain_account"
+authors = [
+    { name = "Xappiens", email = "xappiens@xappiens.com"}
+]
+description = "This app is designed to seamlessly integrate with ERPNext, enabling businesses to effortlessly establish and manage the Spanish chart of accounts. Comply with local accounting standards (Plan General de Contabilidad) and streamline your financial processes with this essential tool. Simplify the setup of your financial structure, ensuring accurate and compliant reporting according to Spanish regulations. Perfect for businesses operating in Spain, this extension brings precision and ease to your ERPNext system, making accounting management more efficient and reliable."
+requires-python = ">=3.10"
+readme = "README.md"
+dynamic = ["version"]
+dependencies = [
+    # "frappe~=15.0.0" # Installed and managed by bench.
+]
+
+[build-system]
+requires = ["flit_core >=3.4,<4"]
+build-backend = "flit_core.buildapi"
+
+# These dependencies are only installed when developer mode is enabled
+[tool.bench.dev-dependencies]
+# package_name = "~=1.1.0"
