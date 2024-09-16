@@ -1,0 +1,53 @@
+{
+    "country_code": "es",
+    "name": "Spain - PGCE Est\u00e1ndar con n\u00fameros",
+    "tree": {
+        "Financiaci\u00f3n b\u00e1sica": {
+            "account_number": "1",
+            "is_group": 1,
+            "children": {}
+        },
+        "Activo no corriente": {
+            "account_number": "2",
+            "is_group": 1,
+
+            "children": {}
+        },
+        "Existencias": {
+            "account_number": "3",
+            "is_group": 1,
+
+            "children": {}
+        },
+        "Acreedores y deudores por operaciones comerciales": {
+            "account_number": "4",
+            "is_group": 1,
+            "children": {}
+        },
+        "Cuentas financieras": {
+            "account_number": "5",
+            "is_group": 1,
+            "children": {}
+        },
+        "Compras y gastos": {
+            "account_number": "6",
+            "is_group": 1,
+            "children": {}
+        },
+        "Ventas e ingresos": {
+            "account_number": "7",
+            "is_group": 1,
+            "children": {}
+        },
+        "Gastos imputados al patrimonio neto": {
+            "account_number": "8",
+            "is_group": 1,
+            "children": {}
+        },
+        "Ingresos imputados al patrimonio neto": {
+            "account_number": "9",
+            "is_group": 1,
+            "children": {}
+        }
+    }
+}

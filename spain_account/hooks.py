@@ -8,6 +8,15 @@ app_license = "mit"
 # Apps
 # ------------------
 
+# hooks.py en tu app 'spain_account'
+
+# Sobrescribir los métodos get_chart y get_charts_for_country en ERPNext
+override_whitelisted_methods = {
+    "erpnext.accounts.doctype.account.chart_of_accounts.chart_of_accounts.get_chart": "spain_account.spain_accounting.chart_of_accounts_loader.get_chart",
+    "erpnext.accounts.doctype.account.chart_of_accounts.chart_of_accounts.get_charts_for_country": "spain_account.spain_accounting.chart_of_accounts_loader.get_charts_for_country"
+}
+
+
 # required_apps = []
 
 # Each item in the list will be shown as an app in the apps page
