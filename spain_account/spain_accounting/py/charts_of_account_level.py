@@ -1,9 +1,5 @@
 import frappe
-
-
 def create_level_1_accounts(level_1):
-    frappe.db.sql("TRUNCATE TABLE `tabAccount`")
-    frappe.db.commit()
     success = True
     for parent in level_1:
         try:
@@ -26,132 +22,130 @@ def create_level_1_accounts(level_1):
 
 @frappe.whitelist()
 def create_accounts():
-    try:
+   print("Function is Running")
+   try:
       company = frappe.db.get_list("Company", fields=['company_name'], pluck='company_name')[0]
       currency = frappe.db.get_list("Company", fields=['default_currency'], pluck='default_currency')[0]
       abbr = frappe.db.get_list("Company", fields=['abbr'], pluck='abbr')[0]
 
-      level_1: [
-          {
+      level_1 = [
+         {
             "account_name": "Basic financing",
             "is_group": 1,
-            "company" : company
+            "company":company,
+            "account_currency":currency,
             "account_number": "1",
             "account_type": "",
-            "parent_account": null,
-            "account_currency": currency,
+            "parent_account": "",
             "root_type": "Asset",
             "report_type": "Balance Sheet"
           },
           {
             "account_name": "Sales andIncome",
             "is_group": 1,
-            "company" : company
             "account_number": "7",
             "account_type": "",
-            "parent_account": null,
-            "account_currency": "EUR",
+            "parent_account": "",
             "root_type": "Income",
+            "company":company,
+            "account_currency":currency,
             "report_type": "Profit and Loss"
-            "account_currency": currency,
-
           },
           {
             "account_name": "Non-current assets",
             "is_group": 1,
             "account_number": "2",
             "account_type": "",
-            "parent_account": null,
-            "account_currency": "EUR",
+            "parent_account": "",
             "root_type": "Asset",
+            "company":company,
+            "account_currency":currency,
             "report_type": "Balance Sheet"
-            "company" : company
-            "account_currency": currency,
-
-
           },
           {
             "account_name": "Stocks",
             "is_group": 1,
             "account_number": "3",
             "account_type": "",
-            "parent_account": null,
-            "account_currency": "EUR",
+            "parent_account": "",
             "root_type": "Asset",
+            "company":company,
+            "account_currency":currency,
             "report_type": "Balance Sheet"
-            "company" : company
-            "account_currency": currency,
-
-
           },
           {
             "account_name": "Creditors and debtors for commercial operations",
             "is_group": 1,
             "account_number": "4",
             "account_type": "",
-            "parent_account": null,
-            "account_currency": "EUR",
+            "parent_account": "",
             "root_type": "Liability",
+            "company":company,
+            "account_currency":currency,
             "report_type": "Balance Sheet"
-            "company" : company
-            "account_currency": currency,
-
-
           },
           {
             "account_name": "Financial accounts",
             "is_group": 1,
             "account_number": "5",
             "account_type": "",
-            "parent_account": null,
-            "account_currency": "EUR",
+            "parent_account": "",
             "root_type": "Asset",
+            "company":company,
+            "account_currency":currency,
             "report_type": "Balance Sheet"
-            "company" : company
-            "account_currency": currency,
-
-
           },
           {
             "account_name": "Purchases andExpenses",
             "is_group": 1,
             "account_number": "6",
             "account_type": "",
-            "parent_account": null,
-            "account_currency": "EUR",
+            "parent_account": "",
             "root_type": "Expense",
+            "company":company,
+            "account_currency":currency,
             "report_type": "Profit and Loss"
-            "company" : company
-            "account_currency": currency,
-
-
           },
           {
             "account_name": "Expenses charged to net worth",
             "is_group": 1,
             "account_number": "8",
             "account_type": "",
-            "parent_account": null,
-            "account_currency": "EUR",
+            "parent_account": "",
+            "company":company,
+            "account_currency":currency,
             "root_type": "Expense",
             "report_type": "Profit and Loss"
-            "company" : company
-            "account_currency": currency,
-
-
           },
           {
             "account_name": "Income attributed to net worth",
             "is_group": 1,
             "account_number": "9",
             "account_type": "",
-            "parent_account": null,
-            "account_currency": "EUR",
+            "parent_account": "",
+            "company":company,
+            "account_currency":currency,
             "root_type": "Income",
             "report_type": "Profit and Loss"
-            "company" : company
-            "account_currency": currency,
-
-
           }
+         
         ]
+      frappe.db.sql("TRUNCATE TABLE `tabAccount`")
+      frappe.db.commit()
+      if create_level_1_accounts(level_1):
+         print("success")
+      else:
+         print("Fail")
+
+   except Exception as e:
+        frappe.log_error("Error: While auto create accounts after setup", f"Error: {e}")
+      
+      
+      
+      
+       
+            
+        
+
+           
+    
