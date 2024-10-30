@@ -1,0 +1,976 @@
+{
+    "message": [
+      {
+        "children": [
+          {
+            "account_name": "11 - RESERVES AND OTHER ASSET INSTRUMENTS",
+            "name": "11 - RESERVES AND OTHER HERITAGE INSTRUMENTS - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "11",
+            "account_type": "",
+            "parent_account": "1 - Basic financing - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "10 - CAPITAL",
+            "name": "10 - CAPITAL - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "10",
+            "account_type": "",
+            "parent_account": "1 - Basic financing - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "12 - RESULTS PENDING APPLICATION",
+            "name": "12 - RESULTS PENDING APPLICATION - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "12",
+            "account_type": "",
+            "parent_account": "1 - Basic financing - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "13 - GRANTS, DONATIONS AND ADJUSTMENTS FOR CHANGES IN VALUE",
+            "name": "13 - GRANTS, DONATIONS AND ADJUSTMENTS FOR CHANGES IN VALUE - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "13",
+            "account_type": "",
+            "parent_account": "1 - Basic financing - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "14 - PROVISIONS",
+            "name": "14 - PROVISIONS - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "14",
+            "account_type": "",
+            "parent_account": "1 - Basic financing - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "15 - LONG-TERM DEBTS WITH SPECIAL CHARACTERISTICS",
+            "name": "15 - LONG-TERM DEBTS WITH SPECIAL CHARACTERISTICS - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "15",
+            "account_type": "",
+            "parent_account": "1 - Basic financing - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "16 - LONG-TERM DEBTS WITH RELATED PARTIES",
+            "name": "16 - LONG-TERM DEBTS WITH RELATED PARTIES - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "16",
+            "account_type": "",
+            "parent_account": "1 - Basic financing - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "17 - LONG-TERM DEBTS FOR LOANS RECEIVED, BORROWING AND OTHER CONCEPTS",
+            "name": "17 - LONG-TERM DEBTS FOR LOANS RECEIVED, BORROWING AND OTHER CONCEPTS - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "17",
+            "account_type": "",
+            "parent_account": "1 - Basic financing - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "18 - LIABILITIES FOR SURETY, GUARANTEES AND OTHER LONG-TERM CONCEPTS",
+            "name": "18 - LIABILITIES FOR SURETY, GUARANTEES AND OTHER LONG-TERM CONCEPTS - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "18",
+            "account_type": "",
+            "parent_account": "1 - Basic financing - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "19 - TRANSITIONAL FINANCING SITUATIONS",
+            "name": "19 - TRANSITIONAL FINANCING SITUATIONS - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "19",
+            "account_type": "",
+            "parent_account": "1 - Basic financing - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          }
+        ]
+      },
+      {
+        "children": [
+          {
+            "account_name": "70 - SALES OF MERCHANDISE, OWN PRODUCTION, SERVICES, ETC.",
+            "name": "70 - SALES OF MERCHANDISE, OWN PRODUCTION, SERVICES, ETC - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "70",
+            "account_type": "",
+            "parent_account": "7 - Sales andIncome - ASF",
+            "account_currency": "EUR",
+            "root_type": "Income",
+            "report_type": "Profit and Loss"
+          },
+          {
+            "account_name": "71 - STOCK VARIATION",
+            "name": "71 - STOCK VARIATION - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "71",
+            "account_type": "",
+            "parent_account": "7 - Sales andIncome - ASF",
+            "account_currency": "EUR",
+            "root_type": "Income",
+            "report_type": "Profit and Loss"
+          },
+          {
+            "account_name": "73 - WORK CARRIED OUT FOR THE COMPANY",
+            "name": "73 - WORK CARRIED OUT FOR THE COMPANY - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "73",
+            "account_type": "",
+            "parent_account": "7 - Sales andIncome - ASF",
+            "account_currency": "EUR",
+            "root_type": "Income",
+            "report_type": "Profit and Loss"
+          },
+          {
+            "account_name": "74 - GRANTS, DONATIONS AND LEGACIES",
+            "name": "74 - GRANTS, DONATIONS AND LEGACIES - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "74",
+            "account_type": "",
+            "parent_account": "7 - Sales andIncome - ASF",
+            "account_currency": "EUR",
+            "root_type": "Income",
+            "report_type": "Profit and Loss"
+          },
+          {
+            "account_name": "75 - OTHER MANAGEMENTIncome",
+            "name": "75 - OTHER MANAGEMENTIncome - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "75",
+            "account_type": "",
+            "parent_account": "7 - Sales andIncome - ASF",
+            "account_currency": "EUR",
+            "root_type": "Income",
+            "report_type": "Profit and Loss"
+          },
+          {
+            "account_name": "76 - FINANCIALIncome",
+            "name": "76 - FINANCIALIncome - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "76",
+            "account_type": "",
+            "parent_account": "7 - Sales andIncome - ASF",
+            "account_currency": "EUR",
+            "root_type": "Income",
+            "report_type": "Profit and Loss"
+          },
+          {
+            "account_name": "77 - PROFITS FROM NON-CURRENT ASSETS AND EXCEPTIONALIncome",
+            "name": "77 - PROFITS FROM NON-CURRENT ASSETS AND EXCEPTIONALIncome - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "77",
+            "account_type": "",
+            "parent_account": "7 - Sales andIncome - ASF",
+            "account_currency": "EUR",
+            "root_type": "Income",
+            "report_type": "Profit and Loss"
+          },
+          {
+            "account_name": "79 - EXCESSES AND APPLICATIONS OF PROVISIONS AND IMPAIRMENT LOSSES",
+            "name": "79 - EXCESSES AND APPLICATIONS OF PROVISIONS AND IMPAIRMENT LOSSES - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "79",
+            "account_type": "",
+            "parent_account": "7 - Sales andIncome - ASF",
+            "account_currency": "EUR",
+            "root_type": "Income",
+            "report_type": "Profit and Loss"
+          }
+        ]
+      },
+      {
+        "children": [
+          {
+            "account_name": "20 - INTANGIBLE IMMOBILIZATIONS",
+            "name": "20 - INTANGIBLE IMMOBILIZATIONS - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "20",
+            "account_type": "",
+            "parent_account": "2 - Non-current assets - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "21 - MATERIAL IMMOBILIZATIONS",
+            "name": "21 - MATERIAL IMMOBILIZATIONS - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "21",
+            "account_type": "",
+            "parent_account": "2 - Non-current assets - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "22 - REAL ESTATE INVESTMENTS",
+            "name": "22 - REAL ESTATE INVESTMENTS - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "22",
+            "account_type": "",
+            "parent_account": "2 - Non-current assets - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "23 - MATERIAL IMMOBILIZATIONS IN PROGRESS",
+            "name": "23 - MATERIAL IMMOBILIZATIONS IN PROGRESS - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "23",
+            "account_type": "",
+            "parent_account": "2 - Non-current assets - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "24 - LONG-TERM FINANCIAL INVESTMENTS IN RELATED PARTIES",
+            "name": "24 - LONG-TERM FINANCIAL INVESTMENTS IN RELATED PARTIES - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "24",
+            "account_type": "",
+            "parent_account": "2 - Non-current assets - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "25 - OTHER LONG-TERM FINANCIAL INVESTMENTS",
+            "name": "25 - OTHER LONG-TERM FINANCIAL INVESTMENTS - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "25",
+            "account_type": "",
+            "parent_account": "2 - Non-current assets - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "26 - LONG-TERM SURETIES AND DEPOSITS",
+            "name": "26 - LONG-TERM SURETIES AND DEPOSITS - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "26",
+            "account_type": "",
+            "parent_account": "2 - Non-current assets - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "28 - ACCUMULATED AMORTIZATION OF FIXED ASSETS",
+            "name": "28 - ACCUMULATED AMORTIZATION OF FIXED ASSETS - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "28",
+            "account_type": "",
+            "parent_account": "2 - Non-current assets - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "29 - IMPAIRMENT OF NON-CURRENT ASSETS",
+            "name": "29 - IMPAIRMENT OF NON-CURRENT ASSETS - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "29",
+            "account_type": "",
+            "parent_account": "2 - Non-current assets - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          }
+        ]
+      },
+      {
+        "children": [
+          {
+            "account_name": "30 - COMMERCIALS",
+            "name": "30 - COMMERCIALS - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "30",
+            "account_type": "",
+            "parent_account": "3 - Stocks - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "31 - RAW MATERIALS",
+            "name": "31 - RAW MATERIALS - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "31",
+            "account_type": "",
+            "parent_account": "3 - Stocks - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "32 - OTHER SUPPLIES",
+            "name": "32 - OTHER SUPPLIES - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "32",
+            "account_type": "",
+            "parent_account": "3 - Stocks - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "33 - PRODUCTS IN PROGRESS",
+            "name": "33 - PRODUCTS IN PROGRESS - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "33",
+            "account_type": "",
+            "parent_account": "3 - Stocks - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "34 - SEMI-FINISHED PRODUCTS",
+            "name": "34 - SEMI-FINISHED PRODUCTS - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "34",
+            "account_type": "",
+            "parent_account": "3 - Stocks - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "35 - FINISHED PRODUCTS",
+            "name": "35 - FINISHED PRODUCTS - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "35",
+            "account_type": "",
+            "parent_account": "3 - Stocks - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "36 - BY-PRODUCTS, WASTE AND RECOVERED MATERIALS",
+            "name": "36 - BY-PRODUCTS, WASTE AND RECOVERED MATERIALS - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "36",
+            "account_type": "",
+            "parent_account": "3 - Stocks - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "39 - DETERIORATION IN VALUE OF STOCK",
+            "name": "39 - DETERIORATION OF VALUE OF STOCK - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "39",
+            "account_type": "",
+            "parent_account": "3 - Stocks - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          }
+        ]
+      },
+      {
+        "children": [
+          {
+            "account_name": "40 - SUPPLIERS",
+            "name": "40 - SUPPLIERS - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "40",
+            "account_type": "",
+            "parent_account": "4 - Creditors and debtors for commercial operations - ASF",
+            "account_currency": "EUR",
+            "root_type": "Liability",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "41 - MISCELLANEOUS CREDITORS",
+            "name": "41 - MISCELLANEOUS CREDITORS - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "41",
+            "account_type": "",
+            "parent_account": "4 - Creditors and debtors for commercial operations - ASF",
+            "account_currency": "EUR",
+            "root_type": "Liability",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "43 - CUSTOMERS",
+            "name": "43 - CUSTOMERS - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "43",
+            "account_type": "",
+            "parent_account": "4 - Creditors and debtors for commercial operations - ASF",
+            "account_currency": "EUR",
+            "root_type": "Liability",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "44 - MISCELLANEOUS DEBTORS",
+            "name": "44 - MISCELLANEOUS DEBTORS - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "44",
+            "account_type": "",
+            "parent_account": "4 - Creditors and debtors for commercial operations - ASF",
+            "account_currency": "EUR",
+            "root_type": "Liability",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "46 - STAFF",
+            "name": "46 - PERSONNEL - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "46",
+            "account_type": "",
+            "parent_account": "4 - Creditors and debtors for commercial operations - ASF",
+            "account_currency": "EUR",
+            "root_type": "Liability",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "47 - PUBLIC ADMINISTRATIONS",
+            "name": "47 - PUBLIC ADMINISTRATIONS - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "47",
+            "account_type": "",
+            "parent_account": "4 - Creditors and debtors for commercial operations - ASF",
+            "account_currency": "EUR",
+            "root_type": "Liability",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "48 - PERIODIFICATION ADJUSTMENTS",
+            "name": "48 - PERIODIFICATION ADJUSTMENTS - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "48",
+            "account_type": "",
+            "parent_account": "4 - Creditors and debtors for commercial operations - ASF",
+            "account_currency": "EUR",
+            "root_type": "Liability",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "49 - IMPAIRMENT OF TRADE CREDITS AND SHORT-TERM PROVISIONS",
+            "name": "49 - IMPAIRMENT OF TRADE CREDITS AND SHORT-TERM PROVISIONS - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "49",
+            "account_type": "",
+            "parent_account": "4 - Creditors and debtors for commercial operations - ASF",
+            "account_currency": "EUR",
+            "root_type": "Liability",
+            "report_type": "Balance Sheet"
+          }
+        ]
+      },
+      {
+        "children": [
+          {
+            "account_name": "50 - LOANS, DEBTS WITH SPECIAL CHARACTERISTICS AND OTHER SIMILAR SHORT-TERM ISSUES",
+            "name": "50 - LOANS, DEBTS WITH SPECIAL CHARACTERISTICS AND OTHER SIMILAR SHORT-TERM ISSUES - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "50",
+            "account_type": "",
+            "parent_account": "5 - Financial accounts - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "51 - SHORT-TERM DEBTS WITH RELATED PARTIES",
+            "name": "51 - SHORT-TERM DEBTS WITH RELATED PARTIES - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "51",
+            "account_type": "",
+            "parent_account": "5 - Financial accounts - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "52 - SHORT-TERM DEBTS FOR LOANS RECEIVED AND OTHER CONCEPTS",
+            "name": "52 - SHORT-TERM DEBTS FOR LOANS RECEIVED AND OTHER CONCEPTS - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "52",
+            "account_type": "",
+            "parent_account": "5 - Financial accounts - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "53 - SHORT-TERM FINANCIAL INVESTMENTS IN RELATED PARTIES",
+            "name": "53 - SHORT-TERM FINANCIAL INVESTMENTS IN RELATED PARTIES - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "53",
+            "account_type": "",
+            "parent_account": "5 - Financial accounts - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "54 - OTHER SHORT-TERM FINANCIAL INVESTMENTS",
+            "name": "54 - OTHER SHORT-TERM FINANCIAL INVESTMENTS - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "54",
+            "account_type": "",
+            "parent_account": "5 - Financial accounts - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "55 - OTHER NON-BANK ACCOUNTS",
+            "name": "55 - OTHER NON-BANK ACCOUNTS - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "55",
+            "account_type": "",
+            "parent_account": "5 - Financial accounts - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "56 - SURETIES AND DEPOSITS RECEIVED AND CONSTITUTED IN THE SHORT TERM AND PERIODIFICATION ADJUSTMENTS",
+            "name": "56 - SURETIES AND DEPOSITS RECEIVED AND CONSTITUTED IN THE SHORT TERM AND ADJUSTMENTS BY PERIODIFICATION - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "56",
+            "account_type": "",
+            "parent_account": "5 - Financial accounts - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "57 - TREASURY",
+            "name": "57 - TREASURY - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "57",
+            "account_type": "",
+            "parent_account": "5 - Financial accounts - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "58 - NON-CURRENT ASSETS HELD FOR SALE AND ASSOCIATED ASSETS AND LIABILITIES",
+            "name": "58 - NON-CURRENT ASSETS HELD FOR SALE AND ASSOCIATED ASSETS AND LIABILITIES - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "58",
+            "account_type": "",
+            "parent_account": "5 - Financial accounts - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "59 - IMPAIRMENT OF SHORT-TERM FINANCIAL INVESTMENTS AND NON-CURRENT ASSETS HELD FOR SALE",
+            "name": "59 - IMPAIRMENT OF SHORT-TERM FINANCIAL INVESTMENTS AND NON-CURRENT ASSETS HELD FOR SALE - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "59",
+            "account_type": "",
+            "parent_account": "5 - Financial accounts - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          }
+        ]
+      },
+      {
+        "children": [
+          {
+            "account_name": "60 - SHOPPING",
+            "name": "60 - SHOPPING - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "60",
+            "account_type": "",
+            "parent_account": "6 - Purchases andExpenses - ASF",
+            "account_currency": "EUR",
+            "root_type": "Expense",
+            "report_type": "Profit and Loss"
+          },
+          {
+            "account_name": "61 - STOCK VARIATION",
+            "name": "61 - STOCK VARIATION - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "61",
+            "account_type": "",
+            "parent_account": "6 - Purchases andExpenses - ASF",
+            "account_currency": "EUR",
+            "root_type": "Expense",
+            "report_type": "Profit and Loss"
+          },
+          {
+            "account_name": "62 - EXTERNAL SERVICES",
+            "name": "62 - EXTERNAL SERVICES - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "62",
+            "account_type": "",
+            "parent_account": "6 - Purchases andExpenses - ASF",
+            "account_currency": "EUR",
+            "root_type": "Expense",
+            "report_type": "Profit and Loss"
+          },
+          {
+            "account_name": "63 - TRIBUTES",
+            "name": "63 - TRIBUTES - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "63",
+            "account_type": "",
+            "parent_account": "6 - Purchases andExpenses - ASF",
+            "account_currency": "EUR",
+            "root_type": "Expense",
+            "report_type": "Profit and Loss"
+          },
+          {
+            "account_name": "64 - PERSONNELExpenseS",
+            "name": "64 - PERSONNELExpenseS - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "64",
+            "account_type": "",
+            "parent_account": "6 - Purchases andExpenses - ASF",
+            "account_currency": "EUR",
+            "root_type": "Expense",
+            "report_type": "Profit and Loss"
+          },
+          {
+            "account_name": "65 - OTHER MANAGEMENTExpenseS",
+            "name": "65 - OTHER MANAGEMENTExpenseS - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "65",
+            "account_type": "",
+            "parent_account": "6 - Purchases andExpenses - ASF",
+            "account_currency": "EUR",
+            "root_type": "Expense",
+            "report_type": "Profit and Loss"
+          },
+          {
+            "account_name": "66 - FINANCIALExpenseS",
+            "name": "66 - FINANCIALExpenseS - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "66",
+            "account_type": "",
+            "parent_account": "6 - Purchases andExpenses - ASF",
+            "account_currency": "EUR",
+            "root_type": "Expense",
+            "report_type": "Profit and Loss"
+          },
+          {
+            "account_name": "67 - LOSSES FROM NON-CURRENT ASSETS AND EXCEPTIONALExpenseS",
+            "name": "67 - LOSSES FROM NON-CURRENT ASSETS AND EXCEPTIONALExpenseS - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "67",
+            "account_type": "",
+            "parent_account": "6 - Purchases andExpenses - ASF",
+            "account_currency": "EUR",
+            "root_type": "Expense",
+            "report_type": "Profit and Loss"
+          },
+          {
+            "account_name": "68 - PROVISIONS FOR AMORTIZATION",
+            "name": "68 - PROVISIONS FOR AMORTIZATION - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "68",
+            "account_type": "",
+            "parent_account": "6 - Purchases andExpenses - ASF",
+            "account_currency": "EUR",
+            "root_type": "Expense",
+            "report_type": "Profit and Loss"
+          },
+          {
+            "account_name": "69 - IMPAIRMENT LOSSES AND OTHER PROVISIONS",
+            "name": "69 - IMPAIRMENT LOSSES AND OTHER PROVISIONS - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "69",
+            "account_type": "",
+            "parent_account": "6 - Purchases andExpenses - ASF",
+            "account_currency": "EUR",
+            "root_type": "Expense",
+            "report_type": "Profit and Loss"
+          }
+        ]
+      },
+      {
+        "children": [
+          {
+            "account_name": "80 - FINANCIALExpenseS FOR VALUATION OF ASSETS AND LIABILITIES",
+            "name": "80 - FINANCIALExpenseS FOR VALUATION OF ASSETS AND LIABILITIES - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "80",
+            "account_type": "",
+            "parent_account": "8 - Expenses charged to net worth - ASF",
+            "account_currency": "EUR",
+            "root_type": "Expense",
+            "report_type": "Profit and Loss"
+          },
+          {
+            "account_name": "81 -ExpenseS IN HEDGE OPERATIONS",
+            "name": "81 -ExpenseS IN COVERAGE OPERATIONS - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "81",
+            "account_type": "",
+            "parent_account": "8 - Expenses charged to net worth - ASF",
+            "account_currency": "EUR",
+            "root_type": "Expense",
+            "report_type": "Profit and Loss"
+          },
+          {
+            "account_name": "82 -ExpenseS FOR CONVERSION DIFFERENCES",
+            "name": "82 -ExpenseS FOR CONVERSION DIFFERENCES - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "82",
+            "account_type": "",
+            "parent_account": "8 - Expenses charged to net worth - ASF",
+            "account_currency": "EUR",
+            "root_type": "Expense",
+            "report_type": "Profit and Loss"
+          },
+          {
+            "account_name": "83 -Income TAX",
+            "name": "83 -Income TAX - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "83",
+            "account_type": "",
+            "parent_account": "8 - Expenses charged to net worth - ASF",
+            "account_currency": "EUR",
+            "root_type": "Expense",
+            "report_type": "Profit and Loss"
+          },
+          {
+            "account_name": "84 - TRANSFERS OF GRANTS, DONATIONS AND LEGACIES",
+            "name": "84 - TRANSFERS OF GRANTS, DONATIONS AND LEGACIES - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "84",
+            "account_type": "",
+            "parent_account": "8 - Expenses charged to net worth - ASF",
+            "account_currency": "EUR",
+            "root_type": "Expense",
+            "report_type": "Profit and Loss"
+          },
+          {
+            "account_name": "85 - ACTUARIAL LOSSExpenseS AND ADJUSTMENTS TO ASSETS FOR LONG-TERM DEFINED BENEFIT COMPENSATION",
+            "name": "85 - ACTUARIAL LOSSExpenseS AND ADJUSTMENTS TO ASSETS FOR LONG-TERM DEFINED BENEFIT COMPENSATION - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "85",
+            "account_type": "",
+            "parent_account": "8 - Expenses charged to net worth - ASF",
+            "account_currency": "EUR",
+            "root_type": "Expense",
+            "report_type": "Profit and Loss"
+          },
+          {
+            "account_name": "86 -ExpenseS FOR NON-CURRENT ASSETS FOR SALE",
+            "name": "86 -ExpenseS FOR NON-CURRENT ASSETS FOR SALE - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "86",
+            "account_type": "",
+            "parent_account": "8 - Expenses charged to net worth - ASF",
+            "account_currency": "EUR",
+            "root_type": "Expense",
+            "report_type": "Profit and Loss"
+          },
+          {
+            "account_name": "89 -ExpenseS OF EQUITY IN GROUP OR ASSOCIATED COMPANIES WITH PREVIOUS POSITIVE VALUATION ADJUSTMENTS",
+            "name": "89 -ExpenseS OF EQUITY IN GROUP OR ASSOCIATED COMPANIES WITH PREVIOUS POSITIVE VALUATION ADJUSTMENTS - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "89",
+            "account_type": "",
+            "parent_account": "8 - Expenses charged to net worth - ASF",
+            "account_currency": "EUR",
+            "root_type": "Expense",
+            "report_type": "Profit and Loss"
+          }
+        ]
+      },
+      {
+        "children": [
+          {
+            "account_name": "90 - FINANCIALIncome FROM VALUATION OF ASSETS AND LIABILITIES",
+            "name": "90 - FINANCIALIncome BY VALUATION OF ASSETS AND LIABILITIES - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "90",
+            "account_type": "",
+            "parent_account": "9 - Income attributed to net worth - ASF",
+            "account_currency": "EUR",
+            "root_type": "Income",
+            "report_type": "Profit and Loss"
+          },
+          {
+            "account_name": "91 -Income FROM HEDGE OPERATIONS",
+            "name": "91 -Income FROM HEDGE OPERATIONS - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "91",
+            "account_type": "",
+            "parent_account": "9 - Income attributed to net worth - ASF",
+            "account_currency": "EUR",
+            "root_type": "Income",
+            "report_type": "Profit and Loss"
+          },
+          {
+            "account_name": "92 -Income FROM CONVERSION DIFFERENCES",
+            "name": "92 -Income FROM CONVERSION DIFFERENCES - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "92",
+            "account_type": "",
+            "parent_account": "9 - Income attributed to net worth - ASF",
+            "account_currency": "EUR",
+            "root_type": "Income",
+            "report_type": "Profit and Loss"
+          },
+          {
+            "account_name": "94 -Income FROM SUBSIDIES, DONATIONS AND LEGACIES",
+            "name": "94 -Income FROM SUBSIDIES, DONATIONS AND LEGACIES - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "94",
+            "account_type": "",
+            "parent_account": "9 - Income attributed to net worth - ASF",
+            "account_currency": "EUR",
+            "root_type": "Income",
+            "report_type": "Profit and Loss"
+          },
+          {
+            "account_name": "95 -Income FROM ACTUARIAL GAINS AND ADJUSTMENTS TO ASSETS FOR LONG-TERM DEFINED BENEFIT COMPENSATION",
+            "name": "95 -Income FROM ACTUARIAL GAINS AND ADJUSTMENTS TO ASSETS FOR LONG-TERM DEFINED BENEFIT COMPENSATION - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "95",
+            "account_type": "",
+            "parent_account": "9 - Income attributed to net worth - ASF",
+            "account_currency": "EUR",
+            "root_type": "Income",
+            "report_type": "Profit and Loss"
+          },
+          {
+            "account_name": "96 -Income FROM NON-CURRENT ASSETS FOR SALE",
+            "name": "96 -Income FROM NON-CURRENT ASSETS FOR SALE - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "96",
+            "account_type": "",
+            "parent_account": "9 - Income attributed to net worth - ASF",
+            "account_currency": "EUR",
+            "root_type": "Income",
+            "report_type": "Profit and Loss"
+          },
+          {
+            "account_name": "99 -Income FROM SHARES IN GROUP OR ASSOCIATED COMPANIES WITH PREVIOUS NEGATIVE VALUATION ADJUSTMENTS",
+            "name": "99 -Income FROM SHARES IN GROUP OR ASSOCIATED COMPANIES WITH PREVIOUS NEGATIVE VALUATION ADJUSTMENTS - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "99",
+            "account_type": "",
+            "parent_account": "9 - Income attributed to net worth - ASF",
+            "account_currency": "EUR",
+            "root_type": "Income",
+            "report_type": "Profit and Loss"
+          }
+        ]
+      }
+    ]
+  }

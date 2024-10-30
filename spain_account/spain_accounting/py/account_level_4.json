@@ -1,0 +1,764 @@
+{
+    "message": [
+      {
+        "sub_child": [
+          {
+            "account_name": "111 - Other equity instruments",
+            "name": "111 - Other equity instruments - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "111",
+            "account_type": "",
+            "parent_account": "11 - RESERVES AND OTHER HERITAGE INSTRUMENTS - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "110 - Issue or assumption premium",
+            "name": "110 - Issue or assumption premium - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "110",
+            "account_type": "",
+            "parent_account": "11 - RESERVES AND OTHER HERITAGE INSTRUMENTS - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "112 - Legal reserve",
+            "name": "112 - Legal reserve - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "112",
+            "account_type": "",
+            "parent_account": "11 - RESERVES AND OTHER HERITAGE INSTRUMENTS - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "113 - Voluntary reservations",
+            "name": "113 - Voluntary reserves - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "113",
+            "account_type": "",
+            "parent_account": "11 - RESERVES AND OTHER HERITAGE INSTRUMENTS - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "114 - Special reservations",
+            "name": "114 - Special reserves - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "114",
+            "account_type": "",
+            "parent_account": "11 - RESERVES AND OTHER HERITAGE INSTRUMENTS - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "115 - Reserves for actuarial gains and losses and other adjustments",
+            "name": "115 - Reserves for actuarial gains and losses and other adjustments - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "115",
+            "account_type": "",
+            "parent_account": "11 - RESERVES AND OTHER HERITAGE INSTRUMENTS - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "118 - Contributions from partners or owners",
+            "name": "118 - Contributions from partners or owners - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "118",
+            "account_type": "",
+            "parent_account": "11 - RESERVES AND OTHER HERITAGE INSTRUMENTS - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "119 - Differences due to capital adjustment toEURos",
+            "name": "119 - Differences due to capital adjustment toEURos - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "119",
+            "account_type": "",
+            "parent_account": "11 - RESERVES AND OTHER HERITAGE INSTRUMENTS - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          }
+        ]
+      },
+      {
+        "sub_child": [
+          {
+            "account_name": "100 - Share capital",
+            "name": "100 - Share capital - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "100",
+            "account_type": "",
+            "parent_account": "10 - CAPITAL - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "101 - Social Fund",
+            "name": "101 - Social Fund - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "101",
+            "account_type": "",
+            "parent_account": "10 - CAPITAL - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "102 - Capital",
+            "name": "102 - Capital - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "102",
+            "account_type": "",
+            "parent_account": "10 - CAPITAL - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "103 - Partners for unrequired disbursements",
+            "name": "103 - Partners for non-required disbursements - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "103",
+            "account_type": "",
+            "parent_account": "10 - CAPITAL - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "104 - Partners for pending non-monetary contributions",
+            "name": "104 - Partners for pending non-monetary contributions - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "104",
+            "account_type": "",
+            "parent_account": "10 - CAPITAL - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "108 - Own shares or interests in special situations",
+            "name": "108 - Own shares or interests in special situations - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "108",
+            "account_type": "",
+            "parent_account": "10 - CAPITAL - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "109 - Own shares or interests for capital reduction",
+            "name": "109 - Own shares or interests for capital reduction - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "109",
+            "account_type": "",
+            "parent_account": "10 - CAPITAL - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          }
+        ]
+      },
+      {
+        "sub_child": [
+          {
+            "account_name": "120 - Remnant",
+            "name": "120 - Remnant - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "120",
+            "account_type": "",
+            "parent_account": "12 - RESULTS PENDING APPLICATION - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "121 - Negative results from previous years",
+            "name": "121 - Negative results from previous years - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "121",
+            "account_type": "",
+            "parent_account": "12 - RESULTS PENDING APPLICATION - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "129 - Result of the exercise",
+            "name": "129 - Result of the exercise - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "129",
+            "account_type": "",
+            "parent_account": "12 - RESULTS PENDING APPLICATION - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          }
+        ]
+      },
+      {
+        "sub_child": [
+          {
+            "account_name": "130 - Official capital subsidies",
+            "name": "130 - Official capital subsidies - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "130",
+            "account_type": "",
+            "parent_account": "13 - GRANTS, DONATIONS AND ADJUSTMENTS FOR CHANGES IN VALUE - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "131 - Donations and legacies of capital",
+            "name": "131 - Capital donations and legacies - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "131",
+            "account_type": "",
+            "parent_account": "13 - GRANTS, DONATIONS AND ADJUSTMENTS FOR CHANGES IN VALUE - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "132 - Other grants, donations and legacies",
+            "name": "132 - Other grants, donations and legacies - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "132",
+            "account_type": "",
+            "parent_account": "13 - GRANTS, DONATIONS AND ADJUSTMENTS FOR CHANGES IN VALUE - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "133 - Valuation adjustments on financial assets available for sale",
+            "name": "133 - Valuation adjustments on financial assets available for sale - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "133",
+            "account_type": "",
+            "parent_account": "13 - GRANTS, DONATIONS AND ADJUSTMENTS FOR CHANGES IN VALUE - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "134 - Hedging operations",
+            "name": "134 - Hedging operations - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "134",
+            "account_type": "",
+            "parent_account": "13 - GRANTS, DONATIONS AND ADJUSTMENTS FOR CHANGES IN VALUE - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "135 - Conversion differences",
+            "name": "135 - Conversion differences - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "135",
+            "account_type": "",
+            "parent_account": "13 - GRANTS, DONATIONS AND ADJUSTMENTS FOR CHANGES IN VALUE - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "136 - Valuation adjustments on non-current assets and disposal groups, held for sale",
+            "name": "136 - Valuation adjustments on non-current assets and disposal groups, held for sale - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "136",
+            "account_type": "",
+            "parent_account": "13 - GRANTS, DONATIONS AND ADJUSTMENTS FOR CHANGES IN VALUE - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "137 - Tax revenues to be distributed over several years",
+            "name": "137 - Tax revenues to be distributed over several years - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "137",
+            "account_type": "",
+            "parent_account": "13 - GRANTS, DONATIONS AND ADJUSTMENTS FOR CHANGES IN VALUE - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          }
+        ]
+      },
+      {
+        "sub_child": [
+          {
+            "account_name": "140 - Provision for long-term employee benefits",
+            "name": "140 - Provision for long-term employee benefits - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "140",
+            "account_type": "",
+            "parent_account": "14 - PROVISIONS - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "141 - Provision for taxes",
+            "name": "141 - Provision for taxes - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "141",
+            "account_type": "",
+            "parent_account": "14 - PROVISIONS - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "142 - Provision for other liabilities",
+            "name": "142 - Provision for other liabilities - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "142",
+            "account_type": "",
+            "parent_account": "14 - PROVISIONS - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "143 - Provision for decommissioning, retirement or rehabilitation of fixed assets",
+            "name": "143 - Provision for decommissioning, retirement or rehabilitation of fixed assets - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "143",
+            "account_type": "",
+            "parent_account": "14 - PROVISIONS - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "145 - Provision for environmental actions",
+            "name": "145 - Provision for environmental actions - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "145",
+            "account_type": "",
+            "parent_account": "14 - PROVISIONS - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "146 - Provision for restructuring",
+            "name": "146 - Provision for restructuring - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "146",
+            "account_type": "",
+            "parent_account": "14 - PROVISIONS - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "147 - Provision for transactions with payments based on equity instruments",
+            "name": "147 - Provision for transactions with payments based on equity instruments - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "147",
+            "account_type": "",
+            "parent_account": "14 - PROVISIONS - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          }
+        ]
+      },
+      {
+        "sub_child": [
+          {
+            "account_name": "150 - Long-term shares or interests considered as financial liabilities",
+            "name": "150 - Long-term shares or interests considered as financial liabilities - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "150",
+            "account_type": "",
+            "parent_account": "15 - LONG-TERM DEBTS WITH SPECIAL CHARACTERISTICS - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "153 - Disbursements not required for shares or participations considered as financial liabilities",
+            "name": "153 - Disbursements not required for shares or participations considered as financial liabilities - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "153",
+            "account_type": "",
+            "parent_account": "15 - LONG-TERM DEBTS WITH SPECIAL CHARACTERISTICS - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "154 - Non-monetary contributions pending for shares or participations considered as financial liabilities",
+            "name": "154 - Outstanding non-monetary contributions for shares or participations considered as financial liabilities - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "154",
+            "account_type": "",
+            "parent_account": "15 - LONG-TERM DEBTS WITH SPECIAL CHARACTERISTICS - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          }
+        ]
+      },
+      {
+        "sub_child": [
+          {
+            "account_name": "160 - Long-term debts with related credit institutions",
+            "name": "160 - Long-term debts with related credit institutions - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "160",
+            "account_type": "",
+            "parent_account": "16 - LONG-TERM DEBTS WITH RELATED PARTIES - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "161 - Suppliers of long-term fixed assets, related parties",
+            "name": "161 - Long-term fixed asset suppliers, related parties - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "161",
+            "account_type": "",
+            "parent_account": "16 - LONG-TERM DEBTS WITH RELATED PARTIES - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "162 - Long-term financial lease creditors, related parties",
+            "name": "162 - Long-term financial lease creditors, related parties - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "162",
+            "account_type": "",
+            "parent_account": "16 - LONG-TERM DEBTS WITH RELATED PARTIES - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "163 - Other long-term debts with related parties",
+            "name": "163 - Other long-term debts with related parties - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "163",
+            "account_type": "",
+            "parent_account": "16 - LONG-TERM DEBTS WITH RELATED PARTIES - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          }
+        ]
+      },
+      {
+        "sub_child": [
+          {
+            "account_name": "170 - Long-term debts with credit institutions",
+            "name": "170 - Long-term debts with credit institutions - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "170",
+            "account_type": "",
+            "parent_account": "17 - LONG-TERM DEBTS FOR LOANS RECEIVED, BORROWING AND OTHER CONCEPTS - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "171 - Long-term debts",
+            "name": "171 - Long-term debts - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "171",
+            "account_type": "",
+            "parent_account": "17 - LONG-TERM DEBTS FOR LOANS RECEIVED, BORROWING AND OTHER CONCEPTS - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "172 - Long-term debts convertible into grants, donations and legacies",
+            "name": "172 - Long-term debts convertible into grants, donations and legacies - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "172",
+            "account_type": "",
+            "parent_account": "17 - LONG-TERM DEBTS FOR LOANS RECEIVED, BORROWING AND OTHER CONCEPTS - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "173 - Long-term fixed asset suppliers",
+            "name": "173 - Long-term fixed asset suppliers - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "173",
+            "account_type": "",
+            "parent_account": "17 - LONG-TERM DEBTS FOR LOANS RECEIVED, BORROWING AND OTHER CONCEPTS - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "174 - Long-term finance lease creditors",
+            "name": "174 - Long-term financial lease creditors - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "174",
+            "account_type": "",
+            "parent_account": "17 - LONG-TERM DEBTS FOR LOANS RECEIVED, BORROWING AND OTHER CONCEPTS - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "175 - Long-term notes payable",
+            "name": "175 - Long-term payables - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "175",
+            "account_type": "",
+            "parent_account": "17 - LONG-TERM DEBTS FOR LOANS RECEIVED, BORROWING AND OTHER CONCEPTS - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "176 - Long-term financial derivative liabilities",
+            "name": "176 - Long-term financial derivative liabilities - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "176",
+            "account_type": "",
+            "parent_account": "17 - LONG-TERM DEBTS FOR LOANS RECEIVED, BORROWING AND OTHER CONCEPTS - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "177 - Bonds and debentures",
+            "name": "177 - Bonds and debentures - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "177",
+            "account_type": "",
+            "parent_account": "17 - LONG-TERM DEBTS FOR LOANS RECEIVED, BORROWING AND OTHER CONCEPTS - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "178 - Bonds and convertible bonds",
+            "name": "178 - Bonds and convertible bonds - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "178",
+            "account_type": "",
+            "parent_account": "17 - LONG-TERM DEBTS FOR LOANS RECEIVED, BORROWING AND OTHER CONCEPTS - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "179 - Debts represented by other negotiable securities",
+            "name": "179 - Debts represented by other negotiable securities - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "179",
+            "account_type": "",
+            "parent_account": "17 - LONG-TERM DEBTS FOR LOANS RECEIVED, BORROWING AND OTHER CONCEPTS - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          }
+        ]
+      },
+      {
+        "sub_child": [
+          {
+            "account_name": "180 - Long-term bonds received",
+            "name": "180 - Long-term bonds received - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "180",
+            "account_type": "",
+            "parent_account": "18 - LIABILITIES FOR SURETY, GUARANTEES AND OTHER LONG-TERM CONCEPTS - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "181 - Advances received for sales or long-term services",
+            "name": "181 - Advances received for sales or long-term services - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "181",
+            "account_type": "",
+            "parent_account": "18 - LIABILITIES FOR SURETY, GUARANTEES AND OTHER LONG-TERM CONCEPTS - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "185 - Long-term deposits received",
+            "name": "185 - Long-term deposits received - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "185",
+            "account_type": "",
+            "parent_account": "18 - LIABILITIES FOR SURETY, GUARANTEES AND OTHER LONG-TERM CONCEPTS - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "189 - Long-term financial guarantees",
+            "name": "189 - Long-term financial guarantees - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "189",
+            "account_type": "",
+            "parent_account": "18 - LIABILITIES FOR SURETY, GUARANTEES AND OTHER LONG-TERM CONCEPTS - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          }
+        ]
+      },
+      {
+        "sub_child": [
+          {
+            "account_name": "190 - Shares or participations issued",
+            "name": "190 - Shares or participations issued - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "190",
+            "account_type": "",
+            "parent_account": "19 - TRANSITIONAL FINANCING SITUATIONS - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "192 - Share Subscribers",
+            "name": "192 - Share Subscribers - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "192",
+            "account_type": "",
+            "parent_account": "19 - TRANSITIONAL FINANCING SITUATIONS - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "194 - Issued capital pending registration",
+            "name": "194 - Issued capital pending registration - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "194",
+            "account_type": "",
+            "parent_account": "19 - TRANSITIONAL FINANCING SITUATIONS - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "195 - Shares or interests issued considered as financial liabilities",
+            "name": "195 - Shares or participations issued considered as financial liabilities - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "195",
+            "account_type": "",
+            "parent_account": "19 - TRANSITIONAL FINANCING SITUATIONS - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "197 - Subscribers to shares considered as financial liabilities",
+            "name": "197 - Subscribers to shares considered as financial liabilities - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "197",
+            "account_type": "",
+            "parent_account": "19 - TRANSITIONAL FINANCING SITUATIONS - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "199 - Shares or participations issued considered as financial liabilities pending registration",
+            "name": "199 - Shares or participations issued considered as financial liabilities pending registration - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "199",
+            "account_type": "",
+            "parent_account": "19 - TRANSITIONAL FINANCING SITUATIONS - ASF",
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          }
+        ]
+      }
+    ]
+  }

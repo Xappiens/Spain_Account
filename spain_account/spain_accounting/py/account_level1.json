@@ -1,0 +1,116 @@
+{
+    "message": [
+      {
+        "parent_accounts": [
+          {
+            "account_name": "Basic financing",
+            "name": "1 - Basic financing - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "1",
+            "account_type": "",
+            "parent_account": null,
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "Sales andIncome",
+            "name": "7 - Sales andIncome - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "7",
+            "account_type": "",
+            "parent_account": null,
+            "account_currency": "EUR",
+            "root_type": "Income",
+            "report_type": "Profit and Loss"
+          },
+          {
+            "account_name": "Non-current assets",
+            "name": "2 - Non-current assets - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "2",
+            "account_type": "",
+            "parent_account": null,
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "Stocks",
+            "name": "3 - Stocks - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "3",
+            "account_type": "",
+            "parent_account": null,
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "Creditors and debtors for commercial operations",
+            "name": "4 - Creditors and debtors for commercial operations - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "4",
+            "account_type": "",
+            "parent_account": null,
+            "account_currency": "EUR",
+            "root_type": "Liability",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "Financial accounts",
+            "name": "5 - Financial accounts - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "5",
+            "account_type": "",
+            "parent_account": null,
+            "account_currency": "EUR",
+            "root_type": "Asset",
+            "report_type": "Balance Sheet"
+          },
+          {
+            "account_name": "Purchases andExpenses",
+            "name": "6 - Purchases andExpenses - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "6",
+            "account_type": "",
+            "parent_account": null,
+            "account_currency": "EUR",
+            "root_type": "Expense",
+            "report_type": "Profit and Loss"
+          },
+          {
+            "account_name": "Expenses charged to net worth",
+            "name": "8 - Expenses charged to net worth - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "8",
+            "account_type": "",
+            "parent_account": null,
+            "account_currency": "EUR",
+            "root_type": "Expense",
+            "report_type": "Profit and Loss"
+          },
+          {
+            "account_name": "Income attributed to net worth",
+            "name": "9 - Income attributed to net worth - ASF",
+            "company": "Xappiens",
+            "is_group": 1,
+            "account_number": "9",
+            "account_type": "",
+            "parent_account": null,
+            "account_currency": "EUR",
+            "root_type": "Income",
+            "report_type": "Profit and Loss"
+          }
+        ]
+      }
+    ]
+  }
