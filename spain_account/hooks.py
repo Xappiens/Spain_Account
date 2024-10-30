@@ -11,10 +11,10 @@ app_license = "mit"
 # hooks.py en tu app 'spain_account'
 
 # Sobrescribir los métodos get_chart y get_charts_for_country en ERPNext
-override_whitelisted_methods = {
-    "erpnext.accounts.doctype.account.chart_of_accounts.chart_of_accounts.get_chart": "spain_account.spain_accounting.chart_of_accounts_loader.get_chart",
-    "erpnext.accounts.doctype.account.chart_of_accounts.chart_of_accounts.get_charts_for_country": "spain_account.spain_accounting.chart_of_accounts_loader.get_charts_for_country"
-}
+# override_whitelisted_methods = {
+#     "erpnext.accounts.doctype.account.chart_of_accounts.chart_of_accounts.get_chart": "spain_account.spain_accounting.chart_of_accounts_loader.get_chart",
+#     "erpnext.accounts.doctype.account.chart_of_accounts.chart_of_accounts.get_charts_for_country": "spain_account.spain_accounting.chart_of_accounts_loader.get_charts_for_country"
+# }
 
 
 # required_apps = []
@@ -250,4 +250,8 @@ override_whitelisted_methods = {
 # default_log_clearing_doctypes = {
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
+
+setup_wizard_complete = (
+    "spain_account.spain_accounting.py.after_setup.after_setup"
+)
 
