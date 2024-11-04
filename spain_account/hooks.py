@@ -51,6 +51,9 @@ app_license = "mit"
 # include js in page
 # page_js = {"page" : "public/js/file.js"}
 
+setup_wizard_requires = "assets/spain_account/js/setup_wizard.js"
+
+
 # include js in doctype views
 doctype_js = {"Purchase Invoice" : "public/js/test.js"}
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
