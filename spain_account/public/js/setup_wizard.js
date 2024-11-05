@@ -80,24 +80,24 @@ erpnext.setup.slides_settings = [
             const args = {};
 
             //Check if Spanish Chart of Accounts checkbox is selected
-            if (this.values.spain_accounts) {
-            const self = this; 
-                console.log(this.values.spain_accounts);
-            frappe.call({
-                method: "spain_account.spain_accounting.py.after_setup.after_setup",
-                args: {
-                    spain_accounts: this.values.spain_accounts ? 1 : 0
-                },
-                callback: function (response) {
-                    if (this.values.spain_accounts) {
-                        console.log("Spanish Chart of Accounts created successfully.");
-                    } else {
-                        console.log("Spanish Chart of Accounts not selected.");
-                    }
-                }
-            });
+        //     if (this.values.spain_accounts) {
+        //     const self = this; 
+        //         console.log(this.values.spain_accounts);
+        //     frappe.call({
+        //         method: "spain_account.spain_accounting.py.after_setup.after_setup",
+        //         args: {
+        //             spain_accounts: this.values.spain_accounts ? 1 : 0
+        //         },
+        //         callback: function (response) {
+        //             if (this.values.spain_accounts) {
+        //                 console.log("Spanish Chart of Accounts created successfully.");
+        //             } else {
+        //                 console.log("Spanish Chart of Accounts not selected.");
+        //             }
+        //         }
+        //     });
 
-        } 
+        // } 
 
 
 
