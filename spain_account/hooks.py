@@ -51,8 +51,9 @@ app_license = "mit"
 # include js in page
 # page_js = {"page" : "public/js/file.js"}
 
-# setup_wizard_requires = "assets/spain_account/js/setup_wizard.js"
-
+setup_wizard_requires = "assets/spain_account/js/setup_wizard.js"
+# setup_wizard_stages = "spain_account.spain_accounting.py.setup_wizard.get_setup_stages"
+setup_wizard_complete = "spain_account.spain_accounting.py.setup_wizard.setup_demo"
 
 # include js in doctype views
 
@@ -253,8 +254,3 @@ app_license = "mit"
 # default_log_clearing_doctypes = {
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
-
-setup_wizard_complete = (
-    "spain_account.spain_accounting.py.after_setup.after_setup"
-)
-
