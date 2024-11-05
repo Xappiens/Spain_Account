@@ -1,0 +1,88 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:model_name",
+ "creation": "2024-11-05 19:24:01.138794",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "model_name",
+  "description",
+  "column_break_jfwu",
+  "periodicity",
+  "fiscal_year",
+  "period",
+  "section_break_bzsa",
+  "model_values"
+ ],
+ "fields": [
+  {
+   "fieldname": "model_name",
+   "fieldtype": "Data",
+   "label": "Model Name",
+   "unique": 1
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  },
+  {
+   "fieldname": "column_break_jfwu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "periodicity",
+   "fieldtype": "Select",
+   "label": "Periodicity",
+   "options": "\nMonthly\nQuarterly\nSemi-annual\nAnnual"
+  },
+  {
+   "fieldname": "fiscal_year",
+   "fieldtype": "Link",
+   "label": "Fiscal Year",
+   "options": "Fiscal Year"
+  },
+  {
+   "fieldname": "period",
+   "fieldtype": "Select",
+   "label": "Period",
+   "options": "\n1Q\n2Q\n3Q\n4Q"
+  },
+  {
+   "fieldname": "section_break_bzsa",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "model_values",
+   "fieldtype": "Table",
+   "label": "Model Values",
+   "options": "Model Values"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-11-05 19:24:01.138794",
+ "modified_by": "Administrator",
+ "module": "Spain Accounting",
+ "name": "Hacienda Model",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,47 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-11-05 19:23:27.035863",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "value_description",
+  "calculation_rule__query",
+  "value_type"
+ ],
+ "fields": [
+  {
+   "fieldname": "value_description",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Value Description"
+  },
+  {
+   "fieldname": "calculation_rule__query",
+   "fieldtype": "Code",
+   "in_list_view": 1,
+   "label": "Calculation Rule / Query"
+  },
+  {
+   "fieldname": "value_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Value Type",
+   "options": "Monetary Amount\nQuantity\nPercentage"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-11-05 19:23:27.035863",
+ "modified_by": "Administrator",
+ "module": "Spain Accounting",
+ "name": "Model Values",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
