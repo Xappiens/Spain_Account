@@ -61,6 +61,11 @@ setup_wizard_complete = "spain_account.spain_accounting.py.setup_wizard.setup_de
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
 
+doctype_js = {
+
+    "Account": "public/js/account.js",
+
+}
 # Svg Icons
 # ------------------
 # include app icons in desk
@@ -156,7 +161,14 @@ setup_wizard_complete = "spain_account.spain_accounting.py.setup_wizard.setup_de
 # 		"on_cancel": "method",
 # 		"on_trash": "method"
 # 	}
+# } 
+
+# doc_events = {
+#     "Company": {
+#         "after_insert": "spain_account.spain_accounting.py.setup_wizard.clear_default_accounts"
+#     }
 # }
+
 
 # Scheduled Tasks
 # ---------------
