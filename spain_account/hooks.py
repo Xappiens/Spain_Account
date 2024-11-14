@@ -151,6 +151,10 @@ doctype_js = {
 # 	"ToDo": "custom_app.overrides.CustomToDo"
 # }
 
+override_doctype_class = {
+    "Company": "spain_account.spain_accounting.py.company.CompanyOverride"
+}
+
 # Document Events
 # ---------------
 # Hook on document methods and events
@@ -163,11 +167,13 @@ doctype_js = {
 # 	}
 # } 
 
-# doc_events = {
-#     "Company": {
-#         "after_insert": "spain_account.spain_accounting.py.setup_wizard.clear_default_accounts"
-#     }
-# }
+
+doc_events = {
+    "Purchase Invoice": {
+        "on_update": "spain_account.spain_accounting.py.purchase_invoice.modify_tds_tax_row"
+    }
+}
+
 
 
 # Scheduled Tasks
