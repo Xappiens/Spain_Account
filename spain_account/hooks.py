@@ -62,9 +62,7 @@ setup_wizard_complete = "spain_account.spain_accounting.py.setup_wizard.setup_de
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
 
 doctype_js = {
-
     "Account": "public/js/account.js",
-
 }
 # Svg Icons
 # ------------------
@@ -165,7 +163,7 @@ override_doctype_class = {
 # 		"on_cancel": "method",
 # 		"on_trash": "method"
 # 	}
-# } 
+# }
 
 
 doc_events = {
@@ -173,7 +171,6 @@ doc_events = {
         "on_update": "spain_account.spain_accounting.py.purchase_invoice.modify_tds_tax_row"
     }
 }
-
 
 
 # Scheduled Tasks
@@ -272,3 +269,17 @@ doc_events = {
 # default_log_clearing_doctypes = {
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
+
+
+fixtures = [
+    {
+        "doctype": "Hacienda Model",
+        "filters": [
+            [
+                "name",
+                "in",
+                ["Modelo 111"],
+            ]
+        ],
+    },
+]

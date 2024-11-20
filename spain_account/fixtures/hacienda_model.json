@@ -1,0 +1,47 @@
+[
+ {
+  "description": "Quarterly declaration of IRPF (income tax) withholdings on payments.",
+  "docstatus": 0,
+  "doctype": "Hacienda Model",
+  "fiscal_year": "2024",
+  "model_name": "Modelo 111",
+  "model_values": [
+   {
+    "calculation_rule__query": "SELECT COUNT(*) \nFROM `tabAccount` AS a\nJOIN `tabAccount` AS p ON a.parent_account = p.name\nWHERE p.account_number = 4751  \nAND a.custom_es_cuenta_de_empleado = 0;",
+    "parent": "Modelo 111",
+    "parentfield": "model_values",
+    "parenttype": "Hacienda Model",
+    "value_description": "Total number of suppliers with IRPF withholding",
+    "value_type": "Integer (count)"
+   },
+   {
+    "calculation_rule__query": "SELECT COUNT(*) \nFROM tabAccount AS a\nJOIN tabAccount AS p ON a.parent_account = p.name\nWHERE p.account_number = 4751  \nAND a.custom_es_cuenta_de_empleado = 1;",
+    "parent": "Modelo 111",
+    "parentfield": "model_values",
+    "parenttype": "Hacienda Model",
+    "value_description": "Total number of employees with IRPF withholding",
+    "value_type": "Integer (count)"
+   },
+   {
+    "calculation_rule__query": "SELECT a.name AS account\nFROM tabAccount AS a\nJOIN tabAccount AS p ON a.parent_account = p.name\nWHERE p.account_number = 4751  \nAND a.custom_es_cuenta_de_empleado = 0;",
+    "parent": "Modelo 111",
+    "parentfield": "model_values",
+    "parenttype": "Hacienda Model",
+    "value_description": "Total IRPF amount withheld from suppliers",
+    "value_type": "Monetary Amount"
+   },
+   {
+    "calculation_rule__query": "SELECT a.name AS account\nFROM tabAccount AS a\nJOIN tabAccount AS p ON a.parent_account = p.name\nWHERE p.account_number = 4751  \nAND a.custom_es_cuenta_de_empleado = 1;",
+    "parent": "Modelo 111",
+    "parentfield": "model_values",
+    "parenttype": "Hacienda Model",
+    "value_description": "Total IRPF amount withheld from employees",
+    "value_type": "Monetary Amount"
+   }
+  ],
+  "modified": "2024-11-20 13:41:21.451903",
+  "name": "Modelo 111",
+  "period": "4Q",
+  "periodicity": "Quarterly"
+ }
+]
