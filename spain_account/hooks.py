@@ -278,7 +278,7 @@ fixtures = [
             [
                 "name",
                 "in",
-                ["Modelo 111"],
+                ["Modelo 111", "Modelo 303"],
             ]
         ],
     },

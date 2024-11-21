@@ -50,28 +50,26 @@ def get_data(filters):
     }
 
     for value in model_values:
+        accounts = execute_sql(value["calculation_rule__query"])
+        
+        total_amount = 0
+        total_account = 0
+        if accounts:
+            for d in accounts:
+                    balance = get_balance_on(d[0], date=end_date, start_date=start_date)
+                    total_amount += balance
+                    if abs(balance) > 0:
+                        total_account += 1
         if value["description"] == "Total number of suppliers with IRPF withholding":
-            calculated_value = execute_sql(value["calculation_rule__query"])
-            results["total_number_of_suppliers_with_irpf_withholding"] = calculated_value[0][0] if calculated_value else 0
+            results["total_number_of_suppliers_with_irpf_withholding"] = total_account if total_account else 0
         
         if value["description"] == "Total number of employees with IRPF withholding":
-            calculated_value = execute_sql(value["calculation_rule__query"])
-            results["total_number_of_employees_with_irpf_withholding"] = calculated_value[0][0] if calculated_value else 0
+            results["total_number_of_employees_with_irpf_withholding"] = total_account if total_account else 0
         
         if value["description"] == "Total IRPF amount withheld from suppliers":
-            accounts = execute_sql(value["calculation_rule__query"])
-            total_amount = 0
-            for d in accounts:
-                balance = get_balance_on(d[0], date=end_date, start_date=start_date)
-                total_amount += balance
             results["total_irpf_amount_withheld_from_suppliers"] = abs(total_amount)
 
         if value["description"] == "Total IRPF amount withheld from employees":
-            total_amount = 0
-            accounts = execute_sql(value["calculation_rule__query"])
-            for d in accounts:
-                balance = get_balance_on(d[0], date=end_date, start_date=start_date)
-                total_amount += balance
             results["total_irpf_amount_withheld_from_employees"] = abs(total_amount)
 
     return [results] 
