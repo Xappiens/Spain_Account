@@ -1,50 +1,5 @@
 [
  {
-  "description": "Declaration of VAT (IVA) for quarterly submission",
-  "docstatus": 0,
-  "doctype": "Hacienda Model",
-  "fiscal_year": "2024",
-  "model_name": "Modelo 303",
-  "model_values": [
-   {
-    "calculation_rule__query": "SELECT \n    SUM(si.grand_total) AS total_sales_amount_subject_to_vat\nFROM \n    `tabSales Invoice` AS si\nINNER JOIN \n    `tabSales Taxes and Charges` AS stc\n    ON si.name = stc.parent\nWHERE \n    LOWER(stc.description) LIKE '%vat%'\n",
-    "parent": "Modelo 303",
-    "parentfield": "model_values",
-    "parenttype": "Hacienda Model",
-    "value_description": "Total Sales Amount Subject to VAT",
-    "value_type": "Monetary Amount"
-   },
-   {
-    "calculation_rule__query": "SELECT \n    SUM(stc.tax_amount) AS total_vat_collected_on_sales\nFROM \n    `tabSales Invoice` AS si\nINNER JOIN \n    `tabSales Taxes and Charges` AS stc\n    ON si.name = stc.parent\nWHERE \n    LOWER(stc.description) LIKE '%vat%'\n",
-    "parent": "Modelo 303",
-    "parentfield": "model_values",
-    "parenttype": "Hacienda Model",
-    "value_description": "Total VAT Collected on Sales",
-    "value_type": "Monetary Amount"
-   },
-   {
-    "calculation_rule__query": "SELECT \n    SUM(ptc.tax_amount) AS total_vat_paid_on_purchases\nFROM \n    `tabPurchase Invoice` AS pi\nINNER JOIN \n    `tabPurchase Taxes and Charges` AS ptc\n    ON pi.name = ptc.parent\nWHERE\n    LOWER(ptc.description) LIKE '%vat%'",
-    "parent": "Modelo 303",
-    "parentfield": "model_values",
-    "parenttype": "Hacienda Model",
-    "value_description": "Total VAT Paid on Purchases",
-    "value_type": "Monetary Amount"
-   },
-   {
-    "calculation_rule__query": "SELECT\n    (\n        (SELECT \n            COALESCE(SUM(stc.tax_amount), 0)\n         FROM\n            `tabSales Invoice` AS si\n         INNER JOIN \n            `tabSales Taxes and Charges` AS stc\n            ON si.name = stc.parent\n         WHERE\n            LOWER(stc.description) LIKE '%vat%'\n        )\n        -\n        (SELECT \n            COALESCE(SUM(ptc.tax_amount), 0)\n         FROM \n            `tabPurchase Invoice` AS pi\n         INNER JOIN \n            `tabPurchase Taxes and Charges` AS ptc\n            ON pi.name = ptc.parent\n         WHERE \n            LOWER(ptc.description) LIKE '%vat%'\n        )\n    ) AS net_vat_applied;\n",
-    "parent": "Modelo 303",
-    "parentfield": "model_values",
-    "parenttype": "Hacienda Model",
-    "value_description": "Net VAT Payable (VAT Collected - VAT Paid)",
-    "value_type": "Monetary Amount"
-   }
-  ],
-  "modified": "2024-11-21 14:28:14.121725",
-  "name": "Modelo 303",
-  "period": "2Q",
-  "periodicity": "Quarterly"
- },
- {
   "description": "Quarterly declaration of IRPF (income tax) withholdings on payments.",
   "docstatus": 0,
   "doctype": "Hacienda Model",
@@ -84,9 +39,54 @@
     "value_type": "Monetary Amount"
    }
   ],
-  "modified": "2024-11-21 13:14:44.749737",
+  "modified": "2024-11-22 05:20:34.456501",
   "name": "Modelo 111",
   "period": "4Q",
+  "periodicity": "Quarterly"
+ },
+ {
+  "description": "Declaration of VAT (IVA) for quarterly submission",
+  "docstatus": 0,
+  "doctype": "Hacienda Model",
+  "fiscal_year": "2024",
+  "model_name": "Modelo 303",
+  "model_values": [
+   {
+    "calculation_rule__query": "SELECT \n    si.name as sales_invoice\nFROM \n    `tabSales Invoice` AS si\nWHERE \n    si.name IN (\n        SELECT DISTINCT stc.parent\n        FROM `tabSales Taxes and Charges` AS stc\n        WHERE LOWER(stc.description) LIKE '%vat%'\n    )\n\n\n",
+    "parent": "Modelo 303",
+    "parentfield": "model_values",
+    "parenttype": "Hacienda Model",
+    "value_description": "Total Sales Amount Subject to VAT",
+    "value_type": "Monetary Amount"
+   },
+   {
+    "calculation_rule__query": "SELECT \n    si.name as sales_invoice\nFROM \n    `tabSales Invoice` AS si\nINNER JOIN \n    `tabSales Taxes and Charges` AS stc\n    ON si.name = stc.parent\nWHERE \n    LOWER(stc.description) LIKE '%vat%'\n",
+    "parent": "Modelo 303",
+    "parentfield": "model_values",
+    "parenttype": "Hacienda Model",
+    "value_description": "Total VAT Collected on Sales",
+    "value_type": "Monetary Amount"
+   },
+   {
+    "calculation_rule__query": "SELECT \n   ptc.name as purchase_invoice_tax\nFROM \n    `tabPurchase Invoice` AS pi\nINNER JOIN \n    `tabPurchase Taxes and Charges` AS ptc\n    ON pi.name = ptc.parent\nWHERE\n    LOWER(ptc.description) LIKE '%vat%'",
+    "parent": "Modelo 303",
+    "parentfield": "model_values",
+    "parenttype": "Hacienda Model",
+    "value_description": "Total VAT Paid on Purchases",
+    "value_type": "Monetary Amount"
+   },
+   {
+    "calculation_rule__query": "SELECT\n    (\n        (SELECT \n            COALESCE(SUM(stc.tax_amount), 0)\n         FROM\n            `tabSales Invoice` AS si\n         INNER JOIN \n            `tabSales Taxes and Charges` AS stc\n            ON si.name = stc.parent\n         WHERE\n            LOWER(stc.description) LIKE '%vat%'\n        )\n        -\n        (SELECT \n            COALESCE(SUM(ptc.tax_amount), 0)\n         FROM \n            `tabPurchase Invoice` AS pi\n         INNER JOIN \n            `tabPurchase Taxes and Charges` AS ptc\n            ON pi.name = ptc.parent\n         WHERE \n            LOWER(ptc.description) LIKE '%vat%'\n        )\n    ) AS net_vat_applied;\n",
+    "parent": "Modelo 303",
+    "parentfield": "model_values",
+    "parenttype": "Hacienda Model",
+    "value_description": "Net VAT Payable (VAT Collected - VAT Paid)",
+    "value_type": "Monetary Amount"
+   }
+  ],
+  "modified": "2024-11-22 07:45:25.805936",
+  "name": "Modelo 303",
+  "period": "2Q",
   "periodicity": "Quarterly"
  }
 ]

@@ -8,6 +8,14 @@ frappe.query_reports["Modelo 303"] = {
             label: __("Quarter"),
             fieldtype: "Select",
             options: ["" ,"1Q", "2Q", "3Q", "4Q"],
-        }
+        },
+        {
+			fieldname: "fiscal_year",
+			label: __("Fiscal Year"),
+			fieldtype: "Link",
+			options: "Fiscal Year", 
+			
+			default: frappe.defaults.get_default('fiscal_year')
+		}
 	]
 };
