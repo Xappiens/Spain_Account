@@ -60,3 +60,12 @@ def custom_create_default_accounts(self):
 		# )
 
 
+def create_account_enqueue(self, method):
+      if self.create_chart_of_accounts_based_on == "Standard Template":
+            print("Creating account enqueue")
+            frappe.enqueue(
+                    "spain_account.spain_accounting.py.charts_of_account_level.create_accounts",
+                    company=self.company_name,
+                    enqueue_after_commit=True,
+                    at_front=True,
+                )

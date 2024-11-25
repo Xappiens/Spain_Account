@@ -87,6 +87,7 @@ def setup_demo(args):
     if args.get("spain_accounts"):
         frappe.enqueue(
             "spain_account.spain_accounting.py.charts_of_account_level.create_accounts",
+            setup_wizard = True,
             enqueue_after_commit=True,
             at_front=True,
         )

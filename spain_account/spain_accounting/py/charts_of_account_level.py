@@ -107,12 +107,16 @@ def create_level_5_accounts(level_5):
 
 
 @frappe.whitelist()
-def create_accounts():
+def create_accounts(company=None,setup_wizard=False):
   print("Function is Running")
-  try:
-        company = frappe.db.get_list("Company", fields=['company_name'], pluck='company_name')[0]
-        currency = frappe.db.get_list("Company", fields=['default_currency'], pluck='default_currency')[0]
-        abbr = frappe.db.get_list("Company", fields=['abbr'], pluck='abbr')[0]
+  try:  
+        if company is None:
+            company = frappe.db.get_list("Company", fields=['company_name'], pluck='company_name')[0]
+            currency = frappe.db.get_list("Company", fields=['default_currency'], pluck='default_currency')[0]
+            abbr = frappe.db.get_list("Company", fields=['abbr'], pluck='abbr')[0]
+        else :
+            currency = frappe.db.get_value("Company", company,"default_currency")
+            abbr =  frappe.db.get_value("Company", company,"abbr")
 
         level_1 = [
             {
@@ -10119,10 +10123,13 @@ def create_accounts():
             frappe.db.commit()
         except Exception as e :
             frappe.log_error("Error While SQL", str(e))
-        frappe.db.sql("TRUNCATE TABLE `tabAccount`")
+        if setup_wizard :
+            frappe.db.sql("TRUNCATE TABLE `tabAccount`")
+        else :
+            frappe.db.sql("DELETE FROM `tabAccount` WHERE company=%s", (company))
         frappe.db.commit()
         if create_level_1_accounts(level_1):
-            if create_level_2_accounts(level_2):
+            if create_level_2_accounts(level_2):    
                 if create_level_2_accounts(level_3):
                     if create_level_2_accounts(level_4):
                         create_level_2_accounts(level_5)
