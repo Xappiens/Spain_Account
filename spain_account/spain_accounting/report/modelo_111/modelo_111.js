@@ -3,6 +3,13 @@
 
 frappe.query_reports["Modelo 111"] = {
 	"filters": [
+        {
+			fieldname: "company",
+			label: __("Company"),
+			fieldtype: "Link",
+			options: "Company", 
+			default: frappe.defaults.get_default('company')
+		},
 		{
             fieldname: "quarter",
             label: __("Quarter"),

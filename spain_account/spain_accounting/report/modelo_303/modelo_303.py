@@ -1,5 +1,4 @@
 import frappe
-from erpnext.accounts.utils import get_balance_on
 from frappe.utils import getdate
 
 
@@ -7,8 +6,11 @@ def execute(filters=None):
 
     if not filters:
         filters = {}
+    
+    if not filters.get("company"):
+        filters["company"] = frappe.defaults.get_defaults().get("company")
 
-    if not filters.get("quarter"):
+    if not filters.get("quarter") and not filters.get("from_date") and not filters.get("to_date"):
         filters["quarter"] = get_current_quarter()
 
     columns = [
@@ -68,22 +70,24 @@ def execute(filters=None):
 
 
 def get_data(filters):
-    quarter = filters["quarter"]
+    from_date = filters.get("from_date")
+    to_date = filters.get("to_date")
+    quarter = filters.get("quarter")
     fiscal_year = filters.get("fiscal_year")
-    start_date = None
-    end_date = None
+    company = filters.get("company")
+    start_date = from_date  
+    end_date = to_date
 
-    if fiscal_year:
+    # Handle fiscal year and quarter if from_date and to_date are not provided
+    if not from_date and not to_date and fiscal_year:
         start_date = frappe.db.get_value("Fiscal Year", fiscal_year, "year_start_date")
         end_date = frappe.db.get_value("Fiscal Year", fiscal_year, "year_end_date")
 
         if not quarter:
             quarter = get_fiscal_year_quarter(start_date, end_date)
 
-    if quarter:
-        quarter_start_date, quarter_end_date = get_quarter_date_range(quarter, start_date, end_date)
-
-        start_date, end_date = quarter_start_date, quarter_end_date
+    if not from_date and not to_date and quarter:
+        start_date, end_date = get_quarter_date_range(quarter, start_date, end_date)
 
     model_values = frappe.get_all(
         "Model Values",
@@ -116,6 +120,7 @@ def get_data(filters):
                             "between",
                             [start_date, end_date],
                         ], 
+                        "company": company
                     },
                     fields=["sum(grand_total) as total_vat_sales_amount_subject"],
                 )
@@ -134,9 +139,9 @@ def get_data(filters):
                             `tabSales Invoice` AS si
                             ON stc.parent = si.name
                         WHERE si.name IN %(invoice_names)s
-                        AND si.posting_date BETWEEN %(start_date)s AND %(end_date)s;"""
+                        AND si.posting_date BETWEEN %(start_date)s AND %(end_date)s AND si.company= %(company)s; """
                 value_count = execute_sql(
-                    sql_query, sales_invoice_names, start_date, end_date
+                    sql_query, sales_invoice_names, start_date, end_date, company
                 )
                 results["total_vat_collected"] = (
                     value_count[0].get("total_vat_collected")
@@ -154,9 +159,9 @@ def get_data(filters):
                                 `tabPurchase Invoice` AS pi
                                 ON ptc.parent = pi.name
                             WHERE ptc.name IN %(invoice_names)s
-                            AND pi.posting_date BETWEEN %(start_date)s AND %(end_date)s;"""
+                            AND pi.posting_date BETWEEN %(start_date)s AND %(end_date)s AND pi.company= %(company)s;"""
                     value_count = execute_sql(
-                        sql_query, purchase_invoice_names, start_date, end_date
+                        sql_query, purchase_invoice_names, start_date, end_date, company
                     )
                 results["total_vat_paid"] = (
                     value_count[0].get("total_vat_paid")
@@ -171,13 +176,13 @@ def get_data(filters):
         return [results]
 
 
-def execute_sql(sql_query, invoice=None, start_date=None, end_date=None):
+def execute_sql(sql_query, invoice=None, start_date=None, end_date=None, company=None):
     if start_date is None and end_date is None:
         result = frappe.db.sql(sql_query)
     else:
         result = frappe.db.sql(
             sql_query,
-            {"invoice_names": invoice, "start_date": start_date, "end_date": end_date},
+            {"invoice_names": invoice, "start_date": start_date, "end_date": end_date , "company": company},
             as_dict=True,
         )
 

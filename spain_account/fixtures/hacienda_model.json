@@ -7,7 +7,7 @@
   "model_name": "Modelo 111",
   "model_values": [
    {
-    "calculation_rule__query": "SELECT a.name AS account\nFROM tabAccount AS a\nJOIN tabAccount AS p ON a.parent_account = p.name\nWHERE p.account_number = 4751  \nAND a.custom_es_cuenta_de_empleado = 0;",
+    "calculation_rule__query": "SELECT a.name AS account\nFROM tabAccount AS a\nJOIN tabAccount AS p ON a.parent_account = p.name\nWHERE p.account_number = 4751 AND p.company = %(company)s\nAND a.custom_es_cuenta_de_empleado = 0\nAND a.company = %(company)s;",
     "parent": "Modelo 111",
     "parentfield": "model_values",
     "parenttype": "Hacienda Model",
@@ -15,7 +15,7 @@
     "value_type": "Integer (count)"
    },
    {
-    "calculation_rule__query": "SELECT a.name AS account\nFROM tabAccount AS a\nJOIN tabAccount AS p ON a.parent_account = p.name\nWHERE p.account_number = 4751  \nAND a.custom_es_cuenta_de_empleado = 1;",
+    "calculation_rule__query": "SELECT a.name AS account\nFROM tabAccount AS a\nJOIN tabAccount AS p ON a.parent_account = p.name\nWHERE p.account_number = 4751  AND p.company = %(company)s\nAND a.custom_es_cuenta_de_empleado = 1\nAND a.company = %(company)s;",
     "parent": "Modelo 111",
     "parentfield": "model_values",
     "parenttype": "Hacienda Model",
@@ -23,7 +23,7 @@
     "value_type": "Integer (count)"
    },
    {
-    "calculation_rule__query": "SELECT a.name AS account\nFROM tabAccount AS a\nJOIN tabAccount AS p ON a.parent_account = p.name\nWHERE p.account_number = 4751  \nAND a.custom_es_cuenta_de_empleado = 0;",
+    "calculation_rule__query": "SELECT a.name AS account\nFROM tabAccount AS a\nJOIN tabAccount AS p ON a.parent_account = p.name\nWHERE p.account_number = 4751  AND p.company = %(company)s\nAND a.custom_es_cuenta_de_empleado = 0\nAND a.company = %(company)s;",
     "parent": "Modelo 111",
     "parentfield": "model_values",
     "parenttype": "Hacienda Model",
@@ -31,7 +31,7 @@
     "value_type": "Monetary Amount"
    },
    {
-    "calculation_rule__query": "SELECT a.name AS account\nFROM tabAccount AS a\nJOIN tabAccount AS p ON a.parent_account = p.name\nWHERE p.account_number = 4751  \nAND a.custom_es_cuenta_de_empleado = 1;",
+    "calculation_rule__query": "SELECT a.name AS account\nFROM tabAccount AS a\nJOIN tabAccount AS p ON a.parent_account = p.name\nWHERE p.account_number = 4751 AND p.company = %(company)s\nAND a.custom_es_cuenta_de_empleado = 1\nAND a.company = %(company)s;",
     "parent": "Modelo 111",
     "parentfield": "model_values",
     "parenttype": "Hacienda Model",
@@ -39,7 +39,7 @@
     "value_type": "Monetary Amount"
    }
   ],
-  "modified": "2024-11-22 05:20:34.456501",
+  "modified": "2024-11-29 14:02:43.073573",
   "name": "Modelo 111",
   "period": "4Q",
   "periodicity": "Quarterly"

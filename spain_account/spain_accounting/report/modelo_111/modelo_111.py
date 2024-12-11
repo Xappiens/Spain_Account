@@ -6,6 +6,9 @@ def execute(filters=None):
 
     if not filters:
         filters = {}
+    
+    if not filters.get("company"):
+        filters["company"] = frappe.defaults.get_defaults().get("company")
 
     if not filters.get('quarter'):
         filters['quarter'] = get_current_quarter() 
@@ -33,6 +36,7 @@ def execute(filters=None):
 
 
 def get_data(filters):
+    company = filters.get("company")
     quarter = filters['quarter']
     start_date, end_date = get_quarter_date_range(quarter)
 
@@ -50,7 +54,7 @@ def get_data(filters):
     }
 
     for value in model_values:
-        accounts = execute_sql(value["calculation_rule__query"])
+        accounts = execute_sql(value["calculation_rule__query"],company)
         
         total_amount = 0
         total_account = 0
@@ -75,9 +79,9 @@ def get_data(filters):
     return [results] 
 
 
-def execute_sql(sql_query):
+def execute_sql(sql_query, company=None):
 
-    result = frappe.db.sql(sql_query)
+    result = frappe.db.sql(sql_query,{"company": company})
     return result if result else 0
 
 
