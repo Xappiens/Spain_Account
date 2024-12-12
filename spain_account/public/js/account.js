@@ -4,7 +4,8 @@ frappe.ui.form.on("Account", {
     },
     is_group(frm) {
         set_account_number(frm);
-    }
+    },
+    
 });
 
 // * FUNCTION TO SET ACCOUNT NUMBER BASED ON PARENT ACCOUNT AND IS_GROUP 
