@@ -177,7 +177,7 @@ doc_events = {
         "after_insert": "spain_account.spain_accounting.py.employee.create_employee_account"
     },
     "Account": {
-        "before_save": "spain_account.spain_accounting.py.account.set_account_number"
+        "before_insert": "spain_account.spain_accounting.py.account.set_account_number"
     }
 }
 

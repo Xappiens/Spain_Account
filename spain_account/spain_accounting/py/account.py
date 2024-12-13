@@ -12,20 +12,7 @@ def set_account_number(doc, method):
             order_by="account_number desc",
             limit=1
         )
-
         new_account_number = None
-
-        if doc.is_group:
-            if records and len(records) > 0:
-                new_account_number = int(records[0]["account_number"]) + 1
-            else:
-                parent_account_number = int(doc.parent_account.split(" ")[0])
-                new_account_number = parent_account_number * 10
-        else:
-            if records and len(records) > 0:
-                new_account_number = int(records[0]["account_number"]) + 1
-            else:
-                parent_account_number = doc.parent_account.split(" ")[0]
-                new_account_number = parent_account_number.ljust(8, "0")
-
+        if records and len(records) > 0:
+            new_account_number = int(records[0]["account_number"]) + 1
         doc.account_number = str(new_account_number)
