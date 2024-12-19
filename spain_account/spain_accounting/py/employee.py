@@ -11,13 +11,12 @@ def create_employee_account(self, method):
                 doctype="Account",
                 is_group=0,  
                 account_name=self.employee_name,  
-                account_type="Expense Account",
+                account_type="Payable",
                 parent_account=parent_account,  
                 company=self.company,  
                 account_currency=self.salary_currency,
                 custom_es_cuenta_de_empleado=1,
                 custom_empleado = self.name    
-
             )
         )
         

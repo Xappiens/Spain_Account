@@ -63,6 +63,7 @@ setup_wizard_complete = "spain_account.spain_accounting.py.setup_wizard.setup_de
 
 doctype_js = {
     "Account": "public/js/account.js",
+    "Expense Claim": "public/js/expense_claim.js",
 }
 # Svg Icons
 # ------------------
@@ -168,7 +169,7 @@ override_doctype_class = {
 
 doc_events = {
     "Purchase Invoice": {
-        "on_update": "spain_account.spain_accounting.py.purchase_invoice.modify_tds_tax_row"
+        "validate": "spain_account.spain_accounting.py.purchase_invoice.modify_tds_tax_row"
     },
     "Company": {
         "before_insert": "spain_account.spain_accounting.py.company.create_account_enqueue"
@@ -214,6 +215,13 @@ doc_events = {
 # override_whitelisted_methods = {
 # 	"frappe.desk.doctype.event.event.get_events": "spain_account.event.get_events"
 # }
+override_whitelisted_methods = {
+    "hrms.hr.doctype.expense_claim.expense_claim.get_expense_claim_account_and_cost_center": "spain_account.spain_accounting.py.expense_claim.get_expense_claim_account_and_cost_center"
+}
+override_doctype_class = {
+    "Expense Claim": "spain_account.spain_accounting.py.expense_claim.ExpenseClaimOverride"
+}
+
 #
 # each overriding function accepts a `data` argument;
 # generated from the base implementation of the doctype dashboard,

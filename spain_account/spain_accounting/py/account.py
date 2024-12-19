@@ -12,7 +12,7 @@ def set_account_number(doc, method):
             order_by="account_number desc",
             limit=1
         )
-        new_account_number = None
+        new_account_number = doc.account_number
         if records and len(records) > 0:
             new_account_number = int(records[0]["account_number"]) + 1
         doc.account_number = str(new_account_number)
