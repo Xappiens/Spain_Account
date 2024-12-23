@@ -1,236 +1,158 @@
 import frappe
-from frappe.utils import getdate
-
+from frappe.utils import getdate, now
+from datetime import timedelta
 
 def execute(filters=None):
-
-    if not filters:
-        filters = {}
-    
-    if not filters.get("company"):
-        filters["company"] = frappe.defaults.get_defaults().get("company")
-
-    if not filters.get("quarter") and not filters.get("from_date") and not filters.get("to_date"):
-        filters["quarter"] = get_current_quarter()
-
-    columns = [
-        {
-            "label": "Declarant NIF",
-            "fieldname": "declarant_nif",
-            "fieldtype": "Data",
-            "width": 120,
-        },
-        {
-            "label": "Declarant Name",
-            "fieldname": "declarant_name",
-            "fieldtype": "Data",
-            "width": 140,
-        },
-        {
-            "label": "Fiscal Year",
-            "fieldname": "fiscal_year",
-            "fieldtype": "Link",
-            "options": "Fiscal Year",
-            "width": 100,
-        },
-        {"label": "Period", "fieldname": "period", "fieldtype": "Data", "width": 80},
-        {
-            "label": "Total VAT Sales Amount Subject",
-            "fieldname": "total_vat_sales_amount_subject",
-            "fieldtype": "Currency",
-            "width": 190,
-            "align": "center",
-        },
-        {
-            "label": "Total VAT Collected",
-            "fieldname": "total_vat_collected",
-            "fieldtype": "Currency",
-            "width": 190,
-            "align": "center",
-        },
-        {
-            "label": "Total VAT Paid",
-            "fieldname": "total_vat_paid",
-            "fieldtype": "Currency",
-            "width": 190,
-            "align": "center",
-        },
-        {
-            "label": "VAT Payable/Refundable",
-            "fieldname": "vat_payable_refundable",
-            "fieldtype": "Currency",
-            "width": 190,
-            "align": "center",
-        },
-    ]
-
-    data = get_data(filters)
-
+    filters = prepare_filters(filters)
+    columns, column_keys = get_columns()
+    data = get_data(filters, column_keys)
     return columns, data
 
+def prepare_filters(filters):
+    filters = filters or {}
+    filters.setdefault("company", frappe.defaults.get_defaults().get("company"))
+    
+    if not any(filters.get(key) for key in ["quarter", "from_date", "to_date"]):
+        filters["quarter"] = get_current_quarter()
 
-def get_data(filters):
-    from_date = filters.get("from_date")
-    to_date = filters.get("to_date")
-    quarter = filters.get("quarter")
-    fiscal_year = filters.get("fiscal_year")
-    company = filters.get("company")
-    start_date = from_date  
-    end_date = to_date
+    return filters
 
-    # Handle fiscal year and quarter if from_date and to_date are not provided
-    if not from_date and not to_date and fiscal_year:
-        start_date = frappe.db.get_value("Fiscal Year", fiscal_year, "year_start_date")
-        end_date = frappe.db.get_value("Fiscal Year", fiscal_year, "year_end_date")
+def get_columns():
+    # Static columns
+    columns = [
+        {"label": "Declarant NIF", "fieldname": "declarant_nif", "fieldtype": "Data", "width": 120},
+        {"label": "Declarant Name", "fieldname": "declarant_name", "fieldtype": "Data", "width": 140},
+        {"label": "Fiscal Year", "fieldname": "fiscal_year", "fieldtype": "Link", "options": "Fiscal Year", "width": 103},
+        {"label": "Period", "fieldname": "period", "fieldtype": "Data", "width": 90},
+    ]
 
-        if not quarter:
-            quarter = get_fiscal_year_quarter(start_date, end_date)
-
-    if not from_date and not to_date and quarter:
-        start_date, end_date = get_quarter_date_range(quarter, start_date, end_date)
-
-    model_values = frappe.get_all(
+    # Fetch dynamic columns from Model Values
+    dynamic_values = frappe.get_all(
         "Model Values",
-        fields=[
-            "value_description as description",
-            "value_type",
-            "calculation_rule__query",
-        ],
-        filters={"parent": "Modelo 303" }
+        fields=["value_description", "idx"],
+        filters={"parent": "Modelo 303"},
+        order_by="idx asc"
     )
-    results = {
-        "period": quarter,
-        "fiscal_year":fiscal_year,
-        "total_vat_sales_amount_subject": 0,
-        "total_vat_collected": 0,
-        "total_vat_paid": 0,
-        "vat_payable_refundable": 0,
+
+    column_keys = []  
+    for row in dynamic_values:
+        fieldname = frappe.scrub(row["value_description"])
+        columns.append({
+            "label": row["value_description"],
+            "fieldname": fieldname,
+            "fieldtype": "Currency",
+            "width": 190,
+            "align": "center"
+        })
+        column_keys.append((row["value_description"], fieldname))  
+
+    return columns, column_keys
+
+def get_data(filters, column_keys):
+    start_date, end_date = determine_date_range(filters)
+    company = filters.get("company")
+
+    # Base row data
+    row_data = {
+        "fiscal_year": filters.get("fiscal_year"),
+        "period": filters.get("quarter"),
     }
-    if model_values :
-        for value in model_values:
 
-            query_result = execute_sql(value["calculation_rule__query"])
-            if value["description"] == "Total Sales Amount Subject to VAT" and  query_result:
-                sales_invoice_names = [invoice[0] for invoice in query_result]
-                total_vat_sales_amount_subject = frappe.get_all(
-                    "Sales Invoice",
-                    filters={
-                        "name": ["in", sales_invoice_names],  
-                        "posting_date": [
-                            "between",
-                            [start_date, end_date],
-                        ], 
-                        "company": company
-                    },
-                    fields=["sum(grand_total) as total_vat_sales_amount_subject"],
-                )
-                results["total_vat_sales_amount_subject"] = (
-                    total_vat_sales_amount_subject[0].get('total_vat_sales_amount_subject', 0)
-                    if total_vat_sales_amount_subject[0].get('total_vat_sales_amount_subject', 0)
-                    else 0
-                )
+    # Fetch and map data dynamically
+    for original_name, fieldname in column_keys:
+        query = frappe.db.get_value("Model Values", {"value_description": original_name}, "calculation_rule__query")
+        row_data[fieldname] = execute_sql(query, start_date, end_date, company) if query else 0
 
-            elif value["description"] == "Total VAT Collected on Sales" and  query_result:
-                sales_invoice_names = [invoice[0] for invoice in query_result]
-                sql_query = """SELECT 
-                        SUM(stc.tax_amount) AS total_vat_collected
-                        FROM `tabSales Taxes and Charges` AS stc
-                        INNER JOIN 
-                            `tabSales Invoice` AS si
-                            ON stc.parent = si.name
-                        WHERE si.name IN %(invoice_names)s
-                        AND si.posting_date BETWEEN %(start_date)s AND %(end_date)s AND si.company= %(company)s; """
-                value_count = execute_sql(
-                    sql_query, sales_invoice_names, start_date, end_date, company
-                )
-                results["total_vat_collected"] = (
-                    value_count[0].get("total_vat_collected")
-                    if value_count[0].get("total_vat_collected")
-                    else 0
-                )
+    return [row_data]
 
-            elif value["description"] == "Total VAT Paid on Purchases" and  query_result:
-                if query_result:
-                    purchase_invoice_names = [invoice[0] for invoice in query_result]
-                    sql_query = """SELECT 
-                            SUM(ptc.tax_amount) AS total_vat_paid
-                            FROM `tabPurchase Taxes and Charges` AS ptc
-                            INNER JOIN 
-                                `tabPurchase Invoice` AS pi
-                                ON ptc.parent = pi.name
-                            WHERE ptc.name IN %(invoice_names)s
-                            AND pi.posting_date BETWEEN %(start_date)s AND %(end_date)s AND pi.company= %(company)s;"""
-                    value_count = execute_sql(
-                        sql_query, purchase_invoice_names, start_date, end_date, company
-                    )
-                results["total_vat_paid"] = (
-                    value_count[0].get("total_vat_paid")
-                    if value_count[0].get("total_vat_paid")
-                    else 0
-                )
+def determine_date_range(filters):
+    fiscal_year = filters.get("fiscal_year")
+    quarter = filters.get("quarter")
 
-        results["vat_payable_refundable"] = (
-            results["total_vat_collected"] - results["total_vat_paid"]
+    if fiscal_year:
+        fiscal_start_date, fiscal_end_date = frappe.db.get_value(
+            "Fiscal Year", fiscal_year, ["year_start_date", "year_end_date"]
         )
 
-        return [results]
+        if quarter:
+            return get_quarter_date_range(quarter, fiscal_start_date)
 
+        return fiscal_start_date, fiscal_end_date
 
-def execute_sql(sql_query, invoice=None, start_date=None, end_date=None, company=None):
-    if start_date is None and end_date is None:
-        result = frappe.db.sql(sql_query)
+    if quarter:
+        # Use the calendar year if no fiscal year is specified
+        return get_quarter_date_range(quarter)
+
+    return None, None
+
+def execute_sql(query, start_date, end_date, company):
+    result = frappe.db.sql(
+        query,
+        {"start_date": start_date, "end_date": end_date, "company": company},
+        as_dict=True,
+    )
+    if result:
+        return result[0].get("total", 0) if result[0].get("total") else 0
     else:
-        result = frappe.db.sql(
-            sql_query,
-            {"invoice_names": invoice, "start_date": start_date, "end_date": end_date , "company": company},
-            as_dict=True,
-        )
-
-    return result if result else 0
-
+        return 0
 
 def get_current_quarter():
+    month = getdate(now()).month
+    return f"{(month - 1) // 3 + 1}Q"
 
-    month = getdate(frappe.utils.now()).month
-    if month in [1, 2, 3]:
-        return "1Q"
-    elif month in [4, 5, 6]:
-        return "2Q"
-    elif month in [7, 8, 9]:
-        return "3Q"
-    else:
-        return "4Q"
+def get_quarter_date_range(quarter, fiscal_start_date=None):
+    if fiscal_start_date:
+        fiscal_year_start = getdate(fiscal_start_date)
+        fiscal_year = fiscal_year_start.year
+        fiscal_month_start = fiscal_year_start.month
 
+        # Adjust the quarter calculation based on the fiscal year's starting month
+        quarters = {
+            "1Q": (
+                fiscal_year_start,
+                fiscal_year_start.replace(
+                    month=(fiscal_month_start + 2) % 12 + 1, day=1
+                )
+                - timedelta(days=1),
+            ),
+            "2Q": (
+                fiscal_year_start.replace(
+                    month=(fiscal_month_start + 3) % 12 + 1, day=1
+                ),
+                fiscal_year_start.replace(
+                    month=(fiscal_month_start + 5) % 12 + 1, day=1
+                )
+                - timedelta(days=1),
+            ),
+            "3Q": (
+                fiscal_year_start.replace(
+                    month=(fiscal_month_start + 6) % 12 + 1, day=1
+                ),
+                fiscal_year_start.replace(
+                    month=(fiscal_month_start + 8) % 12 + 1, day=1
+                )
+                - timedelta(days=1),
+            ),
+            "4Q": (
+                fiscal_year_start.replace(
+                    month=(fiscal_month_start + 9) % 12 + 1, day=1
+                ),
+                fiscal_year_start.replace(
+                    year=fiscal_year + 1,
+                    month=(fiscal_month_start + 11) % 12 + 1,
+                    day=1,
+                )
+                - timedelta(days=1),
+            ),
+        }
+        return quarters.get(quarter)
 
-def get_quarter_date_range(quarter, fiscal_start_date, fiscal_end_date):
-    """Return the date range for the given quarter within the fiscal year."""
-    year = getdate(frappe.utils.now()).year
-
-
-    if fiscal_start_date and fiscal_end_date:
-        year = getdate(fiscal_start_date).year
-    
-    if quarter == "1Q":
-        return f"{year}-01-01", f"{year}-03-31"
-    elif quarter == "2Q":
-        return f"{year}-04-01", f"{year}-06-30"
-    elif quarter == "3Q":
-        return f"{year}-07-01", f"{year}-09-30"
-    elif quarter == "4Q":
-        return f"{year}-10-01", f"{year}-12-31"
-    else:
-        return f"{year}-01-01", f"{year}-12-31"
-
-def get_fiscal_year_quarter(fiscal_start_date, fiscal_end_date):
-    """Determine the quarter based on fiscal year date range."""
-    current_date = getdate(frappe.utils.now())
-
-    if fiscal_start_date <= current_date <= fiscal_end_date:
-        if fiscal_start_date <= current_date <= getdate(fiscal_start_date).replace(month=3, day=31):
-            return "1Q"
-        elif fiscal_start_date <= current_date <= getdate(fiscal_start_date).replace(month=6, day=30):
-            return "2Q"
-        elif fiscal_start_date <= current_date <= getdate(fiscal_start_date).replace(month=9, day=30):
-            return "3Q"
-        elif fiscal_start_date <= current_date <= getdate(fiscal_start_date).replace(month=12, day=31):
-            return "4Q"
+    # Default to calendar year if no fiscal start date is provided
+    year = getdate(now()).year
+    quarters = {
+        "1Q": (f"{year}-01-01", f"{year}-03-31"),
+        "2Q": (f"{year}-04-01", f"{year}-06-30"),
+        "3Q": (f"{year}-07-01", f"{year}-09-30"),
+        "4Q": (f"{year}-10-01", f"{year}-12-31"),
+    }
+    return quarters.get(quarter)

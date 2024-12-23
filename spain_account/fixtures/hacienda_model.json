@@ -3,7 +3,7 @@
   "description": "Quarterly declaration of IRPF (income tax) withholdings on payments.",
   "docstatus": 0,
   "doctype": "Hacienda Model",
-  "fiscal_year": "2024",
+  "fiscal_year": "2023",
   "model_name": "Modelo 111",
   "model_values": [
    {
@@ -39,9 +39,9 @@
     "value_type": "Monetary Amount"
    }
   ],
-  "modified": "2024-11-29 14:02:43.073573",
+  "modified": "2024-12-19 13:31:44.259117",
   "name": "Modelo 111",
-  "period": "4Q",
+  "period": "2Q",
   "periodicity": "Quarterly"
  },
  {
@@ -52,39 +52,39 @@
   "model_name": "Modelo 303",
   "model_values": [
    {
-    "calculation_rule__query": "SELECT \n    si.name as sales_invoice\nFROM \n    `tabSales Invoice` AS si\nWHERE \n    si.name IN (\n        SELECT DISTINCT stc.parent\n        FROM `tabSales Taxes and Charges` AS stc\n        WHERE LOWER(stc.description) LIKE '%vat%'\n    )\n\n\n",
+    "calculation_rule__query": "SELECT \n    SUM(si.grand_total) AS total\nFROM \n    `tabSales Invoice` AS si\nWHERE \n    si.name IN (\n        SELECT DISTINCT stc.parent\n        FROM `tabSales Taxes and Charges` AS stc\n        WHERE stc.account_head IN (\n            SELECT name\n            FROM `tabAccount`\n            WHERE parent_account = (\n                SELECT name \n                FROM `tabAccount`\n                WHERE account_number = \"477\" AND company = %(company)s\n            )\n        )\n    )\n    AND si.posting_date BETWEEN %(start_date)s AND %(end_date)s\n    AND si.company = %(company)s;\n",
     "parent": "Modelo 303",
     "parentfield": "model_values",
     "parenttype": "Hacienda Model",
     "value_description": "Total Sales Amount Subject to VAT",
-    "value_type": "Monetary Amount"
+    "value_type": "Integer (count)"
    },
    {
-    "calculation_rule__query": "SELECT \n    si.name as sales_invoice\nFROM \n    `tabSales Invoice` AS si\nINNER JOIN \n    `tabSales Taxes and Charges` AS stc\n    ON si.name = stc.parent\nWHERE \n    LOWER(stc.description) LIKE '%vat%'\n",
+    "calculation_rule__query": "SELECT \n    SUM(stc.tax_amount) AS total\nFROM \n    `tabSales Invoice` AS si\nINNER JOIN \n    `tabSales Taxes and Charges` AS stc\n    ON si.name = stc.parent\nWHERE \n    si.posting_date BETWEEN %(start_date)s AND %(end_date)s\n    AND si.company = %(company)s\n    AND stc.account_head IN (\n        SELECT name\n        FROM `tabAccount`\n        WHERE parent_account = (\n            SELECT name\n            FROM `tabAccount`\n            WHERE account_number = \"477\" AND company = %(company)s\n        )\n    )\nGROUP BY \n    si.name;\n",
     "parent": "Modelo 303",
     "parentfield": "model_values",
     "parenttype": "Hacienda Model",
     "value_description": "Total VAT Collected on Sales",
-    "value_type": "Monetary Amount"
+    "value_type": "Integer (count)"
    },
    {
-    "calculation_rule__query": "SELECT \n   ptc.name as purchase_invoice_tax\nFROM \n    `tabPurchase Invoice` AS pi\nINNER JOIN \n    `tabPurchase Taxes and Charges` AS ptc\n    ON pi.name = ptc.parent\nWHERE\n    LOWER(ptc.description) LIKE '%vat%'",
+    "calculation_rule__query": "SELECT \n    SUM(ptc.tax_amount) AS total\nFROM \n    `tabPurchase Invoice` AS pi\nINNER JOIN \n    `tabPurchase Taxes and Charges` AS ptc\n    ON pi.name = ptc.parent\nWHERE \n    pi.posting_date BETWEEN %(start_date)s AND %(end_date)s\n    AND pi.company = %(company)s\n    AND ptc.account_head IN (\n        SELECT name\n        FROM `tabAccount`\n        WHERE parent_account = (\n            SELECT name\n            FROM `tabAccount`\n            WHERE account_number = \"472\" AND company = %(company)s\n        )\n    )\nGROUP BY \n    pi.name;\n",
     "parent": "Modelo 303",
     "parentfield": "model_values",
     "parenttype": "Hacienda Model",
     "value_description": "Total VAT Paid on Purchases",
-    "value_type": "Monetary Amount"
+    "value_type": "Integer (count)"
    },
    {
-    "calculation_rule__query": "SELECT\n    (\n        (SELECT \n            COALESCE(SUM(stc.tax_amount), 0)\n         FROM\n            `tabSales Invoice` AS si\n         INNER JOIN \n            `tabSales Taxes and Charges` AS stc\n            ON si.name = stc.parent\n         WHERE\n            LOWER(stc.description) LIKE '%vat%'\n        )\n        -\n        (SELECT \n            COALESCE(SUM(ptc.tax_amount), 0)\n         FROM \n            `tabPurchase Invoice` AS pi\n         INNER JOIN \n            `tabPurchase Taxes and Charges` AS ptc\n            ON pi.name = ptc.parent\n         WHERE \n            LOWER(ptc.description) LIKE '%vat%'\n        )\n    ) AS net_vat_applied;\n",
+    "calculation_rule__query": "SELECT\n    (\n        (SELECT \n    SUM(stc.tax_amount) AS total\nFROM \n    `tabSales Invoice` AS si\nINNER JOIN \n    `tabSales Taxes and Charges` AS stc\n    ON si.name = stc.parent\nWHERE \n    si.posting_date BETWEEN %(start_date)s AND %(end_date)s\n    AND si.company = %(company)s\n    AND stc.account_head IN (\n        SELECT name\n        FROM `tabAccount`\n        WHERE parent_account = (\n            SELECT name\n            FROM `tabAccount`\n            WHERE account_number = \"477\" AND company = %(company)s\n        )\n    )\nGROUP BY \n    si.name\n\n        )\n        -\n        (SELECT \n    SUM(ptc.tax_amount) AS total\nFROM \n    `tabPurchase Invoice` AS pi\nINNER JOIN \n    `tabPurchase Taxes and Charges` AS ptc\n    ON pi.name = ptc.parent\nWHERE \n    pi.posting_date BETWEEN %(start_date)s AND %(end_date)s\n    AND pi.company = %(company)s\n    AND ptc.account_head IN (\n        SELECT name\n        FROM `tabAccount`\n        WHERE parent_account = (\n            SELECT name\n            FROM `tabAccount`\n            WHERE account_number = \"472\" AND company = %(company)s\n        )\n    )\nGROUP BY \n    pi.name\n\n        )\n    ) AS total;\n",
     "parent": "Modelo 303",
     "parentfield": "model_values",
     "parenttype": "Hacienda Model",
     "value_description": "Net VAT Payable (VAT Collected - VAT Paid)",
-    "value_type": "Monetary Amount"
+    "value_type": "Integer (count)"
    }
   ],
-  "modified": "2024-11-22 07:45:25.805936",
+  "modified": "2024-12-23 11:11:04.637906",
   "name": "Modelo 303",
   "period": "2Q",
   "periodicity": "Quarterly"
