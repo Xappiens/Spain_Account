@@ -60,15 +60,7 @@
     "value_type": "Integer (count)"
    },
    {
-    "calculation_rule__query": "SELECT \n    SUM(stc.tax_amount) AS total\nFROM \n    `tabSales Invoice` AS si\nINNER JOIN \n    `tabSales Taxes and Charges` AS stc\n    ON si.name = stc.parent\nWHERE \n    si.posting_date BETWEEN %(start_date)s AND %(end_date)s\n    AND si.company = %(company)s\n    AND stc.account_head IN (\n        SELECT name\n        FROM `tabAccount`\n        WHERE parent_account = (\n            SELECT name\n            FROM `tabAccount`\n            WHERE account_number = \"477\" AND company = %(company)s\n        )\n    )\nGROUP BY \n    si.name;\n",
-    "parent": "Modelo 303",
-    "parentfield": "model_values",
-    "parenttype": "Hacienda Model",
-    "value_description": "Total VAT Collected on Sales",
-    "value_type": "Integer (count)"
-   },
-   {
-    "calculation_rule__query": "SELECT \n    SUM(ptc.tax_amount) AS total\nFROM \n    `tabPurchase Invoice` AS pi\nINNER JOIN \n    `tabPurchase Taxes and Charges` AS ptc\n    ON pi.name = ptc.parent\nWHERE \n    pi.posting_date BETWEEN %(start_date)s AND %(end_date)s\n    AND pi.company = %(company)s\n    AND ptc.account_head IN (\n        SELECT name\n        FROM `tabAccount`\n        WHERE parent_account = (\n            SELECT name\n            FROM `tabAccount`\n            WHERE account_number = \"472\" AND company = %(company)s\n        )\n    )\nGROUP BY \n    pi.name;\n",
+    "calculation_rule__query": "SELECT \n    SUM(ptc.tax_amount) AS total\nFROM \n    `tabPurchase Invoice` AS pi\nINNER JOIN \n    `tabPurchase Taxes and Charges` AS ptc\n    ON pi.name = ptc.parent\nWHERE \n    pi.posting_date BETWEEN %(start_date)s AND %(end_date)s\n    AND pi.company = %(company)s\n    AND ptc.account_head IN (\n        SELECT name\n        FROM `tabAccount`\n        WHERE parent_account = (\n            SELECT name\n            FROM `tabAccount`\n            WHERE account_number = \"472\" AND company = %(company)s\n        )\n    );\n",
     "parent": "Modelo 303",
     "parentfield": "model_values",
     "parenttype": "Hacienda Model",
@@ -76,17 +68,70 @@
     "value_type": "Integer (count)"
    },
    {
-    "calculation_rule__query": "SELECT\n    (\n        (SELECT \n    SUM(stc.tax_amount) AS total\nFROM \n    `tabSales Invoice` AS si\nINNER JOIN \n    `tabSales Taxes and Charges` AS stc\n    ON si.name = stc.parent\nWHERE \n    si.posting_date BETWEEN %(start_date)s AND %(end_date)s\n    AND si.company = %(company)s\n    AND stc.account_head IN (\n        SELECT name\n        FROM `tabAccount`\n        WHERE parent_account = (\n            SELECT name\n            FROM `tabAccount`\n            WHERE account_number = \"477\" AND company = %(company)s\n        )\n    )\nGROUP BY \n    si.name\n\n        )\n        -\n        (SELECT \n    SUM(ptc.tax_amount) AS total\nFROM \n    `tabPurchase Invoice` AS pi\nINNER JOIN \n    `tabPurchase Taxes and Charges` AS ptc\n    ON pi.name = ptc.parent\nWHERE \n    pi.posting_date BETWEEN %(start_date)s AND %(end_date)s\n    AND pi.company = %(company)s\n    AND ptc.account_head IN (\n        SELECT name\n        FROM `tabAccount`\n        WHERE parent_account = (\n            SELECT name\n            FROM `tabAccount`\n            WHERE account_number = \"472\" AND company = %(company)s\n        )\n    )\nGROUP BY \n    pi.name\n\n        )\n    ) AS total;\n",
+    "calculation_rule__query": "SELECT \n    SUM(stc.tax_amount) AS total\nFROM \n    `tabSales Invoice` AS si\nINNER JOIN \n    `tabSales Taxes and Charges` AS stc\n    ON si.name = stc.parent\nWHERE \n    si.posting_date BETWEEN %(start_date)s AND %(end_date)s\n    AND si.company = %(company)s\n    AND stc.account_head IN (\n        SELECT name\n        FROM `tabAccount`\n        WHERE parent_account = (\n            SELECT name\n            FROM `tabAccount`\n            WHERE account_number = \"477\" AND company = %(company)s\n        )\n    );\n",
+    "parent": "Modelo 303",
+    "parentfield": "model_values",
+    "parenttype": "Hacienda Model",
+    "value_description": "Total VAT Collected on Sales",
+    "value_type": "Monetary Amount"
+   },
+   {
+    "calculation_rule__query": "SELECT\n    (\n        (SELECT \n    SUM(stc.tax_amount) AS total\nFROM \n    `tabSales Invoice` AS si\nINNER JOIN \n    `tabSales Taxes and Charges` AS stc\n    ON si.name = stc.parent\nWHERE \n    si.posting_date BETWEEN %(start_date)s AND %(end_date)s\n    AND si.company = %(company)s\n    AND stc.account_head IN (\n        SELECT name\n        FROM `tabAccount`\n        WHERE parent_account = (\n            SELECT name\n            FROM `tabAccount`\n            WHERE account_number = \"477\" AND company = %(company)s\n        )\n    )\n\n\n        )\n        -\n        (SELECT \n    SUM(ptc.tax_amount) AS total\nFROM \n    `tabPurchase Invoice` AS pi\nINNER JOIN \n    `tabPurchase Taxes and Charges` AS ptc\n    ON pi.name = ptc.parent\nWHERE \n    pi.posting_date BETWEEN %(start_date)s AND %(end_date)s\n    AND pi.company = %(company)s\n    AND ptc.account_head IN (\n        SELECT name\n        FROM `tabAccount`\n        WHERE parent_account = (\n            SELECT name\n            FROM `tabAccount`\n            WHERE account_number = \"472\" AND company = %(company)s\n        )\n    )\n\n\n\n        )\n    ) AS total;\n",
     "parent": "Modelo 303",
     "parentfield": "model_values",
     "parenttype": "Hacienda Model",
     "value_description": "Net VAT Payable (VAT Collected - VAT Paid)",
-    "value_type": "Integer (count)"
+    "value_type": "Monetary Amount"
    }
   ],
-  "modified": "2024-12-23 11:11:04.637906",
+  "modified": "2024-12-24 08:49:42.134324",
   "name": "Modelo 303",
   "period": "2Q",
+  "periodicity": "Quarterly"
+ },
+ {
+  "description": null,
+  "docstatus": 0,
+  "doctype": "Hacienda Model",
+  "fiscal_year": "2024",
+  "model_name": "Modelo 347",
+  "model_values": [
+   {
+    "calculation_rule__query": "SELECT \n    COUNT(DISTINCT si.customer) AS total\nFROM \n    `tabSales Invoice` si\nWHERE \n    si.name IN (\n        SELECT DISTINCT stc.parent\n        FROM `tabSales Taxes and Charges` AS stc\n        WHERE stc.account_head IN (\n            SELECT name\n            FROM `tabAccount`\n            WHERE parent_account = (\n                SELECT name \n                FROM `tabAccount`\n                WHERE account_number = '477' \n                  AND company = %(company)s\n            )\n        )\n    )\n    AND si.posting_date BETWEEN %(start_date)s AND %(end_date)s\n    AND si.company = %(company)s\nGROUP BY \n    si.customer\nHAVING \n    SUM(si.grand_total) > 3005.06;\n",
+    "parent": "Modelo 347",
+    "parentfield": "model_values",
+    "parenttype": "Hacienda Model",
+    "value_description": "Total Customers ",
+    "value_type": "Integer (count)"
+   },
+   {
+    "calculation_rule__query": "SELECT \n    SUM(si.grand_total) AS total\nFROM \n    `tabSales Invoice` si\nWHERE \n    si.customer IN (\n        SELECT \n            si.customer\n        FROM \n            `tabSales Invoice` si\n        WHERE \n            si.name IN (\n                SELECT DISTINCT stc.parent\n                FROM `tabSales Taxes and Charges` AS stc\n                WHERE stc.account_head IN (\n                    SELECT name\n                    FROM `tabAccount`\n                    WHERE parent_account = (\n                        SELECT name \n                        FROM `tabAccount`\n                        WHERE account_number = '477' \n                          AND company = %(company)s\n                    )\n                )\n            )\n            AND si.posting_date BETWEEN %(start_date)s AND %(end_date)s\n            AND si.company = %(company)s\n        GROUP BY \n            si.customer\n        HAVING \n            SUM(si.grand_total) > 3005.06\n    )\n    AND si.posting_date BETWEEN %(start_date)s AND %(end_date)s\n    AND si.company = %(company)s;\n",
+    "parent": "Modelo 347",
+    "parentfield": "model_values",
+    "parenttype": "Hacienda Model",
+    "value_description": "Total Sales to Customers",
+    "value_type": "Monetary Amount"
+   },
+   {
+    "calculation_rule__query": "SELECT \n    COUNT(DISTINCT pi.supplier) AS total\nFROM \n    `tabPurchase Invoice` pi\nWHERE \n    pi.name IN (\n        SELECT DISTINCT stc.parent\n        FROM `tabPurchase Taxes and Charges` AS stc\n        WHERE stc.account_head IN (\n            SELECT name\n            FROM `tabAccount`\n            WHERE parent_account = (\n                SELECT name \n                FROM `tabAccount`\n                WHERE account_number = '472' \n                  AND company = %(company)s\n            )\n        )\n    )\n    AND pi.posting_date BETWEEN %(start_date)s AND %(end_date)s\n    AND pi.company = %(company)s\nGROUP BY \n    pi.supplier\nHAVING \n    SUM(pi.grand_total) > 3005.06;\n",
+    "parent": "Modelo 347",
+    "parentfield": "model_values",
+    "parenttype": "Hacienda Model",
+    "value_description": "Total Suppliers",
+    "value_type": "Integer (count)"
+   },
+   {
+    "calculation_rule__query": "WITH RelevantSuppliers AS (\n    SELECT DISTINCT si.supplier\n    FROM \n        `tabPurchase Invoice` si\n        JOIN `tabPurchase Taxes and Charges` stc ON si.name = stc.parent\n        JOIN `tabAccount` a1 ON stc.account_head = a1.name\n        JOIN `tabAccount` a2 ON a1.parent_account = a2.name\n    WHERE \n        a2.account_number = '472' \n        AND a2.company = %(company)s\n        AND si.company = %(company)s\n        AND si.posting_date BETWEEN %(start_date)s AND %(end_date)s\n    GROUP BY \n        si.supplier\n    HAVING \n        SUM(si.grand_total) > 3005.06\n)\nSELECT \n    SUM(si.grand_total) AS total\nFROM \n    `tabPurchase Invoice` si\n    JOIN RelevantSuppliers ON si.supplier = RelevantSuppliers.supplier\n    JOIN `tabPurchase Taxes and Charges` stc ON si.name = stc.parent\n    JOIN `tabAccount` a1 ON stc.account_head = a1.name\n    JOIN `tabAccount` a2 ON a1.parent_account = a2.name\nWHERE \n    a2.account_number = '472' \n    AND a2.company = %(company)s\n    AND si.company = %(company)s\n    AND si.posting_date BETWEEN %(start_date)s AND %(end_date)s;\n",
+    "parent": "Modelo 347",
+    "parentfield": "model_values",
+    "parenttype": "Hacienda Model",
+    "value_description": "Total Purchases from Suppliers",
+    "value_type": "Monetary Amount"
+   }
+  ],
+  "modified": "2024-12-26 13:18:23.586030",
+  "name": "Modelo 347",
+  "period": "",
   "periodicity": "Quarterly"
  }
 ]
