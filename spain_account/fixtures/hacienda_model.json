@@ -65,7 +65,7 @@
     "parentfield": "model_values",
     "parenttype": "Hacienda Model",
     "value_description": "Total VAT Paid on Purchases",
-    "value_type": "Integer (count)"
+    "value_type": "Monetary Amount"
    },
    {
     "calculation_rule__query": "SELECT \n    SUM(stc.tax_amount) AS total\nFROM \n    `tabSales Invoice` AS si\nINNER JOIN \n    `tabSales Taxes and Charges` AS stc\n    ON si.name = stc.parent\nWHERE \n    si.posting_date BETWEEN %(start_date)s AND %(end_date)s\n    AND si.company = %(company)s\n    AND stc.account_head IN (\n        SELECT name\n        FROM `tabAccount`\n        WHERE parent_account = (\n            SELECT name\n            FROM `tabAccount`\n            WHERE account_number = \"477\" AND company = %(company)s\n        )\n    );\n",
@@ -84,7 +84,7 @@
     "value_type": "Monetary Amount"
    }
   ],
-  "modified": "2024-12-24 08:49:42.134324",
+  "modified": "2024-12-27 11:31:06.899294",
   "name": "Modelo 303",
   "period": "2Q",
   "periodicity": "Quarterly"

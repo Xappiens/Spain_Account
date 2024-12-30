@@ -151,7 +151,8 @@ doctype_js = {
 # }
 
 override_doctype_class = {
-    "Company": "spain_account.spain_accounting.py.company.CompanyOverride"
+    "Company": "spain_account.spain_accounting.py.company.CompanyOverride",
+    "Expense Claim": "spain_account.spain_accounting.py.expense_claim.ExpenseClaimOverride"
 }
 
 # Document Events
@@ -172,14 +173,13 @@ doc_events = {
         "validate": "spain_account.spain_accounting.py.purchase_invoice.modify_tds_tax_row"
     },
     "Company": {
-        "before_insert": "spain_account.spain_accounting.py.company.create_account_enqueue"
+        "before_insert": "spain_account.spain_accounting.py.company.create_account_enqueue",
+        
     },
     "Employee": {
         "after_insert": "spain_account.spain_accounting.py.employee.create_employee_account"
     },
-    "Account": {
-        "before_insert": "spain_account.spain_accounting.py.account.set_account_number"
-    }
+    
 }
 
 
@@ -218,9 +218,7 @@ doc_events = {
 override_whitelisted_methods = {
     "hrms.hr.doctype.expense_claim.expense_claim.get_expense_claim_account_and_cost_center": "spain_account.spain_accounting.py.expense_claim.get_expense_claim_account_and_cost_center"
 }
-override_doctype_class = {
-    "Expense Claim": "spain_account.spain_accounting.py.expense_claim.ExpenseClaimOverride"
-}
+
 
 #
 # each overriding function accepts a `data` argument;
@@ -295,7 +293,7 @@ fixtures = [
             [
                 "name",
                 "in",
-                ["Modelo 111", "Modelo 303", "Modelo 347"],
+                ["Modelo 111", "Modelo 303", "Modelo 347" , "Modleo 390"],
             ]
         ],
     },

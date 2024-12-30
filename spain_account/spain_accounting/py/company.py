@@ -1,21 +1,13 @@
 import frappe
 from erpnext.setup.doctype.company.company import Company
 
-
 class CompanyOverride(Company):
-
-    # Override the default cost center Setup in the company
     def create_default_cost_center(self):
         custom_create_default_cost_center(self)
-
-    # Override the default account creation in the company
     def create_default_accounts(self):
         custom_create_default_accounts(self)
-
-    # Pass to disable the default account Setup in the company
     def set_default_accounts(self):
         pass
-
 
 def custom_create_default_cost_center(self):
 
@@ -41,15 +33,32 @@ def custom_create_default_cost_center(self):
         if cc.get("cost_center_name") == self.name:
             cc_doc.flags.ignore_mandatory = True
         cc_doc.insert()
+    
+    # ? COMMENT THESE DEFAULT ACCOUNT
+    # self.db_set("cost_center", "Main" + " - " + self.abbr)
+    # self.db_set("round_off_cost_center", "Main" + " - " + self.abbr)
+    # self.db_set("depreciation_cost_center", "Main" + " - " + self.abbr)
 
 
 def custom_create_default_accounts(self):
-    from erpnext.accounts.doctype.account.chart_of_accounts.chart_of_accounts import (
-        create_charts,
-    )
+		from erpnext.accounts.doctype.account.chart_of_accounts.chart_of_accounts import create_charts
 
-    frappe.local.flags.ignore_root_company_validation = True
-    create_charts(self.name, self.chart_of_accounts, self.existing_company)
+		frappe.local.flags.ignore_root_company_validation = True
+		create_charts(self.name, self.chart_of_accounts, self.existing_company)
+
+        # ? COMMENT THESE DEFAULT ACCOUNT
+		# self.db_set(
+		# 	"default_receivable_account",
+		# 	frappe.db.get_value(
+		# 		"Account", {"company": self.name, "account_type": "Receivable", "is_group": 0}
+		# 	),  
+		# )
+
+		# self.db_set(
+		# 	"default_payable_account",
+		# 	frappe.db.get_value("Account", {"company": self.name, "account_type": "Payable", "is_group": 0}),
+		# )
+
 
 
 def create_account_enqueue(self, method):
