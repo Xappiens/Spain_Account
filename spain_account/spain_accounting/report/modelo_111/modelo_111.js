@@ -11,6 +11,13 @@ frappe.query_reports["Modelo 111"] = {
 			default: frappe.defaults.get_default('company')
 		},
 		{
+			fieldname: "fiscal_year",
+			label: __("Fiscal Year"),
+			fieldtype: "Link",
+			options: "Fiscal Year", 
+			default: frappe.defaults.get_default('fiscal_year')
+		},
+		{
             fieldname: "quarter",
             label: __("Quarter"),
             fieldtype: "Select",
