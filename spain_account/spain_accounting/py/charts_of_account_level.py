@@ -120,7 +120,7 @@ def create_accounts(company=None,setup_wizard=False):
 
         level_1 = [
             {
-            "account_name": "Basic financing",
+            "account_name": "Financiación básica",
             "is_group": 1,
             "company":company,
             "account_currency":currency,
@@ -131,7 +131,7 @@ def create_accounts(company=None,setup_wizard=False):
             "report_type": "Balance Sheet"
             },
             {
-            "account_name": "Sales andIncome",
+            "account_name": "Ventas e ingresos",
             "is_group": 1,
             "account_number": "7",
             "account_type": "",
@@ -142,7 +142,7 @@ def create_accounts(company=None,setup_wizard=False):
             "report_type": "Profit and Loss"
             },
             {
-            "account_name": "Non-current assets",
+            "account_name": "Activo no corriente",
             "is_group": 1,
             "account_number": "2",
             "account_type": "",
@@ -153,7 +153,7 @@ def create_accounts(company=None,setup_wizard=False):
             "report_type": "Balance Sheet"
             },
             {
-            "account_name": "Stocks",
+            "account_name": "Existencias",
             "is_group": 1,
             "account_number": "3",
             "account_type": "",
@@ -164,7 +164,7 @@ def create_accounts(company=None,setup_wizard=False):
             "report_type": "Balance Sheet"
             },
             {
-            "account_name": "Creditors and debtors for commercial operations",
+            "account_name": "Acreedores y deudores por operaciones comerciales",
             "is_group": 1,
             "account_number": "4",
             "account_type": "",
@@ -175,7 +175,7 @@ def create_accounts(company=None,setup_wizard=False):
             "report_type": "Balance Sheet"
             },
             {
-            "account_name": "Financial accounts",
+            "account_name": "Cuentas financieras",
             "is_group": 1,
             "account_number": "5",
             "account_type": "",
@@ -186,7 +186,7 @@ def create_accounts(company=None,setup_wizard=False):
             "report_type": "Balance Sheet"
             },
             {
-            "account_name": "Purchases andExpenses",
+            "account_name": "Compras y gastos",
             "is_group": 1,
             "account_number": "6",
             "account_type": "",
@@ -197,7 +197,7 @@ def create_accounts(company=None,setup_wizard=False):
             "report_type": "Profit and Loss"
             },
             {
-            "account_name": "Expenses charged to net worth",
+            "account_name": "Gastos imputados al patrimonio neto",
             "is_group": 1,
             "account_number": "8",
             "account_type": "",
@@ -208,7 +208,7 @@ def create_accounts(company=None,setup_wizard=False):
             "report_type": "Profit and Loss"
             },
             {
-            "account_name": "Income attributed to net worth",
+            "account_name": "Ingresos imputados al patrimonio neto",
             "is_group": 1,
             "account_number": "9",
             "account_type": "",
@@ -219,7 +219,7 @@ def create_accounts(company=None,setup_wizard=False):
             "report_type": "Profit and Loss"
             }         
         ]
-
+        
         level_2 = [
     {
         "account_name": "CAPITAL",
@@ -233,7 +233,7 @@ def create_accounts(company=None,setup_wizard=False):
         "report_type": "Profit and Loss"
     },
     {
-        "account_name": "RESERVES AND OTHER HERITAGE INSTRUMENTS",
+        "account_name": "RESERVAS Y OTROS INSTRUMENTOS DE PATRIMONIO",
         "company": company,
         "is_group": 1,
         "account_number": 11,
@@ -244,7 +244,7 @@ def create_accounts(company=None,setup_wizard=False):
         "report_type": "Profit and Loss"
     },
     {
-        "account_name": "RESULTS PENDING APPLICATION",
+        "account_name": "RESULTADOS PENDIENTES DE APLICACIÓN",
         "company": company,
         "is_group": 1,
         "account_number": 12,
@@ -255,7 +255,7 @@ def create_accounts(company=None,setup_wizard=False):
         "report_type": "Profit and Loss"
     },
     {
-        "account_name": "GRANTS, DONATIONS AND ADJUSTMENTS FOR CHANGES IN VALUE",
+        "account_name": "SUBVENCIONES, DONACIONES Y AJUSTES POR CAMBIOS DE VALOR",
         "company": company,
         "is_group": 1,
         "account_number": 13,
@@ -266,7 +266,7 @@ def create_accounts(company=None,setup_wizard=False):
         "report_type": "Profit and Loss"
     },
     {
-        "account_name": "PROVISIONS",
+        "account_name": "PROVISIONES",
         "company": company,
         "is_group": 1,
         "account_number": 14,
@@ -277,7 +277,7 @@ def create_accounts(company=None,setup_wizard=False):
         "report_type": "Profit and Loss"
     },
     {
-        "account_name": "LONG-TERM DEBTS WITH SPECIAL CHARACTERISTICS",
+        "account_name": "DEUDAS A LARGO PLAZO CON CARACTERÍSTICAS ESPECIALES",
         "company": company,
         "is_group": 1,
         "account_number": 15,
@@ -288,7 +288,7 @@ def create_accounts(company=None,setup_wizard=False):
         "report_type": "Profit and Loss"
     },
     {
-        "account_name": "LONG-TERM DEBTS WITH RELATED PARTIES",
+        "account_name": "DEUDAS A LARGO PLAZO CON PARTES VINCULADAS",
         "company": company,
         "is_group": 1,
         "account_number": 16,
@@ -299,7 +299,7 @@ def create_accounts(company=None,setup_wizard=False):
         "report_type": "Profit and Loss"
     },
     {
-        "account_name": "LONG-TERM DEBTS FOR LOANS RECEIVED, BORROWING AND OTHER CONCEPTS",
+        "account_name": "DEUDAS A LARGO PLAZO POR PRÉSTAMOS RECIBIDOS, EMPRÉSTITOS Y OTROS CONCEPTOS",
         "company": company,
         "is_group": 1,
         "account_number": 17,
@@ -310,7 +310,7 @@ def create_accounts(company=None,setup_wizard=False):
         "report_type": "Profit and Loss"
     },
     {
-        "account_name": "LIABILITIES FOR SURETY, GUARANTEES AND OTHER LONG-TERM CONCEPTS",
+        "account_name": "PASIVOS POR FIANZAS, GARANTÍAS Y OTROS CONCEPTOS A LARGO PLAZO",
         "company": company,
         "is_group": 1,
         "account_number": 18,
@@ -321,7 +321,7 @@ def create_accounts(company=None,setup_wizard=False):
         "report_type": "Profit and Loss"
     },
     {
-        "account_name": "TRANSITIONAL FINANCING SITUATIONS",
+        "account_name": "SITUACIONES TRANSITORIAS DE FINANCIACIÓN",
         "company": company,
         "is_group": 1,
         "account_number": 19,
@@ -332,7 +332,7 @@ def create_accounts(company=None,setup_wizard=False):
         "report_type": "Profit and Loss"
     },
     {
-        "account_name": "INTANGIBLE IMMOBILIZATIONS",
+        "account_name": "INMOVILIZACIONES INTANGIBLES",
         "company": company,
         "is_group": 1,
         "account_number": 20,
@@ -343,7 +343,7 @@ def create_accounts(company=None,setup_wizard=False):
         "report_type": "Profit and Loss"
     },
     {
-        "account_name": "MATERIAL IMMOBILIZATIONS",
+        "account_name": "INMOVILIZACIONES MATERIALES",
         "company": company,
         "is_group": 1,
         "account_number": 21,
@@ -354,7 +354,7 @@ def create_accounts(company=None,setup_wizard=False):
         "report_type": "Profit and Loss"
     },
     {
-        "account_name": "REAL ESTATE INVESTMENTS",
+        "account_name": "INVERSIONES INMOBILIARIAS",
         "company": company,
         "is_group": 1,
         "account_number": 22,
@@ -365,7 +365,7 @@ def create_accounts(company=None,setup_wizard=False):
         "report_type": "Profit and Loss"
     },
     {
-        "account_name": "MATERIAL IMMOBILIZATIONS IN PROGRESS",
+        "account_name": "INMOVILIZACIONES MATERIALES EN CURSO",
         "company": company,
         "is_group": 1,
         "account_number": 23,
@@ -376,7 +376,7 @@ def create_accounts(company=None,setup_wizard=False):
         "report_type": "Profit and Loss"
     },
     {
-        "account_name": "LONG-TERM FINANCIAL INVESTMENTS IN RELATED PARTIES",
+        "account_name": "INVERSIONES FINANCIERAS A LARGO PLAZO EN PARTES VINCULADAS",
         "company": company,
         "is_group": 1,
         "account_number": 24,
@@ -387,7 +387,7 @@ def create_accounts(company=None,setup_wizard=False):
         "report_type": "Profit and Loss"
     },
     {
-        "account_name": "OTHER LONG-TERM FINANCIAL INVESTMENTS",
+        "account_name": "OTRAS INVERSIONES FINANCIERAS A LARGO PLAZO",
         "company": company,
         "is_group": 1,
         "account_number": 25,
@@ -398,7 +398,7 @@ def create_accounts(company=None,setup_wizard=False):
         "report_type": "Profit and Loss"
     },
     {
-        "account_name": "LONG-TERM SURETIES AND DEPOSITS",
+        "account_name": "FIANZAS Y DEPÓSITOS CONSTITUIDOS A LARGO PLAZO",
         "company": company,
         "is_group": 1,
         "account_number": 26,
@@ -409,7 +409,7 @@ def create_accounts(company=None,setup_wizard=False):
         "report_type": "Profit and Loss"
     },
     {
-        "account_name": "ACCUMULATED AMORTIZATION OF FIXED ASSETS",
+        "account_name": " AMORTIZACIÓN ACUMULADA DEL INMOVILIZADO",
         "company": company,
         "is_group": 1,
         "account_number": 28,
@@ -420,7 +420,7 @@ def create_accounts(company=None,setup_wizard=False):
         "report_type": "Profit and Loss"
     },
     {
-        "account_name": "IMPAIRMENT OF NON-CURRENT ASSETS",
+        "account_name": "DETERIORO DE VALOR DE ACTIVOS NO CORRIENTES",
         "company": company,
         "is_group": 1,
         "account_number": 29,
@@ -431,7 +431,7 @@ def create_accounts(company=None,setup_wizard=False):
         "report_type": "Profit and Loss"
     },
     {
-        "account_name": "COMMERCIALS",
+        "account_name": "COMERCIALES",
         "company": company,
         "is_group": 1,
         "account_number": 30,
@@ -442,7 +442,7 @@ def create_accounts(company=None,setup_wizard=False):
         "report_type": "Profit and Loss"
     },
     {
-        "account_name": "RAW MATERIALS",
+        "account_name": "MATERIAS PRIMAS",
         "company": company,
         "is_group": 1,
         "account_number": 31,
@@ -453,7 +453,7 @@ def create_accounts(company=None,setup_wizard=False):
         "report_type": "Profit and Loss"
     },
     {
-        "account_name": "OTHER SUPPLIES",
+        "account_name": "OTROS APROVISIONAMIENTOS",
         "company": company,
         "is_group": 1,
         "account_number": 32,
@@ -464,7 +464,7 @@ def create_accounts(company=None,setup_wizard=False):
         "report_type": "Profit and Loss"
     },
     {
-        "account_name": "PRODUCTS IN PROGRESS",
+        "account_name": "PRODUCTOS EN CURSO",
         "company": company,
         "is_group": 1,
         "account_number": 33,
@@ -475,7 +475,7 @@ def create_accounts(company=None,setup_wizard=False):
         "report_type": "Profit and Loss"
     },
     {
-        "account_name": "SEMI-FINISHED PRODUCTS",
+        "account_name": "PRODUCTOS SEMITERMINADOS",
         "company": company,
         "is_group": 1,
         "account_number": 34,
@@ -486,7 +486,7 @@ def create_accounts(company=None,setup_wizard=False):
         "report_type": "Profit and Loss"
     },
     {
-        "account_name": "FINISHED PRODUCTS",
+        "account_name": "PRODUCTOS TERMINADOS",
         "company": company,
         "is_group": 1,
         "account_number": 35,
@@ -497,7 +497,7 @@ def create_accounts(company=None,setup_wizard=False):
         "report_type": "Profit and Loss"
     },
     {
-        "account_name": "BY-PRODUCTS, WASTE AND RECOVERED MATERIALS",
+        "account_name": "SUBPRODUCTOS, RESIDUOS Y MATERIALES RECUPERADOS",
         "company": company,
         "is_group": 1,
         "account_number": 36,
@@ -508,7 +508,7 @@ def create_accounts(company=None,setup_wizard=False):
         "report_type": "Profit and Loss"
     },
     {
-        "account_name": "DETERIORATION OF VALUE OF STOCK",
+        "account_name": "DETERIORO DE VALOR DE LAS EXISTENCIAS",
         "company": company,
         "is_group": 1,
         "account_number": 39,
@@ -519,7 +519,7 @@ def create_accounts(company=None,setup_wizard=False):
         "report_type": "Profit and Loss"
     },
     {
-        "account_name": "SUPPLIERS",
+        "account_name": "PROVEEDORES",
         "company": company,
         "is_group": 1,
         "account_number": 40,
@@ -530,7 +530,7 @@ def create_accounts(company=None,setup_wizard=False):
         "report_type": "Balance Sheet"
     },
     {
-        "account_name": "MISCELLANEOUS CREDITORS",
+        "account_name": "ACREEDORES VARIOS",
         "company": company,
         "is_group": 1,
         "account_number": 41,
@@ -541,7 +541,7 @@ def create_accounts(company=None,setup_wizard=False):
         "report_type": "Balance Sheet"
     },
     {
-        "account_name": "CUSTOMERS",
+        "account_name": "CLIENTES",
         "company": company,
         "is_group": 1,
         "account_number": 43,
@@ -552,7 +552,7 @@ def create_accounts(company=None,setup_wizard=False):
         "report_type": "Balance Sheet"
     },
     {
-        "account_name": "MISCELLANEOUS DEBTORS",
+        "account_name": "DEUDORES VARIOS",
         "company": company,
         "is_group": 1,
         "account_number": 44,
@@ -563,7 +563,7 @@ def create_accounts(company=None,setup_wizard=False):
         "report_type": "Profit and Loss"
     },
     {
-        "account_name": "PERSONNEL",
+        "account_name": "PERSONAL",
         "company": company,
         "is_group": 1,
         "account_number": 46,
@@ -574,7 +574,7 @@ def create_accounts(company=None,setup_wizard=False):
         "report_type": "Profit and Loss"
     },
     {
-        "account_name": "PUBLIC ADMINISTRATIONS",
+        "account_name": "ADMINISTRACIONES PÚBLICAS",
         "company": company,
         "is_group": 1,
         "account_number": 47,
@@ -585,7 +585,7 @@ def create_accounts(company=None,setup_wizard=False):
         "report_type": "Balance Sheet"
     },
     {
-        "account_name": "PERIODIFICATION ADJUSTMENTS",
+        "account_name": "AJUSTES POR PERIODIFICACIÓN",
         "company": company,
         "is_group": 1,
         "account_number": 48,
@@ -596,7 +596,7 @@ def create_accounts(company=None,setup_wizard=False):
         "report_type": "Profit and Loss"
     },
     {
-        "account_name": "IMPAIRMENT OF TRADE CREDITS AND SHORT-TERM PROVISIONS",
+        "account_name": "DETERIORO DE VALOR DE CRÉDITOS COMERCIALES Y PROVISIONES A CORTO PLAZO",
         "company": company,
         "is_group": 1,
         "account_number": 49,
@@ -607,7 +607,7 @@ def create_accounts(company=None,setup_wizard=False):
         "report_type": "Profit and Loss"
     },
     {
-        "account_name": "LOANS, DEBTS WITH SPECIAL CHARACTERISTICS AND OTHER SIMILAR SHORT-TERM ISSUES",
+        "account_name": "EMPRÉSTITOS, DEUDAS CON CARÁCTERÍSTICAS ESPECIALES Y OTRAS EMISIONES ANÁLOGAS A CORTO PLAZO",
         "company": company,
         "is_group": 1,
         "account_number": 50,
@@ -618,7 +618,7 @@ def create_accounts(company=None,setup_wizard=False):
         "report_type": "Profit and Loss"
     },
     {
-        "account_name": "SHORT-TERM DEBTS WITH RELATED PARTIES",
+        "account_name": "DEUDAS A CORTO PLAZO CON PARTES VINCULADAS",
         "company": company,
         "is_group": 1,
         "account_number": 51,
@@ -629,7 +629,7 @@ def create_accounts(company=None,setup_wizard=False):
         "report_type": "Profit and Loss"
     },
     {
-        "account_name": "SHORT-TERM DEBTS FOR LOANS RECEIVED AND OTHER CONCEPTS",
+        "account_name": "DEUDAS A CORTO PLAZO POR PRÉSTAMOS RECIBIDOS Y OTROS CONCEPTOS",
         "company": company,
         "is_group": 1,
         "account_number": 52,
@@ -640,7 +640,7 @@ def create_accounts(company=None,setup_wizard=False):
         "report_type": "Profit and Loss"
     },
     {
-        "account_name": "SHORT-TERM FINANCIAL INVESTMENTS IN RELATED PARTIES",
+        "account_name": "INVERSIONES FINANCIERAS A CORTO PLAZO EN PARTES VINCULADAS",
         "company": company,
         "is_group": 1,
         "account_number": 53,
@@ -651,7 +651,7 @@ def create_accounts(company=None,setup_wizard=False):
         "report_type": "Profit and Loss"
     },
     {
-        "account_name": "OTHER SHORT-TERM FINANCIAL INVESTMENTS",
+        "account_name": "OTRAS INVERSIONES FINANCIERAS A CORTO PLAZO",
         "company": company,
         "is_group": 1,
         "account_number": 54,
@@ -662,7 +662,7 @@ def create_accounts(company=None,setup_wizard=False):
         "report_type": "Profit and Loss"
     },
     {
-        "account_name": "OTHER NON-BANK ACCOUNTS",
+        "account_name": "OTRAS CUENTAS NO BANCARIAS",
         "company": company,
         "is_group": 1,
         "account_number": 55,
@@ -673,7 +673,7 @@ def create_accounts(company=None,setup_wizard=False):
         "report_type": "Profit and Loss"
     },
     {
-        "account_name": "SURETIES AND DEPOSITS RECEIVED AND CONSTITUTED IN THE SHORT TERM AND ADJUSTMENTS BY PERIODIFICATION",
+        "account_name": "FIANZAS Y DEPÓSITOS RECIBIDOS Y CONSTITUIDOS A COR TO PLAZO Y AJUSTES POR PERIODIFICACIÓN",
         "company": company,
         "is_group": 1,
         "account_number": 56,
@@ -684,7 +684,7 @@ def create_accounts(company=None,setup_wizard=False):
         "report_type": "Profit and Loss"
     },
     {
-        "account_name": "TREASURY",
+        "account_name": "TESORERÍA",
         "company": company,
         "is_group": 1,
         "account_number": 57,
@@ -695,7 +695,7 @@ def create_accounts(company=None,setup_wizard=False):
         "report_type": "Profit and Loss"
     },
     {
-        "account_name": "NON-CURRENT ASSETS HELD FOR SALE AND ASSOCIATED ASSETS AND LIABILITIES",
+        "account_name": "ACTIVOS NO CORRIENTES MANTENIDOS PARA LA VENTA Y ACTIVOS Y PASIVOS ASOCIADOS",
         "company": company,
         "is_group": 1,
         "account_number": 58,
@@ -706,7 +706,7 @@ def create_accounts(company=None,setup_wizard=False):
         "report_type": "Profit and Loss"
     },
     {
-        "account_name": "IMPAIRMENT OF SHORT-TERM FINANCIAL INVESTMENTS AND NON-CURRENT ASSETS HELD FOR SALE",
+        "account_name": "DETERIORO DEL VALOR DE INVERSIONES FINANCIERAS A CORTO PLAZO Y DE ACTIVOS NO CORRIENTES MANTENIDOS PARA LA VENTA",
         "company": company,
         "is_group": 1,
         "account_number": 59,
@@ -717,7 +717,7 @@ def create_accounts(company=None,setup_wizard=False):
         "report_type": "Profit and Loss"
     },
     {
-        "account_name": "SHOPPING",
+        "account_name": "COMPRAS",
         "company": company,
         "is_group": 1,
         "account_number": 60,
@@ -728,7 +728,7 @@ def create_accounts(company=None,setup_wizard=False):
         "report_type": "Profit and Loss"
     },
     {
-        "account_name": "STOCK VARIATION",
+        "account_name": "VARIACIÓN DE EXISTENCIAS",
         "company": company,
         "is_group": 1,
         "account_number": 61,
@@ -739,7 +739,7 @@ def create_accounts(company=None,setup_wizard=False):
         "report_type": "Profit and Loss"
     },
     {
-        "account_name": "EXTERNAL SERVICES",
+        "account_name": "SERVICIOS EXTERIORES",
         "company": company,
         "is_group": 1,
         "account_number": 62,
@@ -750,7 +750,7 @@ def create_accounts(company=None,setup_wizard=False):
         "report_type": "Profit and Loss"
     },
     {
-        "account_name": "TRIBUTES",
+        "account_name": "TRIBUTOS",
         "company": company,
         "is_group": 1,
         "account_number": 63,
@@ -761,7 +761,7 @@ def create_accounts(company=None,setup_wizard=False):
         "report_type": "Profit and Loss"
     },
     {
-        "account_name": "PERSONNELExpenseS",
+        "account_name": "GASTOS DE PERSONAL",
         "company": company,
         "is_group": 1,
         "account_number": 64,
@@ -772,7 +772,7 @@ def create_accounts(company=None,setup_wizard=False):
         "report_type": "Profit and Loss"
     },
     {
-        "account_name": "OTHER MANAGEMENTExpenseS",
+        "account_name": "OTROS GASTOS DE GESTIÓN",
         "company": company,
         "is_group": 1,
         "account_number": 65,
@@ -783,7 +783,7 @@ def create_accounts(company=None,setup_wizard=False):
         "report_type": "Profit and Loss"
     },
     {
-        "account_name": "FINANCIALExpenseS",
+        "account_name": "GASTOS FINANCIEROS",
         "company": company,
         "is_group": 1,
         "account_number": 66,
@@ -794,7 +794,7 @@ def create_accounts(company=None,setup_wizard=False):
         "report_type": "Profit and Loss"
     },
     {
-        "account_name": "LOSSES FROM NON-CURRENT ASSETS AND EXCEPTIONALExpenseS",
+        "account_name": "PÉRDIDAS PROCEDENTES DE ACTIVOS NO CORRIENTES Y GASTOS EXCEPCIONALES",
         "company": company,
         "is_group": 1,
         "account_number": 67,
@@ -805,7 +805,7 @@ def create_accounts(company=None,setup_wizard=False):
         "report_type": "Profit and Loss"
     },
     {
-        "account_name": "PROVISIONS FOR AMORTIZATION",
+        "account_name": "DOTACIONES PARA AMORTIZACIONES",
         "company": company,
         "is_group": 1,
         "account_number": 68,
@@ -816,7 +816,7 @@ def create_accounts(company=None,setup_wizard=False):
         "report_type": "Profit and Loss"
     },
     {
-        "account_name": "IMPAIRMENT LOSSES AND OTHER PROVISIONS",
+        "account_name": "PÉRDIDAS POR DETERIORO Y OTRAS DOTACIONES",
         "company": company,
         "is_group": 1,
         "account_number": 69,
@@ -827,7 +827,7 @@ def create_accounts(company=None,setup_wizard=False):
         "report_type": "Profit and Loss"
     },
     {
-        "account_name": "SALES OF MERCHANDISE, OWN PRODUCTION, SERVICES, ETC",
+        "account_name": "VENTAS DE MERCADERÍAS, DE PRODUCCIÓN PROPIA, DE SERVICIOS, ETC",
         "company": company,
         "is_group": 1,
         "account_number": 70,
@@ -838,7 +838,7 @@ def create_accounts(company=None,setup_wizard=False):
         "report_type": "Profit and Loss"
     },
     {
-        "account_name": "STOCK VARIATION",
+        "account_name": "VARIACIÓN DE EXISTENCIAS",
         "company": company,
         "is_group": 1,
         "account_number": 71,
@@ -849,7 +849,7 @@ def create_accounts(company=None,setup_wizard=False):
         "report_type": "Profit and Loss"
     },
     {
-        "account_name": "WORK CARRIED OUT FOR THE COMPANY",
+        "account_name": "TRABAJOS REALIZADOS PARA LA EMPRESA",
         "company": company,
         "is_group": 1,
         "account_number": 73,
@@ -860,7 +860,7 @@ def create_accounts(company=None,setup_wizard=False):
         "report_type": "Profit and Loss"
     },
     {
-        "account_name": "GRANTS, DONATIONS AND LEGACIES",
+        "account_name": "SUBVENCIONES, DONACIONES Y LEGADOS",
         "company": company,
         "is_group": 1,
         "account_number": 74,
@@ -871,7 +871,7 @@ def create_accounts(company=None,setup_wizard=False):
         "report_type": "Profit and Loss"
     },
     {
-        "account_name": "OTHER MANAGEMENTIncome",
+        "account_name": "OTROS INGRESOS DE GESTIÓN",
         "company": company,
         "is_group": 1,
         "account_number": 75,
@@ -882,7 +882,7 @@ def create_accounts(company=None,setup_wizard=False):
         "report_type": "Profit and Loss"
     },
     {
-        "account_name": "FINANCIALIncome",
+        "account_name": "INGRESOS FINANCIEROS",
         "company": company,
         "is_group": 1,
         "account_number": 76,
@@ -893,7 +893,7 @@ def create_accounts(company=None,setup_wizard=False):
         "report_type": "Profit and Loss"
     },
     {
-        "account_name": "PROFITS FROM NON-CURRENT ASSETS AND EXCEPTIONALIncome",
+        "account_name": "BENEFICIOS PROCEDENTES DE ACTIVOS NO CORRIENTES E INGRESOS EXCEPCIONALES",
         "company": company,
         "is_group": 1,
         "account_number": 77,
@@ -904,7 +904,7 @@ def create_accounts(company=None,setup_wizard=False):
         "report_type": "Profit and Loss"
     },
     {
-        "account_name": "EXCESSES AND APPLICATIONS OF PROVISIONS AND IMPAIRMENT LOSSES",
+        "account_name": "EXCESOS Y APLICACIONES DE PROVISIONES Y DE PÉRDIDAS POR DETERIORO",
         "company": company,
         "is_group": 1,
         "account_number": 79,
@@ -915,7 +915,7 @@ def create_accounts(company=None,setup_wizard=False):
         "report_type": "Profit and Loss"
     },
     {
-        "account_name": "FINANCIALExpenseS FOR VALUATION OF ASSETS AND LIABILITIES",
+        "account_name": "GASTOS FINANCIEROS POR VALORACIÓN DE ACTIVOS Y PASIVOS",
         "company": company,
         "is_group": 1,
         "account_number": 80,
@@ -926,7 +926,7 @@ def create_accounts(company=None,setup_wizard=False):
         "report_type": "Profit and Loss"
     },
     {
-        "account_name": "ExpenseS IN COVERAGE OPERATIONS",
+        "account_name": "GASTOS EN OPERACIONES DE COBERTURA",
         "company": company,
         "is_group": 1,
         "account_number": 81,
@@ -937,7 +937,7 @@ def create_accounts(company=None,setup_wizard=False):
         "report_type": "Profit and Loss"
     },
     {
-        "account_name": "ExpenseS FOR CONVERSION DIFFERENCES",
+        "account_name": "GASTOS POR DIFERENCIAS DE CONVERSIÓN",
         "company": company,
         "is_group": 1,
         "account_number": 82,
@@ -948,7 +948,7 @@ def create_accounts(company=None,setup_wizard=False):
         "report_type": "Profit and Loss"
     },
     {
-        "account_name": "Income TAX",
+        "account_name": "IMPUESTO SOBRE BENEFICIOS",
         "company": company,
         "is_group": 1,
         "account_number": 83,
@@ -959,7 +959,7 @@ def create_accounts(company=None,setup_wizard=False):
         "report_type": "Profit and Loss"
     },
     {
-        "account_name": "TRANSFERS OF GRANTS, DONATIONS AND LEGACIES",
+        "account_name": "TRANSFERENCIAS DE SUBVENCIONES, DONACIONES Y LEGADOS",
         "company": company,
         "is_group": 1,
         "account_number": 84,
@@ -970,7 +970,7 @@ def create_accounts(company=None,setup_wizard=False):
         "report_type": "Profit and Loss"
     },
     {
-        "account_name": "ACTUARIAL LOSSExpenseS AND ADJUSTMENTS TO ASSETS FOR LONG-TERM DEFINED BENEFIT COMPENSATION",
+        "account_name": "GASTOS POR PÉRDIDAS ACTUARIALES Y AJUSTES EN LOS ACTIVOS POR RETRIBUCIONES A LARGO PLAZO DE PRESTACIÓN DEFINIDA",
         "company": company,
         "is_group": 1,
         "account_number": 85,
@@ -981,7 +981,7 @@ def create_accounts(company=None,setup_wizard=False):
         "report_type": "Profit and Loss"
     },
     {
-        "account_name": "ExpenseS FOR NON-CURRENT ASSETS FOR SALE",
+        "account_name": "GASTOS POR ACTIVOS NO CORRIENTES EN VENTA",
         "company": company,
         "is_group": 1,
         "account_number": 86,
@@ -992,7 +992,7 @@ def create_accounts(company=None,setup_wizard=False):
         "report_type": "Profit and Loss"
     },
     {
-        "account_name": "ExpenseS OF EQUITY IN GROUP OR ASSOCIATED COMPANIES WITH PREVIOUS POSITIVE VALUATION ADJUSTMENTS",
+        "account_name": "GASTOS DE PARTICIPACIONES EN EMPRESAS DEL GRUPO O ASOCIADAS CON AJUSTES VALORATIVOS POSITIVOS PREVIOS",
         "company": company,
         "is_group": 1,
         "account_number": 89,
@@ -1003,7 +1003,7 @@ def create_accounts(company=None,setup_wizard=False):
         "report_type": "Profit and Loss"
     },
     {
-        "account_name": "FINANCIALIncome BY VALUATION OF ASSETS AND LIABILITIES",
+        "account_name": " INGRESOS FINANCIEROS POR VALORACIÓN DE ACTIVOS Y PASIVOS",
         "company": company,
         "is_group": 1,
         "account_number": 90,
@@ -1014,7 +1014,7 @@ def create_accounts(company=None,setup_wizard=False):
         "report_type": "Profit and Loss"
     },
     {
-        "account_name": "Income FROM HEDGE OPERATIONS",
+        "account_name": "INGRESOS EN OPERACIONES DE COBERTURA",
         "company": company,
         "is_group": 1,
         "account_number": 91,
@@ -1025,7 +1025,7 @@ def create_accounts(company=None,setup_wizard=False):
         "report_type": "Profit and Loss"
     },
     {
-        "account_name": "Income FROM CONVERSION DIFFERENCES",
+        "account_name": "INGRESOS POR DIFERENCIAS DE CONVERSIÓN",
         "company": company,
         "is_group": 1,
         "account_number": 92,
@@ -1036,7 +1036,7 @@ def create_accounts(company=None,setup_wizard=False):
         "report_type": "Profit and Loss"
     },
     {
-        "account_name": "Income FROM SUBSIDIES, DONATIONS AND LEGACIES",
+        "account_name": "INGRESOS POR SUBVENCIONES, DONACIONES Y LEGADOS",
         "company": company,
         "is_group": 1,
         "account_number": 94,
@@ -1047,7 +1047,7 @@ def create_accounts(company=None,setup_wizard=False):
         "report_type": "Profit and Loss"
     },
     {
-        "account_name": "Income FROM ACTUARIAL GAINS AND ADJUSTMENTS TO ASSETS FOR LONG-TERM DEFINED BENEFIT COMPENSATION",
+        "account_name": "INGRESOS POR GANANCIAS ACTUARIALES Y AJUSTES EN LOS ACTIVOS POR RETRIBUCIONES A LARGO PLAZO DE PRESTACIÓN DEFINIDA",
         "company": company,
         "is_group": 1,
         "account_number": 95,
@@ -1058,7 +1058,7 @@ def create_accounts(company=None,setup_wizard=False):
         "report_type": "Profit and Loss"
     },
     {
-        "account_name": "Income FROM NON-CURRENT ASSETS FOR SALE",
+        "account_name": "INGRESOS POR ACTIVOS NO CORRIENTES EN VENTA",
         "company": company,
         "is_group": 1,
         "account_number": 96,
@@ -1069,7 +1069,7 @@ def create_accounts(company=None,setup_wizard=False):
         "report_type": "Profit and Loss"
     },
     {
-        "account_name": "Income FROM SHARES IN GROUP OR ASSOCIATED COMPANIES WITH PREVIOUS NEGATIVE VALUATION ADJUSTMENTS",
+        "account_name": "INGRESOS DE PARTICIPACIONES EN EMPRESAS DEL GRUPO O ASOCIADAS CON AJUSTES VALORATIVOS NEGATIVOS PREVIOS",
         "company": company,
         "is_group": 1,
         "account_number": 99,
@@ -1084,7 +1084,7 @@ def create_accounts(company=None,setup_wizard=False):
         
         level_3 = [
             {
-                "account_name": "Share capital",
+                "account_name": " Capital social",
                 "company": company,
                 "is_group": 1,
                 "account_number": 100,
@@ -1095,7 +1095,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Social Fund",
+                "account_name": "Fondo social",
                 "company": company,
                 "is_group": 1,
                 "account_number": 101,
@@ -1117,7 +1117,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Partners for non-required disbursements",
+                "account_name": "Socios por desembolsos no exigidos",
                 "company": company,
                 "is_group": 1,
                 "account_number": 103,
@@ -1128,7 +1128,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Partners for pending non-monetary contributions",
+                "account_name": "Socios por aportaciones no dinerarias pendientes",
                 "company": company,
                 "is_group": 1,
                 "account_number": 104,
@@ -1139,7 +1139,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Own shares or interests in special situations",
+                "account_name": "Acciones o participaciones propias en situaciones especiales",
                 "company": company,
                 "is_group": 1,
                 "account_number": 108,
@@ -1150,7 +1150,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Own shares or interests for capital reduction",
+                "account_name": "Acciones o participaciones propias para reducción de capital",
                 "company": company,
                 "is_group": 1,
                 "account_number": 109,
@@ -1161,7 +1161,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Issue or assumption premium",
+                "account_name": "Prima de emisión o asunción",
                 "company": company,
                 "is_group": 1,
                 "account_number": 110,
@@ -1172,7 +1172,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Other equity instruments",
+                "account_name": "Otros instrumentos de patrimonio neto",
                 "company": company,
                 "is_group": 1,
                 "account_number": 111,
@@ -1183,7 +1183,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Legal reserve",
+                "account_name": "Reserva legal",
                 "company": company,
                 "is_group": 1,
                 "account_number": 112,
@@ -1194,7 +1194,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Voluntary reserves",
+                "account_name": "Reservas voluntarias",
                 "company": company,
                 "is_group": 1,
                 "account_number": 113,
@@ -1205,7 +1205,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Special reserves",
+                "account_name": "Reservas especiales",
                 "company": company,
                 "is_group": 1,
                 "account_number": 114,
@@ -1216,7 +1216,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Reserves for actuarial gains and losses and other adjustments",
+                "account_name": "Reservas por pérdidas y ganancias actuariales y otros ajustes",
                 "company": company,
                 "is_group": 1,
                 "account_number": 115,
@@ -1227,7 +1227,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Contributions from partners or owners",
+                "account_name": "Aportaciones de socios o propietarios",
                 "company": company,
                 "is_group": 1,
                 "account_number": 118,
@@ -1238,7 +1238,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Differences due to capital adjustment toEURos",
+                "account_name": "Diferencias por ajuste del capital a euros",
                 "company": company,
                 "is_group": 1,
                 "account_number": 119,
@@ -1249,7 +1249,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Remnant",
+                "account_name": "Remanente",
                 "company": company,
                 "is_group": 1,
                 "account_number": 120,
@@ -1260,7 +1260,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Negative results from previous years",
+                "account_name": "Resultados negativos de ejercicios anteriores",
                 "company": company,
                 "is_group": 1,
                 "account_number": 121,
@@ -1271,7 +1271,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Result of the exercise",
+                "account_name": "Resultado del ejercicio",
                 "company": company,
                 "is_group": 1,
                 "account_number": 129,
@@ -1282,7 +1282,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Official capital subsidies",
+                "account_name": "Subvenciones oficiales de capital",
                 "company": company,
                 "is_group": 1,
                 "account_number": 130,
@@ -1293,7 +1293,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Capital donations and legacies",
+                "account_name": "Donaciones y legados de capital",
                 "company": company,
                 "is_group": 1,
                 "account_number": 131,
@@ -1304,7 +1304,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Other grants, donations and legacies",
+                "account_name": "Otras subvenciones, donaciones y legados",
                 "company": company,
                 "is_group": 1,
                 "account_number": 132,
@@ -1315,7 +1315,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Valuation adjustments on financial assets available for sale",
+                "account_name": "Ajustes por valoración en activos financieros disponibles para la venta",
                 "company": company,
                 "is_group": 1,
                 "account_number": 133,
@@ -1326,7 +1326,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Hedging operations",
+                "account_name": "Operaciones de cobertura",
                 "company": company,
                 "is_group": 1,
                 "account_number": 134,
@@ -1337,7 +1337,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Conversion differences",
+                "account_name": "Diferencias de conversión",
                 "company": company,
                 "is_group": 1,
                 "account_number": 135,
@@ -1348,7 +1348,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Valuation adjustments on non-current assets and disposal groups, held for sale",
+                "account_name": "Ajustes por valoración en activos no corrientes y grupos enajenables de elementos, mantenidos para la venta",
                 "company": company,
                 "is_group": 1,
                 "account_number": 136,
@@ -1359,7 +1359,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Tax revenues to be distributed over several years",
+                "account_name": "Ingresos fiscales a distribuir en varios ejercicios",
                 "company": company,
                 "is_group": 1,
                 "account_number": 137,
@@ -1370,7 +1370,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Provision for long-term employee benefits",
+                "account_name": "Provisión por retribuciones a largo plazo al personal",
                 "company": company,
                 "is_group": 1,
                 "account_number": 140,
@@ -1381,7 +1381,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Provision for taxes",
+                "account_name": "Provisión para impuestos",
                 "company": company,
                 "is_group": 1,
                 "account_number": 141,
@@ -1392,7 +1392,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Provision for other liabilities",
+                "account_name": "Provisión para otras responsabilidades",
                 "company": company,
                 "is_group": 1,
                 "account_number": 142,
@@ -1403,7 +1403,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Provision for decommissioning, retirement or rehabilitation of fixed assets",
+                "account_name": "Provisión por desmantelamiento, retiro o rehabilitación del inmovilizado",
                 "company": company,
                 "is_group": 1,
                 "account_number": 143,
@@ -1414,7 +1414,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Provision for environmental actions",
+                "account_name": "Provisión para actuaciones medioambientales",
                 "company": company,
                 "is_group": 1,
                 "account_number": 145,
@@ -1425,7 +1425,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Provision for restructuring",
+                "account_name": "Provisión para reestructuraciones",
                 "company": company,
                 "is_group": 1,
                 "account_number": 146,
@@ -1436,7 +1436,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Provision for transactions with payments based on equity instruments",
+                "account_name": "Provisión por transacciones con pagos basados en instrumentos de patrimonio",
                 "company": company,
                 "is_group": 1,
                 "account_number": 147,
@@ -1447,7 +1447,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Long-term shares or interests considered as financial liabilities",
+                "account_name": "Acciones o participaciones a largo plazo consideradas como pasivos financieros",
                 "company": company,
                 "is_group": 1,
                 "account_number": 150,
@@ -1458,7 +1458,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Disbursements not required for shares or participations considered as financial liabilities",
+                "account_name": "Desembolsos no exigidos por acciones o participaciones consideradas como pasivos financieros",
                 "company": company,
                 "is_group": 1,
                 "account_number": 153,
@@ -1469,7 +1469,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Outstanding non-monetary contributions for shares or participations considered as financial liabilities",
+                "account_name": "Aportaciones no dinerarias pendientes por acciones o participaciones consideradas como pasivos financieros",
                 "company": company,
                 "is_group": 1,
                 "account_number": 154,
@@ -1480,7 +1480,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Long-term debts with related credit institutions",
+                "account_name": "Deudas a largo plazo con entidades de crédito vinculadas",
                 "company": company,
                 "is_group": 1,
                 "account_number": 160,
@@ -1491,7 +1491,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Long-term fixed asset suppliers, related parties",
+                "account_name": "Proveedores de inmovilizado a largo plazo, partes vinculadas",
                 "company": company,
                 "is_group": 1,
                 "account_number": 161,
@@ -1502,7 +1502,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Long-term financial lease creditors, related parties",
+                "account_name": "Acreedores por arrendamiento financiero a largo plazo, partes vinculadas",
                 "company": company,
                 "is_group": 1,
                 "account_number": 162,
@@ -1513,7 +1513,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Other long-term debts with related parties",
+                "account_name": "Otras deudas a largo plazo con partes vinculadas",
                 "company": company,
                 "is_group": 1,
                 "account_number": 163,
@@ -1524,7 +1524,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Long-term debts with credit institutions",
+                "account_name": "Deudas a largo plazo con entidades de crédito",
                 "company": company,
                 "is_group": 1,
                 "account_number": 170,
@@ -1535,7 +1535,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Long-term debts",
+                "account_name": "Deudas a largo plazo",
                 "company": company,
                 "is_group": 1,
                 "account_number": 171,
@@ -1546,7 +1546,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Long-term debts convertible into grants, donations and legacies",
+                "account_name": "Deudas a largo plazo transformables en subvenciones, donaciones y legados",
                 "company": company,
                 "is_group": 1,
                 "account_number": 172,
@@ -1557,7 +1557,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Long-term fixed asset suppliers",
+                "account_name": "Proveedores de inmovilizado a largo plazo",
                 "company": company,
                 "is_group": 1,
                 "account_number": 173,
@@ -1568,7 +1568,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Long-term financial lease creditors",
+                "account_name": "Acreedores por arrendamiento financiero a largo plazo",
                 "company": company,
                 "is_group": 1,
                 "account_number": 174,
@@ -1579,7 +1579,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Long-term payables",
+                "account_name": "Efectos a pagar a largo plazo",
                 "company": company,
                 "is_group": 1,
                 "account_number": 175,
@@ -1590,7 +1590,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Long-term financial derivative liabilities",
+                "account_name": "Pasivos por derivados financieros a largo plazo",
                 "company": company,
                 "is_group": 1,
                 "account_number": 176,
@@ -1601,7 +1601,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Bonds and debentures",
+                "account_name": "Obligaciones y bonos",
                 "company": company,
                 "is_group": 1,
                 "account_number": 177,
@@ -1612,7 +1612,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Bonds and convertible bonds",
+                "account_name": "Obligaciones y bonos convertibles",
                 "company": company,
                 "is_group": 1,
                 "account_number": 178,
@@ -1623,7 +1623,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Debts represented by other negotiable securities",
+                "account_name": "Deudas representadas en otros valores negociables",
                 "company": company,
                 "is_group": 1,
                 "account_number": 179,
@@ -1634,7 +1634,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Long-term bonds received",
+                "account_name": "Fianzas recibidas a largo plazo",
                 "company": company,
                 "is_group": 1,
                 "account_number": 180,
@@ -1645,7 +1645,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Advances received for sales or long-term services",
+                "account_name": "Anticipos recibidos por ventas o prestaciones de servicios a largo plazo",
                 "company": company,
                 "is_group": 1,
                 "account_number": 181,
@@ -1656,7 +1656,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Long-term deposits received",
+                "account_name": "Depósitos recibidos a largo plazo",
                 "company": company,
                 "is_group": 1,
                 "account_number": 185,
@@ -1667,7 +1667,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Long-term financial guarantees",
+                "account_name": "Garantías financieras a largo plazo",
                 "company": company,
                 "is_group": 1,
                 "account_number": 189,
@@ -1678,7 +1678,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Shares or participations issued",
+                "account_name": "Acciones o participaciones emitidas",
                 "company": company,
                 "is_group": 1,
                 "account_number": 190,
@@ -1689,7 +1689,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Share Subscribers",
+                "account_name": "Suscriptores de acciones",
                 "company": company,
                 "is_group": 1,
                 "account_number": 192,
@@ -1700,7 +1700,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Issued capital pending registration",
+                "account_name": "Capital emitido pendiente de inscripción",
                 "company": company,
                 "is_group": 1,
                 "account_number": 194,
@@ -1711,7 +1711,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Shares or participations issued considered as financial liabilities",
+                "account_name": "Acciones o participaciones emitidas consideradas como pasivos financieros",
                 "company": company,
                 "is_group": 1,
                 "account_number": 195,
@@ -1722,7 +1722,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Subscribers to shares considered as financial liabilities",
+                "account_name": "Suscriptores de acciones consideradas como pasivos financieros",
                 "company": company,
                 "is_group": 1,
                 "account_number": 197,
@@ -1733,7 +1733,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Shares or participations issued considered as financial liabilities pending registration",
+                "account_name": "Acciones o participaciones emitidas consideradas como pasivos financieros pendientes de inscripción",
                 "company": company,
                 "is_group": 1,
                 "account_number": 199,
@@ -1744,7 +1744,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Research",
+                "account_name": "Investigación",
                 "company": company,
                 "is_group": 1,
                 "account_number": 200,
@@ -1755,7 +1755,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Development",
+                "account_name": "Desarrollo",
                 "company": company,
                 "is_group": 1,
                 "account_number": 201,
@@ -1766,7 +1766,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Administrative concessions",
+                "account_name": "Concesiones administrativas",
                 "company": company,
                 "is_group": 1,
                 "account_number": 202,
@@ -1777,7 +1777,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Industrial property",
+                "account_name": "Propiedad industrial",
                 "company": company,
                 "is_group": 1,
                 "account_number": 203,
@@ -1788,7 +1788,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Goodwill",
+                "account_name": "Fondo de comercio",
                 "company": company,
                 "is_group": 1,
                 "account_number": 204,
@@ -1799,7 +1799,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Transfer rights",
+                "account_name": "Derechos de traspaso",
                 "company": company,
                 "is_group": 1,
                 "account_number": 205,
@@ -1810,7 +1810,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Computer Applications",
+                "account_name": "Aplicaciones informáticas",
                 "company": company,
                 "is_group": 1,
                 "account_number": 206,
@@ -1821,7 +1821,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Advances on intangible assets",
+                "account_name": "Anticipos para inmovilizaciones intangibles",
                 "company": company,
                 "is_group": 1,
                 "account_number": 209,
@@ -1832,7 +1832,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Land and natural resources",
+                "account_name": "Terrenos y bienes naturales",
                 "company": company,
                 "is_group": 1,
                 "account_number": 210,
@@ -1843,7 +1843,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Constructions",
+                "account_name": "Construcciones",
                 "company": company,
                 "is_group": 1,
                 "account_number": 211,
@@ -1854,7 +1854,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Technical installations",
+                "account_name": "Instalaciones técnicas",
                 "company": company,
                 "is_group": 1,
                 "account_number": 212,
@@ -1865,7 +1865,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Machinery",
+                "account_name": "Maquinaria",
                 "company": company,
                 "is_group": 1,
                 "account_number": 213,
@@ -1876,7 +1876,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Tooling",
+                "account_name": "Utillaje",
                 "company": company,
                 "is_group": 1,
                 "account_number": 214,
@@ -1887,7 +1887,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Other facilities",
+                "account_name": "Otras instalaciones",
                 "company": company,
                 "is_group": 1,
                 "account_number": 215,
@@ -1898,7 +1898,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Furniture",
+                "account_name": "Mobiliario",
                 "company": company,
                 "is_group": 1,
                 "account_number": 216,
@@ -1909,7 +1909,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Information processing equipment",
+                "account_name": "Equipos para procesos de información",
                 "company": company,
                 "is_group": 1,
                 "account_number": 217,
@@ -1920,7 +1920,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Transport elements",
+                "account_name": "Elementos de transporte",
                 "company": company,
                 "is_group": 1,
                 "account_number": 218,
@@ -1931,7 +1931,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Other tangible fixed assets",
+                "account_name": "Otro inmovilizado material",
                 "company": company,
                 "is_group": 1,
                 "account_number": 219,
@@ -1942,7 +1942,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Investments in land and natural resources",
+                "account_name": "Inversiones en terrenos y bienes naturales",
                 "company": company,
                 "is_group": 1,
                 "account_number": 220,
@@ -1953,7 +1953,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Investments in construction",
+                "account_name": "Inversiones en construcciones",
                 "company": company,
                 "is_group": 1,
                 "account_number": 221,
@@ -1964,7 +1964,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Adaptation of land and natural resources",
+                "account_name": "Adaptación de terrenos y bienes naturales",
                 "company": company,
                 "is_group": 1,
                 "account_number": 230,
@@ -1975,7 +1975,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Construction in progress",
+                "account_name": "Construcciones en curso",
                 "company": company,
                 "is_group": 1,
                 "account_number": 231,
@@ -1986,7 +1986,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Technical installations in assembly",
+                "account_name": "Instalaciones técnicas en montaje",
                 "company": company,
                 "is_group": 1,
                 "account_number": 232,
@@ -1997,7 +1997,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Machinery in assembly",
+                "account_name": "Maquinaria en montaje",
                 "company": company,
                 "is_group": 1,
                 "account_number": 233,
@@ -2008,7 +2008,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Equipment for information processes in assembly",
+                "account_name": "Equipos para procesos de información en montaje",
                 "company": company,
                 "is_group": 1,
                 "account_number": 237,
@@ -2019,7 +2019,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Advances on tangible fixed assets",
+                "account_name": "Anticipos para inmovilizaciones materiales",
                 "company": company,
                 "is_group": 1,
                 "account_number": 239,
@@ -2030,7 +2030,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Long-term investments in related parties",
+                "account_name": "Participaciones a largo plazo en partes vinculadas",
                 "company": company,
                 "is_group": 1,
                 "account_number": 240,
@@ -2041,7 +2041,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Long-term debt securities of related parties",
+                "account_name": "Valores representativos de deuda a largo plazo de partes vinculadas",
                 "company": company,
                 "is_group": 1,
                 "account_number": 241,
@@ -2052,7 +2052,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Long-term loans to related parties",
+                "account_name": "Créditos a largo plazo a partes vinculadas",
                 "company": company,
                 "is_group": 1,
                 "account_number": 242,
@@ -2063,7 +2063,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Outstanding disbursements on long-term investments in related parties",
+                "account_name": "Desembolsos pendientes sobre participaciones a largo plazo en partes vinculadas",
                 "company": company,
                 "is_group": 1,
                 "account_number": 249,
@@ -2074,7 +2074,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Long-term financial investments in equity instruments",
+                "account_name": "Inversiones financieras a largo plazo en instrumentos de patrimonio",
                 "company": company,
                 "is_group": 1,
                 "account_number": 250,
@@ -2085,7 +2085,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Long-term debt securities",
+                "account_name": "Valores representativos de deuda a largo plazo",
                 "company": company,
                 "is_group": 1,
                 "account_number": 251,
@@ -2096,7 +2096,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Long-term loans",
+                "account_name": "Créditos a largo plazo",
                 "company": company,
                 "is_group": 1,
                 "account_number": 252,
@@ -2107,7 +2107,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Long-term credits for the sale of fixed assets",
+                "account_name": "Créditos a largo plazo por enajenación de inmovilizado",
                 "company": company,
                 "is_group": 1,
                 "account_number": 253,
@@ -2118,7 +2118,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Long-term loans to staff",
+                "account_name": "Créditos a largo plazo al personal",
                 "company": company,
                 "is_group": 1,
                 "account_number": 254,
@@ -2129,7 +2129,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Long-term financial derivatives assets",
+                "account_name": "Activos por derivados financieros a largo plazo",
                 "company": company,
                 "is_group": 1,
                 "account_number": 255,
@@ -2140,7 +2140,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Reimbursement rights arising from insurance contracts relating to long-term employee benefits",
+                "account_name": "Derechos de reembolso derivados de contratos de seguro relativos a retribuciones a largo plazo al personal",
                 "company": company,
                 "is_group": 1,
                 "account_number": 257,
@@ -2151,7 +2151,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Long-term deposits",
+                "account_name": "Imposiciones a largo plazo",
                 "company": company,
                 "is_group": 1,
                 "account_number": 258,
@@ -2162,7 +2162,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Outstanding disbursements on long-term equity interests",
+                "account_name": "Desembolsos pendientes sobre participaciones en el patrimonio neto a largo plazo",
                 "company": company,
                 "is_group": 1,
                 "account_number": 259,
@@ -2173,7 +2173,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Long-term guarantees",
+                "account_name": "Fianzas constituidas a largo plazo",
                 "company": company,
                 "is_group": 1,
                 "account_number": 260,
@@ -2184,7 +2184,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Long-term deposits",
+                "account_name": "Depósitos constituidos a largo plazo",
                 "company": company,
                 "is_group": 1,
                 "account_number": 265,
@@ -2195,7 +2195,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Accumulated amortization of intangible assets",
+                "account_name": "Amortización acumulada del inmovilizado intangible",
                 "company": company,
                 "is_group": 1,
                 "account_number": 280,
@@ -2206,7 +2206,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Accumulated depreciation of tangible fixed assets",
+                "account_name": "Amortización acumulada del inmovilizado material",
                 "company": company,
                 "is_group": 1,
                 "account_number": 281,
@@ -2217,7 +2217,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Accumulated amortization of real estate investments",
+                "account_name": "Amortización acumulada de las inversiones inmobiliarias",
                 "company": company,
                 "is_group": 1,
                 "account_number": 282,
@@ -2228,7 +2228,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Impairment of intangible assets",
+                "account_name": "Deterioro de valor del inmovilizado intangible",
                 "company": company,
                 "is_group": 1,
                 "account_number": 290,
@@ -2239,7 +2239,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Impairment of tangible fixed assets",
+                "account_name": "Deterioro de valor del inmovilizado material",
                 "company": company,
                 "is_group": 1,
                 "account_number": 291,
@@ -2250,7 +2250,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Impairment of value of real estate investments",
+                "account_name": "Deterioro de valor de las inversiones inmobiliarias",
                 "company": company,
                 "is_group": 1,
                 "account_number": 292,
@@ -2261,7 +2261,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Impairment of long-term investments in related parties",
+                "account_name": "Deterioro de valor de participaciones a largo plazo en partes vinculadas",
                 "company": company,
                 "is_group": 1,
                 "account_number": 293,
@@ -2272,7 +2272,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Impairment of long-term debt securities of related parties",
+                "account_name": "Deterioro de valor de valores representativos de deuda a largo plazo de partes vinculadas",
                 "company": company,
                 "is_group": 1,
                 "account_number": 294,
@@ -2283,7 +2283,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Impairment of long-term loans to related parties",
+                "account_name": "Deterioro de valor de créditos a lar go plazo a partes vinculadas",
                 "company": company,
                 "is_group": 1,
                 "account_number": 295,
@@ -2294,7 +2294,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Impairment of long-term debt securities",
+                "account_name": "Deterioro de valor de valores representativos de deuda a largo plazo",
                 "company": company,
                 "is_group": 1,
                 "account_number": 297,
@@ -2305,7 +2305,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Impairment of long-term credits",
+                "account_name": "Deterioro de valor de créditos a largo plazo",
                 "company": company,
                 "is_group": 1,
                 "account_number": 298,
@@ -2316,7 +2316,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Goods A",
+                "account_name": "Mercaderías A",
                 "company": company,
                 "is_group": 1,
                 "account_number": 300,
@@ -2327,7 +2327,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Merchandise B",
+                "account_name": "Mercaderías B",
                 "company": company,
                 "is_group": 1,
                 "account_number": 301,
@@ -2338,7 +2338,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Raw materials A",
+                "account_name": "Materias primas A",
                 "company": company,
                 "is_group": 1,
                 "account_number": 310,
@@ -2349,7 +2349,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Raw materials B",
+                "account_name": "Materias primas B",
                 "company": company,
                 "is_group": 1,
                 "account_number": 311,
@@ -2360,7 +2360,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Incorporable elements and assemblies",
+                "account_name": "Elementos y conjuntos incorporables",
                 "company": company,
                 "is_group": 1,
                 "account_number": 320,
@@ -2371,7 +2371,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Fuels",
+                "account_name": "Combustibles",
                 "company": company,
                 "is_group": 1,
                 "account_number": 321,
@@ -2382,7 +2382,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Spare parts",
+                "account_name": "Repuestos",
                 "company": company,
                 "is_group": 1,
                 "account_number": 322,
@@ -2393,7 +2393,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Miscellaneous materials",
+                "account_name": "Materiales diversos",
                 "company": company,
                 "is_group": 1,
                 "account_number": 325,
@@ -2404,7 +2404,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Packaging",
+                "account_name": "Embalajes",
                 "company": company,
                 "is_group": 1,
                 "account_number": 326,
@@ -2415,7 +2415,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Packaging",
+                "account_name": "Envases",
                 "company": company,
                 "is_group": 1,
                 "account_number": 327,
@@ -2426,7 +2426,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Office supplies",
+                "account_name": "Material de oficina",
                 "company": company,
                 "is_group": 1,
                 "account_number": 328,
@@ -2437,7 +2437,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Products in progress A",
+                "account_name": "Productos en curso A",
                 "company": company,
                 "is_group": 1,
                 "account_number": 330,
@@ -2448,7 +2448,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Work in progress B",
+                "account_name": "Productos en curso B",
                 "company": company,
                 "is_group": 1,
                 "account_number": 331,
@@ -2459,7 +2459,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Semi-finished products A",
+                "account_name": "Productos semiterminados A",
                 "company": company,
                 "is_group": 1,
                 "account_number": 340,
@@ -2470,7 +2470,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Semi-finished products B",
+                "account_name": "Productos semiterminados B",
                 "company": company,
                 "is_group": 1,
                 "account_number": 341,
@@ -2481,7 +2481,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Finished products A",
+                "account_name": "Productos terminados A",
                 "company": company,
                 "is_group": 1,
                 "account_number": 350,
@@ -2492,7 +2492,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Finished products B",
+                "account_name": "Productos terminados B",
                 "company": company,
                 "is_group": 1,
                 "account_number": 351,
@@ -2503,7 +2503,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "By-products A",
+                "account_name": "Subproductos A",
                 "company": company,
                 "is_group": 1,
                 "account_number": 360,
@@ -2514,7 +2514,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "By-products B",
+                "account_name": "Subproductos B",
                 "company": company,
                 "is_group": 1,
                 "account_number": 361,
@@ -2525,7 +2525,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Waste A",
+                "account_name": "Residuos A",
                 "company": company,
                 "is_group": 1,
                 "account_number": 365,
@@ -2536,7 +2536,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Waste B",
+                "account_name": "Residuos B",
                 "company": company,
                 "is_group": 1,
                 "account_number": 366,
@@ -2547,7 +2547,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Recovered materials A",
+                "account_name": "Materiales recuperados A",
                 "company": company,
                 "is_group": 1,
                 "account_number": 368,
@@ -2558,7 +2558,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Recovered materials B",
+                "account_name": "Materiales recuperados B",
                 "company": company,
                 "is_group": 1,
                 "account_number": 369,
@@ -2569,7 +2569,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Impairment of value of goods",
+                "account_name": "Deterioro de valor de las mercaderías",
                 "company": company,
                 "is_group": 1,
                 "account_number": 390,
@@ -2580,7 +2580,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Impairment of value of raw materials",
+                "account_name": "Deterioro de valor de las materias primas",
                 "company": company,
                 "is_group": 1,
                 "account_number": 391,
@@ -2591,7 +2591,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Impairment of other provisions",
+                "account_name": "Deterioro de valor de otros aprovi sionamientos",
                 "company": company,
                 "is_group": 1,
                 "account_number": 392,
@@ -2602,7 +2602,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Impairment of work in progress",
+                "account_name": "Deterioro de valor de los productos en curso",
                 "company": company,
                 "is_group": 1,
                 "account_number": 393,
@@ -2613,7 +2613,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Impairment of value of semi-finished products",
+                "account_name": "Deterioro de valor de los productos semiterminados",
                 "company": company,
                 "is_group": 1,
                 "account_number": 394,
@@ -2624,7 +2624,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Impairment of finished goods",
+                "account_name": "Deterioro de valor de los productos terminados",
                 "company": company,
                 "is_group": 1,
                 "account_number": 395,
@@ -2635,7 +2635,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Impairment of value of by-products, waste and recovered materials",
+                "account_name": "Deterioro de valor de los subproductos, residuos y materiales recuperados",
                 "company": company,
                 "is_group": 1,
                 "account_number": 396,
@@ -2646,7 +2646,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Suppliers",
+                "account_name": "Proveedores",
                 "company": company,
                 "is_group": 1,
                 "account_number": 400,
@@ -2657,7 +2657,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Balance Sheet"
             },
             {
-                "account_name": "Suppliers, commercial effects payable",
+                "account_name": "Proveedores, efectos comerciales a pagar",
                 "company": company,
                 "is_group": 1,
                 "account_number": 401,
@@ -2668,7 +2668,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Balance Sheet"
             },
             {
-                "account_name": "Suppliers, group companies",
+                "account_name": "Proveedores, empresas del grupo",
                 "company": company,
                 "is_group": 1,
                 "account_number": 403,
@@ -2679,7 +2679,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Balance Sheet"
             },
             {
-                "account_name": "Suppliers, associated companies",
+                "account_name": "Proveedores, empresas asociadas",
                 "company": company,
                 "is_group": 1,
                 "account_number": 404,
@@ -2690,7 +2690,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Balance Sheet"
             },
             {
-                "account_name": "Suppliers, other related parties",
+                "account_name": "Proveedores, otras partes vinculadas",
                 "company": company,
                 "is_group": 1,
                 "account_number": 405,
@@ -2701,7 +2701,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Balance Sheet"
             },
             {
-                "account_name": "Packaging to be returned to suppliers",
+                "account_name": "Envases y embalajes a devolver a proveedores",
                 "company": company,
                 "is_group": 1,
                 "account_number": 406,
@@ -2712,7 +2712,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Balance Sheet"
             },
             {
-                "account_name": "Advances to suppliers",
+                "account_name": "Anticipos a proveedores",
                 "company": company,
                 "is_group": 1,
                 "account_number": 407,
@@ -2723,7 +2723,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Balance Sheet"
             },
             {
-                "account_name": "Creditors for services rendered",
+                "account_name": "Acreedores por prestaciones de servicios",
                 "company": company,
                 "is_group": 1,
                 "account_number": 410,
@@ -2734,7 +2734,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Balance Sheet"
             },
             {
-                "account_name": "Creditors, commercial effects payable",
+                "account_name": "Acreedores, efectos comerciales a pagar",
                 "company": company,
                 "is_group": 1,
                 "account_number": 411,
@@ -2745,7 +2745,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Balance Sheet"
             },
             {
-                "account_name": "Creditors for joint operations",
+                "account_name": "Acreedores por operaciones en común",
                 "company": company,
                 "is_group": 1,
                 "account_number": 419,
@@ -2756,7 +2756,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Balance Sheet"
             },
             {
-                "account_name": "Clients",
+                "account_name": "Clientes",
                 "company": company,
                 "is_group": 1,
                 "account_number": 430,
@@ -2767,7 +2767,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Balance Sheet"
             },
             {
-                "account_name": "Clients, commercial effects receivable",
+                "account_name": "Clientes, efectos comerciales a cobrar",
                 "company": company,
                 "is_group": 1,
                 "account_number": 431,
@@ -2778,7 +2778,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Balance Sheet"
             },
             {
-                "account_name": "Clients, factoring operations",
+                "account_name": "Clientes, operaciones de 'factoring'",
                 "company": company,
                 "is_group": 1,
                 "account_number": 432,
@@ -2789,7 +2789,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Balance Sheet"
             },
             {
-                "account_name": "Clients, group companies",
+                "account_name": "Clientes, empresas del grupo",
                 "company": company,
                 "is_group": 1,
                 "account_number": 433,
@@ -2800,7 +2800,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Balance Sheet"
             },
             {
-                "account_name": "Clients, associated companies",
+                "account_name": "Clientes, empresas asociadas",
                 "company": company,
                 "is_group": 1,
                 "account_number": 434,
@@ -2811,7 +2811,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Balance Sheet"
             },
             {
-                "account_name": "Clients, other related parties",
+                "account_name": "Clientes, otras partes vinculadas",
                 "company": company,
                 "is_group": 1,
                 "account_number": 435,
@@ -2822,7 +2822,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Balance Sheet"
             },
             {
-                "account_name": "Doubtful debt customers",
+                "account_name": "Clientes de dudoso cobro",
                 "company": company,
                 "is_group": 1,
                 "account_number": 436,
@@ -2833,7 +2833,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Balance Sheet"
             },
             {
-                "account_name": "Packaging to be returned by customers",
+                "account_name": "Envases y embalajes a devolver por clientes",
                 "company": company,
                 "is_group": 1,
                 "account_number": 437,
@@ -2844,7 +2844,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Balance Sheet"
             },
             {
-                "account_name": "Customer advances",
+                "account_name": "Anticipos de clientes",
                 "company": company,
                 "is_group": 1,
                 "account_number": 438,
@@ -2855,7 +2855,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Balance Sheet"
             },
             {
-                "account_name": "Debtors",
+                "account_name": "Deudores",
                 "company": company,
                 "is_group": 1,
                 "account_number": 440,
@@ -2866,7 +2866,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Debtors, commercial effects receivable",
+                "account_name": "Deudores, efectos comerciales a cobrar",
                 "company": company,
                 "is_group": 1,
                 "account_number": 441,
@@ -2877,7 +2877,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Doubtful debts",
+                "account_name": "Deudores de dudoso cobro",
                 "company": company,
                 "is_group": 1,
                 "account_number": 446,
@@ -2888,7 +2888,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Debtors from joint operations",
+                "account_name": "Deudores por operaciones en común",
                 "company": company,
                 "is_group": 1,
                 "account_number": 449,
@@ -2899,7 +2899,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Salary advances",
+                "account_name": "Anticipos de remuneraciones",
                 "company": company,
                 "is_group": 1,
                 "account_number": 460,
@@ -2910,7 +2910,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Salaries pending payment",
+                "account_name": "Remuneraciones pendientes de pago",
                 "company": company,
                 "is_group": 1,
                 "account_number": 465,
@@ -2921,7 +2921,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Remuneration through defined contribution systems pending payment",
+                "account_name": "Remuneraciones mediante sistemas de aportación definida pendientes de pago",
                 "company": company,
                 "is_group": 1,
                 "account_number": 466,
@@ -2932,7 +2932,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Public Treasury, debtor for various concepts",
+                "account_name": "Hacienda Pública, deudora por diversos conceptos",
                 "company": company,
                 "is_group": 1,
                 "account_number": 470,
@@ -2943,7 +2943,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Balance Sheet"
             },
             {
-                "account_name": "Social Security Organizations, debtors",
+                "account_name": "Organismos de la Seguridad Social, deudores",
                 "company": company,
                 "is_group": 1,
                 "account_number": 471,
@@ -2954,7 +2954,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Balance Sheet"
             },
             {
-                "account_name": "Public Treasury, VAT paid",
+                "account_name": "Hacienda Pública, IVA soportado",
                 "company": company,
                 "is_group": 1,
                 "account_number": 472,
@@ -2965,7 +2965,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Balance Sheet"
             },
             {
-                "account_name": "Public Treasury, withholdings and payments on account",
+                "account_name": "Hacienda Pública, retenciones y pagos a cuenta",
                 "company": company,
                 "is_group": 1,
                 "account_number": 473,
@@ -2976,7 +2976,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Balance Sheet"
             },
             {
-                "account_name": "Deferred tax assets",
+                "account_name": "Activos por impuesto diferido",
                 "company": company,
                 "is_group": 1,
                 "account_number": 474,
@@ -2987,7 +2987,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Balance Sheet"
             },
             {
-                "account_name": "Public Treasury, creditor for tax purposes",
+                "account_name": "Hacienda Pública, acreedora por conceptos fiscales",
                 "company": company,
                 "is_group": 1,
                 "account_number": 475,
@@ -2998,7 +2998,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Balance Sheet"
             },
             {
-                "account_name": "Social Security Organizations, creditors",
+                "account_name": "Organismos de la Seguridad Social, acreedores",
                 "company": company,
                 "is_group": 1,
                 "account_number": 476,
@@ -3009,7 +3009,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Balance Sheet"
             },
             {
-                "account_name": "Public Treasury, VAT charged",
+                "account_name": " Hacienda Pública, IVA repercutido",
                 "company": company,
                 "is_group": 1,
                 "account_number": 477,
@@ -3020,7 +3020,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Balance Sheet"
             },
             {
-                "account_name": "Liabilities for taxable temporary differences",
+                "account_name": "Pasivos por diferencias temporarias imponibles",
                 "company": company,
                 "is_group": 1,
                 "account_number": 479,
@@ -3031,7 +3031,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Balance Sheet"
             },
             {
-                "account_name": "AdvanceExpenses",
+                "account_name": "Gastos anticipados",
                 "company": company,
                 "is_group": 1,
                 "account_number": 480,
@@ -3042,7 +3042,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "AdvanceIncome",
+                "account_name": "Ingresos anticipados",
                 "company": company,
                 "is_group": 1,
                 "account_number": 485,
@@ -3053,7 +3053,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Impairment of credits from commercial operations",
+                "account_name": "Deterioro de valor de créditos por operaciones comerciales",
                 "company": company,
                 "is_group": 1,
                 "account_number": 490,
@@ -3064,7 +3064,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Impairment of credits from commercial transactions with related parties",
+                "account_name": "Deterioro de valor de créditos por operaciones comerciales con partes vinculadas",
                 "company": company,
                 "is_group": 1,
                 "account_number": 493,
@@ -3075,7 +3075,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Provisions for commercial operations",
+                "account_name": "Provisiones por operaciones comerciales",
                 "company": company,
                 "is_group": 1,
                 "account_number": 499,
@@ -3086,7 +3086,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Short-term bonds and debentures",
+                "account_name": "Obligaciones y bonos a corto plazo",
                 "company": company,
                 "is_group": 1,
                 "account_number": 500,
@@ -3097,7 +3097,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Short-term convertible bonds and debentures",
+                "account_name": "Obligaciones y bonos convertibles a corto plazo",
                 "company": company,
                 "is_group": 1,
                 "account_number": 501,
@@ -3108,7 +3108,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Short-term shares or interests considered as financial liabilities",
+                "account_name": "Acciones o participaciones a corto plazo consideradas como pasivos financieros",
                 "company": company,
                 "is_group": 1,
                 "account_number": 502,
@@ -3119,7 +3119,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Debts represented by other short-term negotiable securities",
+                "account_name": "Deudas representadas en otros valores negociables a corto plazo",
                 "company": company,
                 "is_group": 1,
                 "account_number": 505,
@@ -3130,7 +3130,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Short-term interest on loans and other similar issues",
+                "account_name": "Intereses a corto plazo de empréstitos y otras emisiones análogas",
                 "company": company,
                 "is_group": 1,
                 "account_number": 506,
@@ -3141,7 +3141,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Dividends on shares or interests considered as financial liabilities",
+                "account_name": "Dividendos de acciones o participaciones consideradas como pasivos financieros",
                 "company": company,
                 "is_group": 1,
                 "account_number": 507,
@@ -3152,7 +3152,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Amortized negotiable securities",
+                "account_name": "Valores negociables amortizados",
                 "company": company,
                 "is_group": 1,
                 "account_number": 509,
@@ -3163,7 +3163,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Short-term debts with related credit institutions",
+                "account_name": "Deudas a corto plazo con entidades de crédito vinculadas",
                 "company": company,
                 "is_group": 1,
                 "account_number": 510,
@@ -3174,7 +3174,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Short-term fixed asset suppliers, related parties",
+                "account_name": "Proveedores de inmovilizado a corto plazo, partes vinculadas",
                 "company": company,
                 "is_group": 1,
                 "account_number": 511,
@@ -3185,7 +3185,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Short-term financial lease creditors, related parties",
+                "account_name": "Acreedores por arrendamiento financiero a corto plazo, partes vinculadas",
                 "company": company,
                 "is_group": 1,
                 "account_number": 512,
@@ -3196,7 +3196,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Other short-term debts with related parties",
+                "account_name": "Otras deudas a corto plazo con partes vinculadas",
                 "company": company,
                 "is_group": 1,
                 "account_number": 513,
@@ -3207,7 +3207,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Short-term interest on debts with related parties",
+                "account_name": "Intereses a corto plazo de deudas con partes vinculadas",
                 "company": company,
                 "is_group": 1,
                 "account_number": 514,
@@ -3218,7 +3218,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Short-term debts with credit institutions",
+                "account_name": "Deudas a corto plazo con entidades de crédito",
                 "company": company,
                 "is_group": 1,
                 "account_number": 520,
@@ -3229,7 +3229,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Short-term debts",
+                "account_name": "Deudas a corto plazo",
                 "company": company,
                 "is_group": 1,
                 "account_number": 521,
@@ -3240,7 +3240,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Short-term debts convertible into grants, donations and legacies",
+                "account_name": "Deudas a corto plazo transformables en subvenciones, donaciones y legados",
                 "company": company,
                 "is_group": 1,
                 "account_number": 522,
@@ -3251,7 +3251,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Short-term fixed asset suppliers",
+                "account_name": "Proveedores de inmovilizado a corto plazo",
                 "company": company,
                 "is_group": 1,
                 "account_number": 523,
@@ -3262,7 +3262,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Short-term financial lease creditors",
+                "account_name": "Acreedores por arrendamiento financiero a corto plazo",
                 "company": company,
                 "is_group": 1,
                 "account_number": 524,
@@ -3273,7 +3273,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Short-term notes payable",
+                "account_name": "Efectos a pagar a corto plazo",
                 "company": company,
                 "is_group": 1,
                 "account_number": 525,
@@ -3284,7 +3284,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Active dividend payable",
+                "account_name": "Dividendo activo a pagar",
                 "company": company,
                 "is_group": 1,
                 "account_number": 526,
@@ -3295,7 +3295,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Short-term interest on debts with credit institutions",
+                "account_name": "Intereses a corto plazo de deudas con entidades de crédito",
                 "company": company,
                 "is_group": 1,
                 "account_number": 527,
@@ -3306,7 +3306,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Short-term interest on debts",
+                "account_name": "Intereses a corto plazo de deudas",
                 "company": company,
                 "is_group": 1,
                 "account_number": 528,
@@ -3317,7 +3317,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Short-term provisions",
+                "account_name": "Provisiones a corto plazo",
                 "company": company,
                 "is_group": 1,
                 "account_number": 529,
@@ -3328,7 +3328,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Short-term investments in related parties",
+                "account_name": "Participaciones a corto plazo en partes vinculadas",
                 "company": company,
                 "is_group": 1,
                 "account_number": 530,
@@ -3339,7 +3339,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Short-term debt securities of related parties",
+                "account_name": "Valores representativos de deuda a corto plazo de partes vinculadas",
                 "company": company,
                 "is_group": 1,
                 "account_number": 531,
@@ -3350,7 +3350,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Short-term loans to related parties",
+                "account_name": "Créditos a corto plazo a partes vinculadas",
                 "company": company,
                 "is_group": 1,
                 "account_number": 532,
@@ -3361,7 +3361,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Short-term interest on debt securities of related parties",
+                "account_name": "Intereses a corto plazo de valores representativos de deuda de partes vinculadas",
                 "company": company,
                 "is_group": 1,
                 "account_number": 533,
@@ -3372,7 +3372,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Short-term interest on loans to related parties",
+                "account_name": "Intereses a corto plazo de créditos a partes vinculadas",
                 "company": company,
                 "is_group": 1,
                 "account_number": 534,
@@ -3383,7 +3383,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Dividend receivable from financial investments in related parties",
+                "account_name": "Dividendo a cobrar de inversiones financieras en partes vinculadas",
                 "company": company,
                 "is_group": 1,
                 "account_number": 535,
@@ -3394,7 +3394,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Outstanding disbursements on short-term investments in related parties",
+                "account_name": "Desembolsos pendientes sobre participaciones a corto plazo en partes vinculadas",
                 "company": company,
                 "is_group": 1,
                 "account_number": 539,
@@ -3405,7 +3405,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Short-term financial investments in equity instruments",
+                "account_name": "Inversiones financieras a corto plazo en instrumentos de patrimonio",
                 "company": company,
                 "is_group": 1,
                 "account_number": 540,
@@ -3416,7 +3416,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Short-term debt securities",
+                "account_name": "Valores representativos de deuda a corto plazo",
                 "company": company,
                 "is_group": 1,
                 "account_number": 541,
@@ -3427,7 +3427,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Short-term loans",
+                "account_name": "Créditos a corto plazo",
                 "company": company,
                 "is_group": 1,
                 "account_number": 542,
@@ -3438,7 +3438,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Short-term credits for the sale of fixed assets",
+                "account_name": "Créditos a corto plazo por enajenación de inmovilizado",
                 "company": company,
                 "is_group": 1,
                 "account_number": 543,
@@ -3449,7 +3449,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Short-term loans to staff",
+                "account_name": "Créditos a corto plazo al personal",
                 "company": company,
                 "is_group": 1,
                 "account_number": 544,
@@ -3460,7 +3460,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Dividend receivable",
+                "account_name": "Dividendo a cobrar",
                 "company": company,
                 "is_group": 1,
                 "account_number": 545,
@@ -3471,7 +3471,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Short-term interest on debt securities",
+                "account_name": "Intereses a corto plazo de valores representativos de deudas",
                 "company": company,
                 "is_group": 1,
                 "account_number": 546,
@@ -3482,7 +3482,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Short-term interest on loans",
+                "account_name": "Intereses a corto plazo de créditos",
                 "company": company,
                 "is_group": 1,
                 "account_number": 547,
@@ -3493,7 +3493,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Short-term deposits",
+                "account_name": "Imposiciones a corto plazo",
                 "company": company,
                 "is_group": 1,
                 "account_number": 548,
@@ -3504,7 +3504,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Outstanding disbursements on short-term equity interests",
+                "account_name": "Desembolsos pendientes sobre participaciones en el patrimonio neto a corto plazo",
                 "company": company,
                 "is_group": 1,
                 "account_number": 549,
@@ -3515,7 +3515,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Owner of the farm",
+                "account_name": "Titular de la explotación",
                 "company": company,
                 "is_group": 1,
                 "account_number": 550,
@@ -3526,7 +3526,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Current account with partners and managers",
+                "account_name": "Cuenta corriente con socios y administradores",
                 "company": company,
                 "is_group": 1,
                 "account_number": 551,
@@ -3537,7 +3537,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Current account with other related persons and entities",
+                "account_name": "Cuenta corriente con otras personas y entidades vinculadas",
                 "company": company,
                 "is_group": 1,
                 "account_number": 552,
@@ -3548,7 +3548,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Current accounts in mergers and spin-offs",
+                "account_name": "Cuentas corrientes en fusiones y escisiones",
                 "company": company,
                 "is_group": 1,
                 "account_number": 553,
@@ -3559,7 +3559,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Current account with temporary joint ventures and property communities",
+                "account_name": "Cuenta corriente con uniones temporales de empresas y comunidades de bienes",
                 "company": company,
                 "is_group": 1,
                 "account_number": 554,
@@ -3570,7 +3570,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Pending application items",
+                "account_name": "Partidas pendientes de aplicación",
                 "company": company,
                 "is_group": 1,
                 "account_number": 555,
@@ -3581,7 +3581,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Required disbursements on equity interests",
+                "account_name": "Desembolsos exigidos sobre participaciones en el patrimonio neto",
                 "company": company,
                 "is_group": 1,
                 "account_number": 556,
@@ -3592,7 +3592,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Active dividend on account",
+                "account_name": "Dividendo activo a cuenta",
                 "company": company,
                 "is_group": 1,
                 "account_number": 557,
@@ -3603,7 +3603,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Partners for required disbursements",
+                "account_name": "Socios por desembolsos exigidos",
                 "company": company,
                 "is_group": 1,
                 "account_number": 558,
@@ -3614,7 +3614,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Short-term financial derivatives",
+                "account_name": "Derivados financieros a corto plazo",
                 "company": company,
                 "is_group": 1,
                 "account_number": 559,
@@ -3625,7 +3625,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Short-term bonds received",
+                "account_name": "Fianzas recibidas a corto plazo",
                 "company": company,
                 "is_group": 1,
                 "account_number": 560,
@@ -3636,7 +3636,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Short-term deposits received",
+                "account_name": "Depósitos recibidos a corto plazo",
                 "company": company,
                 "is_group": 1,
                 "account_number": 561,
@@ -3647,7 +3647,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Short-term bonds",
+                "account_name": "Fianzas constituidas a corto plazo",
                 "company": company,
                 "is_group": 1,
                 "account_number": 565,
@@ -3658,7 +3658,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Short-term deposits",
+                "account_name": "Depósitos constituidos a corto plazo",
                 "company": company,
                 "is_group": 1,
                 "account_number": 566,
@@ -3669,7 +3669,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Interest paid in advance",
+                "account_name": "Intereses pagados por anticipado",
                 "company": company,
                 "is_group": 1,
                 "account_number": 567,
@@ -3680,7 +3680,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Interest collected in advance",
+                "account_name": "Intereses cobrados por anticipado",
                 "company": company,
                 "is_group": 1,
                 "account_number": 568,
@@ -3691,7 +3691,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Short-term financial guarantees",
+                "account_name": "Garantías financieras a corto plazo",
                 "company": company,
                 "is_group": 1,
                 "account_number": 569,
@@ -3702,7 +3702,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Box,EURos",
+                "account_name": "Caja, euros",
                 "company": company,
                 "is_group": 1,
                 "account_number": 570,
@@ -3713,7 +3713,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Cash, foreign currency",
+                "account_name": "Caja, moneda extranjera",
                 "company": company,
                 "is_group": 1,
                 "account_number": 571,
@@ -3724,7 +3724,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Banks and credit institutions with demand deposits,EURos",
+                "account_name": "Bancos e instituciones de crédito c/c vista, euros",
                 "company": company,
                 "is_group": 1,
                 "account_number": 572,
@@ -3735,7 +3735,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Banks and credit institutions with sight accounts, foreign currency",
+                "account_name": "Bancos e instituciones de crédito c/c vista, moneda extranjera",
                 "company": company,
                 "is_group": 1,
                 "account_number": 573,
@@ -3746,7 +3746,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Banks and credit institutions, savings accounts,EURos",
+                "account_name": "Bancos e instituciones de crédito, cuentas de ahorro, euros",
                 "company": company,
                 "is_group": 1,
                 "account_number": 574,
@@ -3757,7 +3757,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Banks and credit institutions, savings accounts, foreign currency",
+                "account_name": "Bancos e instituciones de crédito, cuentas de ahorro, moneda extranjera",
                 "company": company,
                 "is_group": 1,
                 "account_number": 575,
@@ -3768,7 +3768,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Highly liquid short-term investments",
+                "account_name": "Inversiones a corto plazo de gran liquidez",
                 "company": company,
                 "is_group": 1,
                 "account_number": 576,
@@ -3779,7 +3779,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Fixed assets",
+                "account_name": "Inmovilizado",
                 "company": company,
                 "is_group": 1,
                 "account_number": 580,
@@ -3790,7 +3790,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Investments with related persons and entities",
+                "account_name": "Inversiones con personas y entidades vinculadas",
                 "company": company,
                 "is_group": 1,
                 "account_number": 581,
@@ -3801,7 +3801,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Financial investments",
+                "account_name": "Inversiones financieras",
                 "company": company,
                 "is_group": 1,
                 "account_number": 582,
@@ -3812,7 +3812,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Inventories, trade receivables and other accounts receivable",
+                "account_name": "Existencias, deudores comerciales y otras cuentas a cobrar",
                 "company": company,
                 "is_group": 1,
                 "account_number": 583,
@@ -3823,7 +3823,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Other assets",
+                "account_name": "Otros activos",
                 "company": company,
                 "is_group": 1,
                 "account_number": 584,
@@ -3834,7 +3834,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Provisions",
+                "account_name": "Provisiones",
                 "company": company,
                 "is_group": 1,
                 "account_number": 585,
@@ -3845,7 +3845,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Debts with special characteristics",
+                "account_name": "Deudas con características especiales",
                 "company": company,
                 "is_group": 1,
                 "account_number": 586,
@@ -3856,7 +3856,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Debts with related persons and entities",
+                "account_name": "Deudas con personas y entidades vinculadas",
                 "company": company,
                 "is_group": 1,
                 "account_number": 587,
@@ -3867,7 +3867,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Trade creditors and other accounts payable",
+                "account_name": "Acreedores comerciales y otras cuentas a pagar",
                 "company": company,
                 "is_group": 1,
                 "account_number": 588,
@@ -3878,7 +3878,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Other liabilities",
+                "account_name": "Otros pasivos",
                 "company": company,
                 "is_group": 1,
                 "account_number": 589,
@@ -3889,7 +3889,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Impairment of short-term investments in related parties",
+                "account_name": "Deterioro de valor de participaciones a corto plazo en partes vinculadas",
                 "company": company,
                 "is_group": 1,
                 "account_number": 593,
@@ -3900,7 +3900,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Impairment of short-term debt securities of related parties",
+                "account_name": "Deterioro de valor de valores representativos de deuda a corto plazo de partes vinculadas",
                 "company": company,
                 "is_group": 1,
                 "account_number": 594,
@@ -3911,7 +3911,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Impairment of short-term loans to related parties",
+                "account_name": "Deterioro de valor de créditos a corto plazo a partes vinculadas",
                 "company": company,
                 "is_group": 1,
                 "account_number": 595,
@@ -3922,7 +3922,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Impairment of short-term debt securities",
+                "account_name": "Deterioro de valor de valores representativos de deuda a corto plazo",
                 "company": company,
                 "is_group": 1,
                 "account_number": 597,
@@ -3933,7 +3933,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Impairment of short-term credits",
+                "account_name": "Deterioro de valor de créditos a corto plazo",
                 "company": company,
                 "is_group": 1,
                 "account_number": 598,
@@ -3944,7 +3944,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Impairment of non-current assets held for sale",
+                "account_name": "Deterioro de valor de activos no corrientes mantenidos para la venta",
                 "company": company,
                 "is_group": 1,
                 "account_number": 599,
@@ -3955,7 +3955,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Purchase of goods",
+                "account_name": "Compras de mercaderías",
                 "company": company,
                 "is_group": 1,
                 "account_number": 600,
@@ -3966,7 +3966,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Purchases of raw materials",
+                "account_name": "Compras de materias primas",
                 "company": company,
                 "is_group": 1,
                 "account_number": 601,
@@ -3977,7 +3977,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Purchases of other supplies",
+                "account_name": "Compras de otros aprovisionamientos",
                 "company": company,
                 "is_group": 1,
                 "account_number": 602,
@@ -3988,7 +3988,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Discounts on purchases for prompt payment",
+                "account_name": "Descuentos sobre compras por pronto pago",
                 "company": company,
                 "is_group": 1,
                 "account_number": 606,
@@ -3999,7 +3999,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Work carried out by other companies",
+                "account_name": "Trabajos realizados por otras empresas",
                 "company": company,
                 "is_group": 1,
                 "account_number": 607,
@@ -4010,7 +4010,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Returns on purchases and similar operations",
+                "account_name": "Devoluciones de compras y operaciones similares",
                 "company": company,
                 "is_group": 1,
                 "account_number": 608,
@@ -4021,7 +4021,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "“Reppels” for purchases",
+                "account_name": "“Rappels” por compras",
                 "company": company,
                 "is_group": 1,
                 "account_number": 609,
@@ -4032,7 +4032,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Variation in merchandise stocks",
+                "account_name": "Variación de existencias de mercaderías",
                 "company": company,
                 "is_group": 1,
                 "account_number": 610,
@@ -4043,7 +4043,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Change in raw material stocks",
+                "account_name": "Variación de existencias de materias primas",
                 "company": company,
                 "is_group": 1,
                 "account_number": 611,
@@ -4054,7 +4054,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Change in stock of other supplies",
+                "account_name": "Variación de existencias de otros aprovisionamientos",
                 "company": company,
                 "is_group": 1,
                 "account_number": 612,
@@ -4065,7 +4065,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Research and developmentExpenses for the financial year",
+                "account_name": "Gastos en investigación y desarrollo del ejercicio",
                 "company": company,
                 "is_group": 1,
                 "account_number": 620,
@@ -4076,7 +4076,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Leases and fees",
+                "account_name": "Arrendamientos y cánones",
                 "company": company,
                 "is_group": 1,
                 "account_number": 621,
@@ -4087,7 +4087,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Repairs and maintenance",
+                "account_name": "Reparaciones y conservación",
                 "company": company,
                 "is_group": 1,
                 "account_number": 622,
@@ -4098,7 +4098,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Independent professional services",
+                "account_name": "Servicios de profesionales independientes",
                 "company": company,
                 "is_group": 1,
                 "account_number": 623,
