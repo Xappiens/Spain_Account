@@ -1,4 +1,6 @@
 import frappe
+from erpnext.accounts.utils import get_fiscal_year
+from frappe.utils import  nowdate
 
 def execute(filters=None):
     filters = prepare_filters(filters)
@@ -12,7 +14,7 @@ def prepare_filters(filters):
 
     # Set a default fiscal year if not provided
     if not filters.get("fiscal_year"):
-        filters["fiscal_year"] = frappe.defaults.get_user_default("fiscal_year")
+        filters["fiscal_year"] = get_fiscal_year(nowdate(), as_dict=True).get("name")
         
     return filters
 

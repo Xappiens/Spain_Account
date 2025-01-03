@@ -45,6 +45,43 @@
   "periodicity": "Annual"
  },
  {
+  "description": "",
+  "docstatus": 0,
+  "doctype": "Hacienda Model",
+  "fiscal_year": "2025",
+  "model_name": "Modelo 115",
+  "model_values": [
+   {
+    "calculation_rule__query": "SELECT \n    SUM(pi.base_net_total) AS total\nFROM \n    `tabPurchase Invoice` AS pi\nINNER JOIN \n    `tabPurchase Taxes and Charges` AS ptc\n    ON pi.name = ptc.parent\nWHERE \n    pi.posting_date BETWEEN %(start_date)s AND %(end_date)s\n    AND pi.company = %(company)s\n    AND ptc.rate = \"19\"\n    AND ptc.account_head IN (\n        SELECT name\n        FROM `tabAccount`\n        WHERE parent_account = (\n            SELECT name\n            FROM `tabAccount`\n            WHERE account_number = \"4751\" AND company = %(company)s\n        )\n    );\n",
+    "parent": "Modelo 115",
+    "parentfield": "model_values",
+    "parenttype": "Hacienda Model",
+    "value_description": "Total rent subject to withholding tax",
+    "value_type": "Monetary Amount"
+   },
+   {
+    "calculation_rule__query": "SELECT \n    SUM(pi.grand_total) AS total\nFROM \n    `tabPurchase Invoice` AS pi\nINNER JOIN \n    `tabPurchase Taxes and Charges` AS ptc\n    ON pi.name = ptc.parent\nWHERE \n    pi.posting_date BETWEEN %(start_date)s AND %(end_date)s\n    AND pi.company = %(company)s\n    AND ptc.rate = \"19\"\n    AND ptc.account_head IN (\n        SELECT name\n        FROM `tabAccount`\n        WHERE parent_account = (\n            SELECT name\n            FROM `tabAccount`\n            WHERE account_number = \"4751\" AND company = %(company)s\n        )\n    );\n",
+    "parent": "Modelo 115",
+    "parentfield": "model_values",
+    "parenttype": "Hacienda Model",
+    "value_description": "Total rent paid",
+    "value_type": "Monetary Amount"
+   },
+   {
+    "calculation_rule__query": "SELECT \n    SUM(ptc.tax_amount) AS total\nFROM \n    `tabPurchase Invoice` AS pi\nINNER JOIN \n    `tabPurchase Taxes and Charges` AS ptc\n    ON pi.name = ptc.parent\nWHERE \n    pi.posting_date BETWEEN %(start_date)s AND %(end_date)s\n    AND pi.company = %(company)s\n    AND ptc.rate = \"19\"\n    AND ptc.account_head IN (\n        SELECT name\n        FROM `tabAccount`\n        WHERE parent_account = (\n            SELECT name\n            FROM `tabAccount`\n            WHERE account_number = \"4751\" AND company = %(company)s\n        )\n    );\n",
+    "parent": "Modelo 115",
+    "parentfield": "model_values",
+    "parenttype": "Hacienda Model",
+    "value_description": "Total IRPF Withholding",
+    "value_type": "Monetary Amount"
+   }
+  ],
+  "modified": "2025-01-02 12:23:08.163420",
+  "name": "Modelo 115",
+  "period": "1Q",
+  "periodicity": "Quarterly"
+ },
+ {
   "description": "Annual declaration of IRPF (income tax) withholdings on payments.",
   "docstatus": 0,
   "doctype": "Hacienda Model",
