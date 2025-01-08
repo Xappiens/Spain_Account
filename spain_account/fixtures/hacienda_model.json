@@ -1,84 +1,31 @@
 [
  {
-  "description": "Annual declaration of IRPF (income tax) withholdings on payments.",
+  "description": "Quarterly report of withheld taxes on interest, dividends, or professional payments",
   "docstatus": 0,
   "doctype": "Hacienda Model",
   "fiscal_year": "2024",
-  "model_name": "Modelo 190",
+  "model_name": "Modelo 123",
   "model_values": [
    {
-    "calculation_rule__query": "SELECT a.name AS account\nFROM tabAccount AS a\nJOIN tabAccount AS p ON a.parent_account = p.name\nWHERE p.account_number = 4751 AND p.company = %(company)s\nAND a.custom_es_cuenta_de_empleado = 0\nAND a.company = %(company)s;",
-    "parent": "Modelo 190",
+    "calculation_rule__query": "SELECT \n    SUM(si.grand_total) AS total\nFROM \n    `tabSales Invoice` AS si\nINNER JOIN \n    `tabSales Taxes and Charges` AS stc\n    ON si.name = stc.parent\nWHERE \n    si.posting_date BETWEEN %(start_date)s AND %(end_date)s\n    AND si.docstatus = 1\n    AND si.company = %(company)s\n    AND stc.account_head IN (\n        SELECT name\n        FROM `tabAccount`\n        WHERE parent_account = (\n            SELECT name\n            FROM `tabAccount`\n            WHERE account_number = \"4752\" AND company = %(company)s\n        )\n    );\n",
+    "parent": "Modelo 123",
     "parentfield": "model_values",
     "parenttype": "Hacienda Model",
-    "value_description": "Total number of suppliers with IRPF withholding",
-    "value_type": "Integer (count)"
-   },
-   {
-    "calculation_rule__query": "SELECT a.name AS account\nFROM tabAccount AS a\nJOIN tabAccount AS p ON a.parent_account = p.name\nWHERE p.account_number = 4751  AND p.company = %(company)s\nAND a.custom_es_cuenta_de_empleado = 1\nAND a.company = %(company)s;",
-    "parent": "Modelo 190",
-    "parentfield": "model_values",
-    "parenttype": "Hacienda Model",
-    "value_description": "Total number of employees with IRPF withholding",
-    "value_type": "Integer (count)"
-   },
-   {
-    "calculation_rule__query": "SELECT a.name AS account\nFROM tabAccount AS a\nJOIN tabAccount AS p ON a.parent_account = p.name\nWHERE p.account_number = 4751  AND p.company = %(company)s\nAND a.custom_es_cuenta_de_empleado = 0\nAND a.company = %(company)s;",
-    "parent": "Modelo 190",
-    "parentfield": "model_values",
-    "parenttype": "Hacienda Model",
-    "value_description": "Total IRPF amount withheld from suppliers",
+    "value_description": "Total payments subject to withholding",
     "value_type": "Monetary Amount"
    },
    {
-    "calculation_rule__query": "SELECT a.name AS account\nFROM tabAccount AS a\nJOIN tabAccount AS p ON a.parent_account = p.name\nWHERE p.account_number = 4751 AND p.company = %(company)s\nAND a.custom_es_cuenta_de_empleado = 1\nAND a.company = %(company)s;",
-    "parent": "Modelo 190",
+    "calculation_rule__query": "SELECT \n    SUM(stc.tax_amount) AS total\nFROM \n    `tabSales Invoice` AS si\nINNER JOIN \n    `tabSales Taxes and Charges` AS stc\n    ON si.name = stc.parent\nWHERE \n    si.posting_date BETWEEN %(start_date)s AND %(end_date)s\n    AND si.docstatus = 1\n    AND si.company = %(company)s\n    AND stc.account_head IN (\n        SELECT name\n        FROM `tabAccount`\n        WHERE parent_account = (\n            SELECT name\n            FROM `tabAccount`\n            WHERE account_number = \"4752\" AND company = %(company)s\n        )\n    );\n",
+    "parent": "Modelo 123",
     "parentfield": "model_values",
     "parenttype": "Hacienda Model",
-    "value_description": "Total IRPF amount withheld from employees",
+    "value_description": "Total withholding tax applied",
     "value_type": "Monetary Amount"
    }
   ],
-  "modified": "2024-12-31 06:09:37.573423",
-  "name": "Modelo 190",
-  "period": "",
-  "periodicity": "Annual"
- },
- {
-  "description": "",
-  "docstatus": 0,
-  "doctype": "Hacienda Model",
-  "fiscal_year": "2025",
-  "model_name": "Modelo 115",
-  "model_values": [
-   {
-    "calculation_rule__query": "SELECT \n    SUM(pi.base_net_total) AS total\nFROM \n    `tabPurchase Invoice` AS pi\nINNER JOIN \n    `tabPurchase Taxes and Charges` AS ptc\n    ON pi.name = ptc.parent\nWHERE \n    pi.posting_date BETWEEN %(start_date)s AND %(end_date)s\n    AND pi.company = %(company)s\n    AND ptc.rate = \"19\"\n    AND ptc.account_head IN (\n        SELECT name\n        FROM `tabAccount`\n        WHERE parent_account = (\n            SELECT name\n            FROM `tabAccount`\n            WHERE account_number = \"4751\" AND company = %(company)s\n        )\n    );\n",
-    "parent": "Modelo 115",
-    "parentfield": "model_values",
-    "parenttype": "Hacienda Model",
-    "value_description": "Total rent subject to withholding tax",
-    "value_type": "Monetary Amount"
-   },
-   {
-    "calculation_rule__query": "SELECT \n    SUM(pi.grand_total) AS total\nFROM \n    `tabPurchase Invoice` AS pi\nINNER JOIN \n    `tabPurchase Taxes and Charges` AS ptc\n    ON pi.name = ptc.parent\nWHERE \n    pi.posting_date BETWEEN %(start_date)s AND %(end_date)s\n    AND pi.company = %(company)s\n    AND ptc.rate = \"19\"\n    AND ptc.account_head IN (\n        SELECT name\n        FROM `tabAccount`\n        WHERE parent_account = (\n            SELECT name\n            FROM `tabAccount`\n            WHERE account_number = \"4751\" AND company = %(company)s\n        )\n    );\n",
-    "parent": "Modelo 115",
-    "parentfield": "model_values",
-    "parenttype": "Hacienda Model",
-    "value_description": "Total rent paid",
-    "value_type": "Monetary Amount"
-   },
-   {
-    "calculation_rule__query": "SELECT \n    SUM(ptc.tax_amount) AS total\nFROM \n    `tabPurchase Invoice` AS pi\nINNER JOIN \n    `tabPurchase Taxes and Charges` AS ptc\n    ON pi.name = ptc.parent\nWHERE \n    pi.posting_date BETWEEN %(start_date)s AND %(end_date)s\n    AND pi.company = %(company)s\n    AND ptc.rate = \"19\"\n    AND ptc.account_head IN (\n        SELECT name\n        FROM `tabAccount`\n        WHERE parent_account = (\n            SELECT name\n            FROM `tabAccount`\n            WHERE account_number = \"4751\" AND company = %(company)s\n        )\n    );\n",
-    "parent": "Modelo 115",
-    "parentfield": "model_values",
-    "parenttype": "Hacienda Model",
-    "value_description": "Total IRPF Withholding",
-    "value_type": "Monetary Amount"
-   }
-  ],
-  "modified": "2025-01-02 12:23:08.163420",
-  "name": "Modelo 115",
-  "period": "1Q",
+  "modified": "2025-01-08 13:58:43.673448",
+  "name": "Modelo 123",
+  "period": "4Q",
   "periodicity": "Quarterly"
  },
  {
@@ -115,51 +62,6 @@
   ],
   "modified": "2025-01-02 12:11:24.000244",
   "name": "Modelo 180",
-  "period": "",
-  "periodicity": "Annual"
- },
- {
-  "description": "Annual declaration of IRPF (income tax) withholdings on payments.",
-  "docstatus": 0,
-  "doctype": "Hacienda Model",
-  "fiscal_year": "2024",
-  "model_name": "Modelo 390",
-  "model_values": [
-   {
-    "calculation_rule__query": "SELECT \n    SUM(si.grand_total) AS total\nFROM \n    `tabSales Invoice` AS si\nWHERE \n    si.name IN (\n        SELECT DISTINCT stc.parent\n        FROM `tabSales Taxes and Charges` AS stc\n        WHERE stc.account_head IN (\n            SELECT name\n            FROM `tabAccount`\n            WHERE parent_account = (\n                SELECT name \n                FROM `tabAccount`\n                WHERE account_number = \"477\" AND company = %(company)s\n            )\n        )\n    )\n    AND si.posting_date BETWEEN %(start_date)s AND %(end_date)s\n    AND si.company = %(company)s;\n",
-    "parent": "Modelo 390",
-    "parentfield": "model_values",
-    "parenttype": "Hacienda Model",
-    "value_description": "Total Sales Amount Subject to VAT",
-    "value_type": "Monetary Amount"
-   },
-   {
-    "calculation_rule__query": "SELECT \n    SUM(ptc.tax_amount) AS total\nFROM \n    `tabPurchase Invoice` AS pi\nINNER JOIN \n    `tabPurchase Taxes and Charges` AS ptc\n    ON pi.name = ptc.parent\nWHERE \n    pi.posting_date BETWEEN %(start_date)s AND %(end_date)s\n    AND pi.company = %(company)s\n    AND ptc.account_head IN (\n        SELECT name\n        FROM `tabAccount`\n        WHERE parent_account = (\n            SELECT name\n            FROM `tabAccount`\n            WHERE account_number = \"472\" AND company = %(company)s\n        )\n    );\n",
-    "parent": "Modelo 390",
-    "parentfield": "model_values",
-    "parenttype": "Hacienda Model",
-    "value_description": "Total VAT Paid on Purchases",
-    "value_type": "Monetary Amount"
-   },
-   {
-    "calculation_rule__query": "SELECT \n    SUM(stc.tax_amount) AS total\nFROM \n    `tabSales Invoice` AS si\nINNER JOIN \n    `tabSales Taxes and Charges` AS stc\n    ON si.name = stc.parent\nWHERE \n    si.posting_date BETWEEN %(start_date)s AND %(end_date)s\n    AND si.company = %(company)s\n    AND stc.account_head IN (\n        SELECT name\n        FROM `tabAccount`\n        WHERE parent_account = (\n            SELECT name\n            FROM `tabAccount`\n            WHERE account_number = \"477\" AND company = %(company)s\n        )\n    );\n",
-    "parent": "Modelo 390",
-    "parentfield": "model_values",
-    "parenttype": "Hacienda Model",
-    "value_description": "Total VAT Collected on Sales",
-    "value_type": "Monetary Amount"
-   },
-   {
-    "calculation_rule__query": "SELECT\n    (\n        (SELECT \n    SUM(stc.tax_amount) AS total\nFROM \n    `tabSales Invoice` AS si\nINNER JOIN \n    `tabSales Taxes and Charges` AS stc\n    ON si.name = stc.parent\nWHERE \n    si.posting_date BETWEEN %(start_date)s AND %(end_date)s\n    AND si.company = %(company)s\n    AND stc.account_head IN (\n        SELECT name\n        FROM `tabAccount`\n        WHERE parent_account = (\n            SELECT name\n            FROM `tabAccount`\n            WHERE account_number = \"477\" AND company = %(company)s\n        )\n    )\n\n\n        )\n        -\n        (SELECT \n    SUM(ptc.tax_amount) AS total\nFROM \n    `tabPurchase Invoice` AS pi\nINNER JOIN \n    `tabPurchase Taxes and Charges` AS ptc\n    ON pi.name = ptc.parent\nWHERE \n    pi.posting_date BETWEEN %(start_date)s AND %(end_date)s\n    AND pi.company = %(company)s\n    AND ptc.account_head IN (\n        SELECT name\n        FROM `tabAccount`\n        WHERE parent_account = (\n            SELECT name\n            FROM `tabAccount`\n            WHERE account_number = \"472\" AND company = %(company)s\n        )\n    )\n\n\n\n        )\n    ) AS total;\n",
-    "parent": "Modelo 390",
-    "parentfield": "model_values",
-    "parenttype": "Hacienda Model",
-    "value_description": "Net VAT Payable (VAT Collected - VAT Paid)",
-    "value_type": "Monetary Amount"
-   }
-  ],
-  "modified": "2024-12-30 06:20:23.316632",
-  "name": "Modelo 390",
   "period": "",
   "periodicity": "Annual"
  },
