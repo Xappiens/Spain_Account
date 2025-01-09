@@ -29,6 +29,83 @@
   "periodicity": "Quarterly"
  },
  {
+  "description": "Quarterly declaration of intra-EU operations",
+  "docstatus": 0,
+  "doctype": "Hacienda Model",
+  "fiscal_year": "2024",
+  "model_name": "Modelo 349",
+  "model_values": [
+   {
+    "calculation_rule__query": "SELECT \n    SUM(si.base_net_total) AS total\nFROM \n    `tabSales Invoice` si\nJOIN \n    `tabSales Taxes and Charges` stc ON si.name = stc.parent\nJOIN \n    `tabAddress` a ON si.shipping_address_name = a.name  -- Join on the shipping address\nWHERE \n    a.country != 'Spain'  -- Filter out Spain\n    AND a.country IN ('France', 'Germany', 'Italy', 'Other EU Countries')\n    AND si.posting_date BETWEEN %(start_date)s AND %(end_date)s\n    AND si.company = %(company)s;",
+    "parent": "Modelo 349",
+    "parentfield": "model_values",
+    "parenttype": "Hacienda Model",
+    "value_description": "Total Goods Supplied to EU Customers",
+    "value_type": "Monetary Amount"
+   },
+   {
+    "calculation_rule__query": "SELECT \n    IFNULL(SUM(stc.tax_amount), 0) AS total\nFROM \n    `tabSales Invoice` si\nJOIN \n    `tabSales Taxes and Charges` stc ON si.name = stc.parent\nJOIN \n    `tabAddress` a ON si.shipping_address_name = a.name\nWHERE \n    a.country != 'Spain'  -- Filter out Spain\n    AND a.country IN ('France', 'Germany', 'Italy', 'Poland', 'Netherlands', 'Belgium', 'Other EU Countries')  -- Expand list as needed\n    AND si.posting_date BETWEEN %(start_date)s AND %(end_date)s\n    AND si.company = %(company)s;\n",
+    "parent": "Modelo 349",
+    "parentfield": "model_values",
+    "parenttype": "Hacienda Model",
+    "value_description": "Tax Withheld on EU Supplies",
+    "value_type": "Monetary Amount"
+   },
+   {
+    "calculation_rule__query": "SELECT \n    SUM(pi.base_net_total) AS total\nFROM \n    `tabPurchase Invoice` pi\nJOIN \n    `tabPurchase Taxes and Charges` ptc ON pi.name = ptc.parent\nJOIN \n    `tabAddress` a ON pi.shipping_address = a.name \nWHERE \n    \n    a.country != 'Spain'  \n    AND a.country IN ('France', 'Germany', 'Italy', 'Other EU Countries')\n    AND pi.posting_date BETWEEN %(start_date)s AND %(end_date)s\n    AND pi.company = %(company)s;",
+    "parent": "Modelo 349",
+    "parentfield": "model_values",
+    "parenttype": "Hacienda Model",
+    "value_description": "Total Goods Purchased from EU Suppliers",
+    "value_type": "Monetary Amount"
+   },
+   {
+    "calculation_rule__query": "SELECT \n    IFNULL(SUM(ptc.tax_amount), 0) AS total\nFROM \n    `tabPurchase Invoice` pi\nJOIN \n    `tabPurchase Taxes and Charges` ptc ON pi.name = ptc.parent\nJOIN \n    `tabAddress` a ON pi.shipping_address = a.name \nWHERE \n    \n    a.country != 'Spain'  \n    AND a.country IN ('France', 'Germany', 'Italy', 'Other EU Countries')\n    AND pi.posting_date BETWEEN %(start_date)s AND %(end_date)s\n    AND pi.company = %(company)s;",
+    "parent": "Modelo 349",
+    "parentfield": "model_values",
+    "parenttype": "Hacienda Model",
+    "value_description": "Tax Withheld on EU Purchases",
+    "value_type": "Monetary Amount"
+   },
+   {
+    "calculation_rule__query": "SELECT \n    SUM(si.base_net_total) AS total\nFROM \n    `tabSales Invoice` si\nJOIN \n    `tabCustomer` c ON si.customer = c.name\nJOIN \n    `tabSales Invoice Item` sii ON si.name = sii.parent\nJOIN \n    `tabAddress` a ON si.customer_address = a.name \nWHERE \n    a.country != 'Spain'\n    AND a.country IN ('France', 'Germany', 'Italy', 'Other EU Countries')\n    AND sii.item_group = 'Products' \n    AND si.posting_date BETWEEN %(start_date)s AND %(end_date)s\n    AND si.company = %(company)s;\n",
+    "parent": "Modelo 349",
+    "parentfield": "model_values",
+    "parenttype": "Hacienda Model",
+    "value_description": "Total Intra-EU Services Provided",
+    "value_type": "Monetary Amount"
+   },
+   {
+    "calculation_rule__query": "SELECT \n    SUM(si.total_taxes_and_charges) AS total\nFROM \n    `tabSales Invoice` si\nJOIN \n    `tabCustomer` c ON si.customer = c.name\nJOIN \n    `tabSales Invoice Item` sii ON si.name = sii.parent\nJOIN \n    `tabAddress` a ON si.customer_address = a.name \nWHERE \n    a.country != 'Spain'\n    AND a.country IN ('France', 'Germany', 'Italy', 'Other EU Countries')\n    AND sii.item_group = 'Products' \n    AND si.posting_date BETWEEN %(start_date)s AND %(end_date)s\n    AND si.company = %(company)s;\n",
+    "parent": "Modelo 349",
+    "parentfield": "model_values",
+    "parenttype": "Hacienda Model",
+    "value_description": "Tax Withheld on Intra-EU Services",
+    "value_type": "Monetary Amount"
+   },
+   {
+    "calculation_rule__query": "SELECT \n    SUM(pi.base_net_total) AS total\nFROM \n    `tabPurchase Invoice` pi\nJOIN \n    `tabSupplier` s ON pi.supplier = s.name\nJOIN \n    `tabPurchase Invoice Item` pii ON pi.name = pii.parent\nJOIN \n    `tabAddress` a ON pi.supplier_address = a.name \nWHERE \n    a.country != 'Spain'\n    AND a.country IN ('France', 'Germany', 'Italy', 'Other EU Countries')\n    AND pii.item_group = 'Products' \n    AND pi.posting_date BETWEEN %(start_date)s AND %(end_date)s\n    AND pi.company = %(company)s;\n",
+    "parent": "Modelo 349",
+    "parentfield": "model_values",
+    "parenttype": "Hacienda Model",
+    "value_description": "Total Intra-EU Services Received",
+    "value_type": "Monetary Amount"
+   },
+   {
+    "calculation_rule__query": "SELECT \n    SUM(ABS(pi.total_taxes_and_charges)) AS total\nFROM \n    `tabPurchase Invoice` pi\nJOIN \n    `tabSupplier` s ON pi.supplier = s.name\nJOIN \n    `tabPurchase Invoice Item` pii ON pi.name = pii.parent\nJOIN \n    `tabAddress` a ON pi.supplier_address = a.name \nWHERE \n    a.country != 'Spain'\n    AND a.country IN ('France', 'Germany', 'Italy', 'Other EU Countries')\n    AND pii.item_group = 'Products' \n    AND pi.posting_date BETWEEN %(start_date)s AND %(end_date)s\n    AND pi.company = %(company)s;\n",
+    "parent": "Modelo 349",
+    "parentfield": "model_values",
+    "parenttype": "Hacienda Model",
+    "value_description": "Tax Withheld on Intra-EU Received",
+    "value_type": "Monetary Amount"
+   }
+  ],
+  "modified": "2025-01-09 08:37:45.939923",
+  "name": "Modelo 349",
+  "period": "4Q",
+  "periodicity": "Quarterly"
+ },
+ {
   "description": null,
   "docstatus": 0,
   "doctype": "Hacienda Model",

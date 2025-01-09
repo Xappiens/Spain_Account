@@ -88,7 +88,6 @@ def determine_date_range(filters):
     return None, None
 
 def execute_sql(query, start_date, end_date, company):
-    print("Executing",query, start_date, end_date, company)
     result = frappe.db.sql(
         query,
         {"start_date": start_date, "end_date": end_date, "company": company},

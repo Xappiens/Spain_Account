@@ -32,7 +32,7 @@ def get_columns():
     dynamic_values = frappe.get_all(
         "Model Values",
         fields=["value_description", "idx"],
-        filters={"parent": "Modelo 123"},
+        filters={"parent": "Modelo 349"},
         order_by="idx asc"
     )
 
@@ -43,8 +43,8 @@ def get_columns():
             "label": row["value_description"],
             "fieldname": fieldname,
             "fieldtype": "Currency",
-            "width": 190,
-            "align": "center"
+            "width": 250,
+            "align": "center"	
         })
         column_keys.append((row["value_description"], fieldname))  
 
