@@ -409,7 +409,7 @@ def create_accounts(company=None,setup_wizard=False):
         "report_type": "Profit and Loss"
     },
     {
-        "account_name": " AMORTIZACIÓN ACUMULADA DEL INMOVILIZADO",
+        "account_name": "AMORTIZACIÓN ACUMULADA DEL INMOVILIZADO",
         "company": company,
         "is_group": 1,
         "account_number": 28,
@@ -1003,7 +1003,7 @@ def create_accounts(company=None,setup_wizard=False):
         "report_type": "Profit and Loss"
     },
     {
-        "account_name": " INGRESOS FINANCIEROS POR VALORACIÓN DE ACTIVOS Y PASIVOS",
+        "account_name": "INGRESOS FINANCIEROS POR VALORACIÓN DE ACTIVOS Y PASIVOS",
         "company": company,
         "is_group": 1,
         "account_number": 90,
@@ -1084,7 +1084,7 @@ def create_accounts(company=None,setup_wizard=False):
         
         level_3 = [
             {
-                "account_name": " Capital social",
+                "account_name": "Capital social",
                 "company": company,
                 "is_group": 1,
                 "account_number": 100,
@@ -3009,7 +3009,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Balance Sheet"
             },
             {
-                "account_name": " Hacienda Pública, IVA repercutido",
+                "account_name": "Hacienda Pública, IVA repercutido",
                 "company": company,
                 "is_group": 1,
                 "account_number": 477,
@@ -8644,7 +8644,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "Intereses por operaciones de “factoring” con otras entidades de crédito vinculadas ",
+                "account_name": "Intereses por operaciones de “factoring” con otras entidades de crédito vinculadas",
                 "company": company,
                 "is_group": 1,
                 "account_number": 6656,
@@ -9304,7 +9304,7 @@ def create_accounts(company=None,setup_wizard=False):
                 "report_type": "Profit and Loss"
             },
             {
-                "account_name": "“Rappels” sobre ventas de productos semiterminados ",
+                "account_name": "“Rappels” sobre ventas de productos semiterminados",
                 "company": company,
                 "is_group": 1,
                 "account_number": 7092,
@@ -10118,11 +10118,18 @@ def create_accounts(company=None,setup_wizard=False):
             # 				"default_bank_account",
             # 				""
             # 			)
-        try :
-            frappe.db.sql("""UPDATE `tabCompany` SET default_bank_account = '' WHERE name = %s""", company)
+        try:
+            frappe.db.sql("""
+                UPDATE `tabCompany`
+                SET 
+                    default_bank_account = '',
+                    default_payroll_payable_account = '',
+                    default_employee_advance_account = ''
+                WHERE name = %s
+            """, company)
             frappe.db.commit()
-        except Exception as e :
-            frappe.log_error("Error While SQL", str(e))
+        except Exception as e:
+            frappe.log_error(title="Error While SQL", message=str(e))
         if setup_wizard :
             frappe.db.sql("TRUNCATE TABLE `tabAccount`")
         else :
@@ -10133,6 +10140,8 @@ def create_accounts(company=None,setup_wizard=False):
                 if create_level_2_accounts(level_3):
                     if create_level_2_accounts(level_4):
                         create_level_2_accounts(level_5)
+                        company_doc = frappe.get_doc("Company", company)
+                        company_doc.reload()
 
 
 

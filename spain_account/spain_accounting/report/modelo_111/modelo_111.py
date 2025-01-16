@@ -54,7 +54,7 @@ def get_columns():
         for value in frappe.get_all(
             "Model Values",
             fields=["value_description", "value_type"],
-            filters={"parent": "Modelo 190"},
+            filters={"parent": "Modelo 111"},
             order_by="idx asc",
         )
     ]
@@ -76,7 +76,7 @@ def get_data(filters, columns):
         for value in frappe.get_all(
             "Model Values",
             fields=["value_description", "calculation_rule__query"],
-            filters={"parent": "Modelo 190"},
+            filters={"parent": "Modelo 111"},
         )
     }
 
