@@ -1,0 +1,57 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:type",
+ "creation": "2025-01-17 05:44:19.538485",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "type",
+  "percentaje",
+  "years"
+ ],
+ "fields": [
+  {
+   "fieldname": "type",
+   "fieldtype": "Data",
+   "label": "Tipo de Amortizacion",
+   "unique": 1
+  },
+  {
+   "fieldname": "percentaje",
+   "fieldtype": "Percent",
+   "label": "Porcentaje de amortizacion",
+   "precision": "0"
+  },
+  {
+   "fieldname": "years",
+   "fieldtype": "Int",
+   "label": "A\u00f1os maximos"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-01-17 05:44:19.538485",
+ "modified_by": "Administrator",
+ "module": "Spain Accounting",
+ "name": "Tipo de Amortizacion",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

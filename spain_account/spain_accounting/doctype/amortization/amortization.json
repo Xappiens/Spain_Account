@@ -1,0 +1,135 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "AMR-.YYYY.-.#######",
+ "creation": "2025-01-17 05:45:07.243367",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "asset",
+  "description",
+  "company",
+  "total_amortized",
+  "column_break_bwhc",
+  "type",
+  "purchase_date",
+  "price",
+  "account",
+  "percentage",
+  "initial_amortization",
+  "section_break_puuj",
+  "amortization_details"
+ ],
+ "fields": [
+  {
+   "fieldname": "asset",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Activo",
+   "reqd": 1
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Descripci\u00f3n"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Compa\u00f1ia",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "fieldname": "total_amortized",
+   "fieldtype": "Currency",
+   "label": "Total amortizado",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_bwhc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "type",
+   "fieldtype": "Link",
+   "label": "Tipo de Amortizacion",
+   "options": "Tipo de Amortizacion",
+   "reqd": 1
+  },
+  {
+   "fieldname": "purchase_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Fecha de compra",
+   "reqd": 1
+  },
+  {
+   "fieldname": "price",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Precio de compra",
+   "reqd": 1
+  },
+  {
+   "fieldname": "account",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Cuenta",
+   "options": "Account",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "type.percentaje",
+   "fieldname": "percentage",
+   "fieldtype": "Percent",
+   "label": "Porcentaje de Amortizaci\u00f3n",
+   "precision": "0",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "initial_amortization",
+   "fieldtype": "Currency",
+   "label": "Amortizacion inicial"
+  },
+  {
+   "fieldname": "section_break_puuj",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amortization_details",
+   "fieldtype": "Table",
+   "label": "Tabla de Amortizacion",
+   "options": "Amortization Details"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-01-17 05:45:07.243367",
+ "modified_by": "Administrator",
+ "module": "Spain Accounting",
+ "name": "Amortization",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "asset",
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "asset"
+}
