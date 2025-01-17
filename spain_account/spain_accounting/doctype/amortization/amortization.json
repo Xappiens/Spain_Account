@@ -6,45 +6,51 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "product_information_section",
   "asset",
   "description",
-  "company",
-  "total_amortized",
-  "column_break_bwhc",
   "type",
+  "column_break_bwhc",
   "purchase_date",
   "price",
   "account",
+  "invoice",
+  "company",
+  "amortization_information_section",
   "percentage",
-  "initial_amortization",
+  "column_break_vodl",
+  "start_date",
+  "column_break_kjjc",
+  "amortizable_value",
+  "write_off_section",
+  "end_date",
+  "column_break_bjtl",
+  "reason",
+  "column_break_pzbf",
+  "reason_description",
   "section_break_puuj",
   "amortization_details"
  ],
  "fields": [
   {
    "fieldname": "asset",
-   "fieldtype": "Data",
+   "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "Activo",
+   "label": "Asset",
+   "options": "Item",
    "reqd": 1
   },
   {
    "fieldname": "description",
    "fieldtype": "Small Text",
-   "label": "Descripci\u00f3n"
+   "label": "Description"
   },
   {
    "fieldname": "company",
    "fieldtype": "Link",
-   "label": "Compa\u00f1ia",
+   "label": "Company",
    "options": "Company",
    "reqd": 1
-  },
-  {
-   "fieldname": "total_amortized",
-   "fieldtype": "Currency",
-   "label": "Total amortizado",
-   "read_only": 1
   },
   {
    "fieldname": "column_break_bwhc",
@@ -53,7 +59,7 @@
   {
    "fieldname": "type",
    "fieldtype": "Link",
-   "label": "Tipo de Amortizacion",
+   "label": "Amortization Type",
    "options": "Tipo de Amortizacion",
    "reqd": 1
   },
@@ -61,21 +67,21 @@
    "fieldname": "purchase_date",
    "fieldtype": "Date",
    "in_list_view": 1,
-   "label": "Fecha de compra",
+   "label": "Purchase Date",
    "reqd": 1
   },
   {
    "fieldname": "price",
    "fieldtype": "Currency",
    "in_list_view": 1,
-   "label": "Precio de compra",
+   "label": "Purchase Price",
    "reqd": 1
   },
   {
    "fieldname": "account",
    "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "Cuenta",
+   "label": "Account",
    "options": "Account",
    "reqd": 1
   },
@@ -89,24 +95,82 @@
    "reqd": 1
   },
   {
-   "fieldname": "initial_amortization",
-   "fieldtype": "Currency",
-   "label": "Amortizacion inicial"
-  },
-  {
    "fieldname": "section_break_puuj",
    "fieldtype": "Section Break"
   },
   {
    "fieldname": "amortization_details",
    "fieldtype": "Table",
-   "label": "Tabla de Amortizacion",
+   "label": "Amortization Details",
    "options": "Amortization Details"
+  },
+  {
+   "fieldname": "product_information_section",
+   "fieldtype": "Section Break",
+   "label": "Product Information"
+  },
+  {
+   "fieldname": "invoice",
+   "fieldtype": "Link",
+   "label": "Purchase invoice",
+   "options": "Purchase Invoice"
+  },
+  {
+   "fieldname": "amortization_information_section",
+   "fieldtype": "Section Break",
+   "label": "Amortization Information"
+  },
+  {
+   "fieldname": "column_break_vodl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Start Date"
+  },
+  {
+   "fieldname": "column_break_kjjc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "amortizable_value",
+   "fieldtype": "Currency",
+   "label": "Amortizable Value"
+  },
+  {
+   "fieldname": "write_off_section",
+   "fieldtype": "Section Break",
+   "label": "Write Off"
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "End Date"
+  },
+  {
+   "fieldname": "column_break_bjtl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "reason",
+   "fieldtype": "Select",
+   "label": "Reason",
+   "options": "\nAmortizacion total\nVenta o transmision\nDeterioro o destruccion\nRetirada por obsolescencia\nPerdida\nRobo\nOtras causas"
+  },
+  {
+   "fieldname": "column_break_pzbf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "reason_description",
+   "fieldtype": "Data",
+   "label": "Reason Description"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-01-17 05:45:07.243367",
+ "modified": "2025-01-17 09:37:48.641717",
  "modified_by": "Administrator",
  "module": "Spain Accounting",
  "name": "Amortization",
