@@ -5,34 +5,33 @@ frappe.query_reports["Modelo 303"] = {
 	"filters": [
         {
 			fieldname: "company",
-			label: __("Company"),
+			label: __("Compañía"),
 			fieldtype: "Link",
 			options: "Company", 
 			default: frappe.defaults.get_default('company')
 		},
 		{
             fieldname: "quarter",
-            label: __("Quarter"),
+            label: __("Trimestre"),
             fieldtype: "Select",
-            options: ["" ,"1Q", "2Q", "3Q", "4Q"],
+            options: ["" ,"1T", "2T", "3T", "4T"],
         },
         {
 			fieldname: "fiscal_year",
-			label: __("Fiscal Year"),
+			label: __("Año Fiscal"),
 			fieldtype: "Link",
 			options: "Fiscal Year", 
 			default: frappe.defaults.get_default('fiscal_year')
 		},
         {
             fieldname: "from_date",
-            label: __("From Date"),
+            label: __("Fecha de Inicio"),
             fieldtype: "Date",
         },
         {
             fieldname: "to_date",
-            label: __("To Date"),
+            label: __("Fecha de Fin"),
             fieldtype: "Date",
-
         }
 	]
 };

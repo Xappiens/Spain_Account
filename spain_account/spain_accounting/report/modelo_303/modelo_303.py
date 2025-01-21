@@ -20,10 +20,10 @@ def prepare_filters(filters):
 def get_columns():
     # Static columns
     columns = [
-        {"label": "Declarant NIF", "fieldname": "declarant_nif", "fieldtype": "Data", "width": 120},
-        {"label": "Declarant Name", "fieldname": "declarant_name", "fieldtype": "Data", "width": 140},
-        {"label": "Fiscal Year", "fieldname": "fiscal_year", "fieldtype": "Link", "options": "Fiscal Year", "width": 103},
-        {"label": "Period", "fieldname": "period", "fieldtype": "Data", "width": 90},
+        {"label": "NIF del Declarante", "fieldname": "declarant_nif", "fieldtype": "Data", "width": 120},
+        {"label": "Nombre del Declarante", "fieldname": "declarant_name", "fieldtype": "Data", "width": 140},
+        {"label": "Año Fiscal", "fieldname": "fiscal_year", "fieldtype": "Link", "options": "Fiscal Year", "width": 103},
+        {"label": "Periodo", "fieldname": "period", "fieldtype": "Data", "width": 90}
     ]
 
     # Fetch dynamic columns from Model Values

@@ -31,16 +31,17 @@ def initialize_filters(filters):
 def get_columns():
     """Define static and dynamic columns."""
     # Static columns
-    base_columns = [
-        {"label": "Declarant NIF", "fieldname": "declarant_nif", "fieldtype": "Data", "width": 100},
-        {"label": "Declarant Name", "fieldname": "declarant_name", "fieldtype": "Data", "width": 100},
-        {"label": "Section", "fieldname": "section", "fieldtype": "Data", "width": 100},
-        {"label": "Recipient NIF", "fieldname": "recipient_nif", "fieldtype": "Data", "width": 100},
-        {"label": "Recipient Name", "fieldname": "recipient_name", "fieldtype": "Data", "width": 100},
-        {"label": "Gross Payment Amount", "fieldname": "gross_payment_amount", "fieldtype": "Currency", "width": 100},
-        {"label": "Payment Type Code", "fieldname": "payment_type_code", "fieldtype": "Data", "width": 100},
-        {"label": "Fiscal Year", "fieldname": "fiscal_year", "fieldtype": "Data", "width": 100},
-    ]
+    base_columns =[
+    {"label": "NIF del Declarante", "fieldname": "declarant_nif", "fieldtype": "Data", "width": 100},
+    {"label": "Nombre del Declarante", "fieldname": "declarant_name", "fieldtype": "Data", "width": 100},
+    {"label": "Sección", "fieldname": "section", "fieldtype": "Data", "width": 100},
+    {"label": "NIF del Destinatario", "fieldname": "recipient_nif", "fieldtype": "Data", "width": 100},
+    {"label": "Nombre del Destinatario", "fieldname": "recipient_name", "fieldtype": "Data", "width": 100},
+    {"label": "Monto Bruto de Pago", "fieldname": "gross_payment_amount", "fieldtype": "Currency", "width": 100},
+    {"label": "Código del Tipo de Pago", "fieldname": "payment_type_code", "fieldtype": "Data", "width": 100},
+    {"label": "Año Fiscal", "fieldname": "fiscal_year", "fieldtype": "Data", "width": 100}
+]
+
 
     # Dynamic columns fetched from Model Values
     dynamic_columns = [
