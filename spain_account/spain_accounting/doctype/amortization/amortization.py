@@ -116,6 +116,7 @@ class Amortization(Document):
             # Pasar al siguiente año
             current_year += 1
         self.flags.dirty = True
+        self.save()  # Añadir esta línea
 
 
     def process_gl_create(self, year=None):
