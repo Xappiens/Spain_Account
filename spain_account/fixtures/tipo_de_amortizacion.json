@@ -1,0 +1,290 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Tipo de Amortizacion",
+  "modified": "2025-01-17 10:24:45.786294",
+  "name": "Obra civil general",
+  "percentaje": 2.0,
+  "type": "Obra civil general",
+  "years": 100
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Tipo de Amortizacion",
+  "modified": "2025-01-17 10:25:02.420582",
+  "name": "Pavimetos",
+  "percentaje": 6.0,
+  "type": "Pavimetos",
+  "years": 34
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Tipo de Amortizacion",
+  "modified": "2025-01-17 10:25:20.151640",
+  "name": "Infraestructuras y obras mineras",
+  "percentaje": 7.0,
+  "type": "Infraestructuras y obras mineras",
+  "years": 30
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Tipo de Amortizacion",
+  "modified": "2025-01-17 10:25:34.433779",
+  "name": "Centrales hidraulicas",
+  "percentaje": 2.0,
+  "type": "Centrales hidraulicas",
+  "years": 100
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Tipo de Amortizacion",
+  "modified": "2025-01-17 10:25:48.467566",
+  "name": "Centrales nucleares",
+  "percentaje": 3.0,
+  "type": "Centrales nucleares",
+  "years": 60
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Tipo de Amortizacion",
+  "modified": "2025-01-17 10:26:05.537398",
+  "name": "Centrales de carbon",
+  "percentaje": 4.0,
+  "type": "Centrales de carbon",
+  "years": 50
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Tipo de Amortizacion",
+  "modified": "2025-01-17 10:26:17.450689",
+  "name": "Centrales renovables",
+  "percentaje": 7.0,
+  "type": "Centrales renovables",
+  "years": 30
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Tipo de Amortizacion",
+  "modified": "2025-01-17 10:26:31.238590",
+  "name": "Otras centrales",
+  "percentaje": 5.0,
+  "type": "Otras centrales",
+  "years": 40
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Tipo de Amortizacion",
+  "modified": "2025-01-17 10:26:50.571478",
+  "name": "Edificios industriales",
+  "percentaje": 3.0,
+  "type": "Edificios industriales",
+  "years": 68
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Tipo de Amortizacion",
+  "modified": "2025-01-17 10:28:27.105422",
+  "name": "Terrenos de escombreras",
+  "percentaje": 4.0,
+  "type": "Terrenos de escombreras",
+  "years": 50
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Tipo de Amortizacion",
+  "modified": "2025-01-17 10:43:02.585793",
+  "name": "Almacen y Depositos",
+  "percentaje": 7.0,
+  "type": "Almacen y Depositos",
+  "years": 30
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Tipo de Amortizacion",
+  "modified": "2025-01-17 10:57:17.339078",
+  "name": "Edificios comerciales, administrativos, de servicios y viviendas",
+  "percentaje": 2.0,
+  "type": "Edificios comerciales, administrativos, de servicios y viviendas",
+  "years": 100
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Tipo de Amortizacion",
+  "modified": "2025-01-17 11:07:11.541188",
+  "name": "Cables",
+  "percentaje": 7.0,
+  "type": "Cables",
+  "years": 30
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Tipo de Amortizacion",
+  "modified": "2025-01-17 11:07:24.766427",
+  "name": "Resto instalaciones",
+  "percentaje": 10.0,
+  "type": "Resto instalaciones",
+  "years": 20
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Tipo de Amortizacion",
+  "modified": "2025-01-17 11:07:36.388145",
+  "name": "Maquinaria",
+  "percentaje": 12.0,
+  "type": "Maquinaria",
+  "years": 18
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Tipo de Amortizacion",
+  "modified": "2025-01-17 11:07:51.149596",
+  "name": "Equipos medicos y asimilados",
+  "percentaje": 15.0,
+  "type": "Equipos medicos y asimilados",
+  "years": 14
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Tipo de Amortizacion",
+  "modified": "2025-01-17 11:08:10.598399",
+  "name": "Locomotoras, vagoes y equipos de traccion",
+  "percentaje": 8.0,
+  "type": "Locomotoras, vagoes y equipos de traccion",
+  "years": 25
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Tipo de Amortizacion",
+  "modified": "2025-01-17 11:08:23.950316",
+  "name": "Buques, aeronaves",
+  "percentaje": 10.0,
+  "type": "Buques, aeronaves",
+  "years": 20
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Tipo de Amortizacion",
+  "modified": "2025-01-17 11:09:15.428094",
+  "name": "Elementos de transporte interno",
+  "percentaje": 10.0,
+  "type": "Elementos de transporte interno",
+  "years": 20
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Tipo de Amortizacion",
+  "modified": "2025-01-17 11:09:33.677813",
+  "name": "Elementos de transporte externo",
+  "percentaje": 16.0,
+  "type": "Elementos de transporte externo",
+  "years": 14
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Tipo de Amortizacion",
+  "modified": "2025-01-17 11:09:47.677359",
+  "name": "Autocamiones",
+  "percentaje": 20.0,
+  "type": "Autocamiones",
+  "years": 10
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Tipo de Amortizacion",
+  "modified": "2025-01-17 11:11:26.106913",
+  "name": "Lenceria",
+  "percentaje": 25.0,
+  "type": "Lenceria",
+  "years": 8
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Tipo de Amortizacion",
+  "modified": "2025-01-17 11:11:46.849976",
+  "name": "Cristaleria",
+  "percentaje": 50.0,
+  "type": "Cristaleria",
+  "years": 4
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Tipo de Amortizacion",
+  "modified": "2025-01-17 11:12:09.326316",
+  "name": "Utiles y herramientas",
+  "percentaje": 25.0,
+  "type": "Utiles y herramientas",
+  "years": 8
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Tipo de Amortizacion",
+  "modified": "2025-01-17 11:12:34.720172",
+  "name": "Moldes, matrices y modelos",
+  "percentaje": 33.0,
+  "type": "Moldes, matrices y modelos",
+  "years": 6
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Tipo de Amortizacion",
+  "modified": "2025-01-17 11:12:52.209812",
+  "name": "Otros enseres",
+  "percentaje": 15.0,
+  "type": "Otros enseres",
+  "years": 14
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Tipo de Amortizacion",
+  "modified": "2025-01-17 11:13:11.891332",
+  "name": "Equipos electrónicos",
+  "percentaje": 20.0,
+  "type": "Equipos electrónicos",
+  "years": 10
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Tipo de Amortizacion",
+  "modified": "2025-01-17 11:15:55.013517",
+  "name": "Equipos para procesos de informacion",
+  "percentaje": 25.0,
+  "type": "Equipos para procesos de informacion",
+  "years": 8
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Tipo de Amortizacion",
+  "modified": "2025-01-17 11:16:10.846977",
+  "name": "Sistemas y programas informaticos",
+  "percentaje": 33.0,
+  "type": "Sistemas y programas informaticos",
+  "years": 6
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Tipo de Amortizacion",
+  "modified": "2025-01-17 11:16:30.495889",
+  "name": "Prod. audiovisuales",
+  "percentaje": 33.0,
+  "type": "Prod. audiovisuales",
+  "years": 6
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Tipo de Amortizacion",
+  "modified": "2025-01-17 11:16:42.587050",
+  "name": "Otros elementos",
+  "percentaje": 10.0,
+  "type": "Otros elementos",
+  "years": 20
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Tipo de Amortizacion",
+  "modified": "2025-01-16 13:47:26.694016",
+  "name": "Mobiliario",
+  "percentaje": 10.0,
+  "type": "Mobiliario",
+  "years": 20
+ }
+]

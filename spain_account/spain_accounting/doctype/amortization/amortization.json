@@ -6,6 +6,7 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "detalles_tab",
   "product_information_section",
   "asset",
   "description",
@@ -13,7 +14,6 @@
   "column_break_bwhc",
   "purchase_date",
   "price",
-  "account",
   "invoice",
   "company",
   "amortization_information_section",
@@ -29,12 +29,17 @@
   "column_break_pzbf",
   "reason_description",
   "section_break_puuj",
-  "amortization_details"
+  "amortization_details",
+  "contabilidad_tab",
+  "asset_account",
+  "amortization_expense_account",
+  "accumulated_amortization_account",
+  "column_break_omvc"
  ],
  "fields": [
   {
    "fieldname": "asset",
-   "fieldtype": "Link",
+   "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Activo",
    "options": "Item",
@@ -75,14 +80,6 @@
    "fieldtype": "Currency",
    "in_list_view": 1,
    "label": "Precio de Compra",
-   "reqd": 1
-  },
-  {
-   "fieldname": "account",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Cuenta",
-   "options": "Account",
    "reqd": 1
   },
   {
@@ -127,7 +124,8 @@
   {
    "fieldname": "start_date",
    "fieldtype": "Date",
-   "label": "Fecha de Inicio"
+   "label": "Fecha de Inicio",
+   "reqd": 1
   },
   {
    "fieldname": "column_break_kjjc",
@@ -136,7 +134,8 @@
   {
    "fieldname": "amortizable_value",
    "fieldtype": "Currency",
-   "label": "V. Amortizable"
+   "label": "V. Amortizable",
+   "reqd": 1
   },
   {
    "fieldname": "write_off_section",
@@ -166,11 +165,47 @@
    "fieldname": "reason_description",
    "fieldtype": "Data",
    "label": "Descripcion de baja"
+  },
+  {
+   "fieldname": "detalles_tab",
+   "fieldtype": "Tab Break",
+   "label": "Detalles"
+  },
+  {
+   "fieldname": "contabilidad_tab",
+   "fieldtype": "Tab Break",
+   "label": "Contabilidad"
+  },
+  {
+   "fieldname": "amortization_expense_account",
+   "fieldtype": "Link",
+   "label": "Cuenta de Gastos de Amortizacion",
+   "options": "Account",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_omvc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "asset_account",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Cuenta de Activo",
+   "options": "Account",
+   "reqd": 1
+  },
+  {
+   "fieldname": "accumulated_amortization_account",
+   "fieldtype": "Link",
+   "label": "Cuenta de Amortizacion Acumulada",
+   "options": "Account",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-01-17 13:51:32.230329",
+ "modified": "2025-01-23 11:43:59.304729",
  "modified_by": "Administrator",
  "module": "Spain Accounting",
  "name": "Amortization",

@@ -204,6 +204,11 @@ doc_events = {
 # 	],
 # }
 
+scheduler_events = {
+    "daily": [
+        "spain_account.spain_accounting.doctype.amortization.amortization.process_amortizations_in_background"
+    ]
+}
 # Testing
 # -------
 
@@ -297,4 +302,7 @@ fixtures = [
             ]
         ],
     },
+    {
+        "doctype": "Tipo de Amortizacion",
+    }
 ]
