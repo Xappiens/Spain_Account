@@ -50,8 +50,10 @@ logger = setup_logger()
 class Amortization(Document):
     
     def on_update(self):
-        self.calculate_amortization()
-        frappe.db.commit()
+        if not self.flags.ignore_calculate_amortization:
+            self.flags.ignore_calculate_amortization = True
+            self.calculate_amortization()
+            frappe.db.commit()
     
     @frappe.whitelist()
     def calculate_amortization(self):
@@ -116,7 +118,8 @@ class Amortization(Document):
             # Pasar al siguiente año
             current_year += 1
         self.flags.dirty = True
-        self.save()  # Añadir esta línea
+        if not self.flags.from_update:
+            self.save(ignore_permissions=True)
 
 
     def process_gl_create(self, year=None):
@@ -221,28 +224,29 @@ class Amortization(Document):
 
 @frappe.whitelist()
 def get_filtered_accounts(doctype, txt, searchfield, start, page_len, filters):
-    """
-    Devuelve las cuentas que:
-    - No sean grupo (is_group = 0)
-    - Su account_number comience con '20' o '21'
-    - Opcionalmente filtradas por empresa
-    """
     conditions = ["is_group = 0"]
     values = []
-    # Filtro por número de cuenta
+    
+    # Filtro por número de cuenta (20% o 21%)
     conditions.append("(account_number LIKE %s OR account_number LIKE %s)")
     values.extend(["20%", "21%"])
-    # Si hay empresa, añadir al filtro
+    
+    # Filtro por texto de búsqueda
+    if txt:
+        conditions.append("(name LIKE %s OR account_number LIKE %s OR account_name LIKE %s)")
+        values.extend([f"%{txt}%", f"%{txt}%", f"%{txt}%"])
+    
     if filters.get("company"):
         conditions.append("company = %s")
         values.append(filters["company"])
+    
     query = f"""
         SELECT name, account_name
         FROM `tabAccount`
         WHERE {' AND '.join(conditions)}
         ORDER BY {searchfield} LIMIT %s, %s
     """
-    values.extend([start, page_len])  # Agrega los límites para paginación
+    values.extend([start, page_len])
     return frappe.db.sql(query, values)
 
 @frappe.whitelist()
