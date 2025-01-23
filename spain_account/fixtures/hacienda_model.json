@@ -1,6 +1,6 @@
 [
  {
-  "description": "Informe trimestral de impuestos retenidos sobre intereses, dividendos o pagos profesionales\n",
+  "description": "Quarterly report of withheld taxes on interest, dividends, or professional payments",
   "docstatus": 0,
   "doctype": "Hacienda Model",
   "fiscal_year": "2024",
@@ -11,7 +11,7 @@
     "parent": "Modelo 123",
     "parentfield": "model_values",
     "parenttype": "Hacienda Model",
-    "value_description": "Pagos totales sujetos a retención",
+    "value_description": "Total payments subject to withholding",
     "value_type": "Monetary Amount"
    },
    {
@@ -19,7 +19,7 @@
     "parent": "Modelo 123",
     "parentfield": "model_values",
     "parenttype": "Hacienda Model",
-    "value_description": "Total de retención en origen aplicada",
+    "value_description": "Total withholding tax applied",
     "value_type": "Monetary Amount"
    }
   ],
@@ -40,7 +40,7 @@
     "parent": "Modelo 180",
     "parentfield": "model_values",
     "parenttype": "Hacienda Model",
-    "value_description": "Alquiler total sujeto a retención en origen",
+    "value_description": "Total rent subject to withholding tax",
     "value_type": "Monetary Amount"
    },
    {
@@ -48,7 +48,7 @@
     "parent": "Modelo 180",
     "parentfield": "model_values",
     "parenttype": "Hacienda Model",
-    "value_description": "Alquiler total pagado",
+    "value_description": "Total rent paid",
     "value_type": "Monetary Amount"
    },
    {
@@ -56,17 +56,17 @@
     "parent": "Modelo 180",
     "parentfield": "model_values",
     "parenttype": "Hacienda Model",
-    "value_description": "Retención total del IRPF",
+    "value_description": "Total IRPF Withholding",
     "value_type": "Monetary Amount"
    }
   ],
-  "modified": "2025-01-21 13:21:48.163216",
+  "modified": "2025-01-02 12:11:24.000244",
   "name": "Modelo 180",
   "period": "",
   "periodicity": "Annual"
  },
  {
-  "description": "Declaración trimestral de retenciones a cuenta del IRPF sobre pagos.\n",
+  "description": "Quarterly declaration of IRPF (income tax) withholdings on payments.",
   "docstatus": 0,
   "doctype": "Hacienda Model",
   "fiscal_year": "2023",
@@ -77,7 +77,7 @@
     "parent": "Modelo 111",
     "parentfield": "model_values",
     "parenttype": "Hacienda Model",
-    "value_description": "Número total de proveedores con retención del IRPF",
+    "value_description": "Total number of suppliers with IRPF withholding",
     "value_type": "Integer (count)"
    },
    {
@@ -85,7 +85,7 @@
     "parent": "Modelo 111",
     "parentfield": "model_values",
     "parenttype": "Hacienda Model",
-    "value_description": "Número total de empleados con retención del IRPF",
+    "value_description": "Total number of employees with IRPF withholding",
     "value_type": "Integer (count)"
    },
    {
@@ -93,7 +93,7 @@
     "parent": "Modelo 111",
     "parentfield": "model_values",
     "parenttype": "Hacienda Model",
-    "value_description": "Importe total del IRPF retenido a proveedores",
+    "value_description": "Total IRPF amount withheld from suppliers",
     "value_type": "Monetary Amount"
    },
    {
@@ -101,17 +101,17 @@
     "parent": "Modelo 111",
     "parentfield": "model_values",
     "parenttype": "Hacienda Model",
-    "value_description": "Importe total del IRPF retenido a los empleados",
+    "value_description": "Total IRPF amount withheld from employees",
     "value_type": "Monetary Amount"
    }
   ],
-  "modified": "2025-01-21 13:06:42.713504",
+  "modified": "2024-12-19 13:31:44.259117",
   "name": "Modelo 111",
   "period": "2Q",
   "periodicity": "Quarterly"
  },
  {
-  "description": "Declaración de IVA (IVA) para presentación trimestral\n",
+  "description": "Declaration of VAT (IVA) for quarterly submission",
   "docstatus": 0,
   "doctype": "Hacienda Model",
   "fiscal_year": "2024",
@@ -122,7 +122,7 @@
     "parent": "Modelo 303",
     "parentfield": "model_values",
     "parenttype": "Hacienda Model",
-    "value_description": "Monto Total de Ventas Sujeto a IVA",
+    "value_description": "Total Sales Amount Subject to VAT",
     "value_type": "Integer (count)"
    },
    {
@@ -130,7 +130,7 @@
     "parent": "Modelo 303",
     "parentfield": "model_values",
     "parenttype": "Hacienda Model",
-    "value_description": "Total IVA pagado en compras",
+    "value_description": "Total VAT Paid on Purchases",
     "value_type": "Monetary Amount"
    },
    {
@@ -138,7 +138,7 @@
     "parent": "Modelo 303",
     "parentfield": "model_values",
     "parenttype": "Hacienda Model",
-    "value_description": "Total IVA recaudado sobre las ventas",
+    "value_description": "Total VAT Collected on Sales",
     "value_type": "Monetary Amount"
    },
    {
@@ -146,11 +146,11 @@
     "parent": "Modelo 303",
     "parentfield": "model_values",
     "parenttype": "Hacienda Model",
-    "value_description": "IVA Neto a Pagar (IVA Recaudado - IVA Pagado)",
+    "value_description": "Net VAT Payable (VAT Collected - VAT Paid)",
     "value_type": "Monetary Amount"
    }
   ],
-  "modified": "2025-01-21 13:13:22.090887",
+  "modified": "2024-12-27 11:31:06.899294",
   "name": "Modelo 303",
   "period": "2Q",
   "periodicity": "Quarterly"
@@ -167,7 +167,7 @@
     "parent": "Modelo 347",
     "parentfield": "model_values",
     "parenttype": "Hacienda Model",
-    "value_description": "Clientes totales",
+    "value_description": "Total Customers ",
     "value_type": "Integer (count)"
    },
    {
@@ -175,7 +175,7 @@
     "parent": "Modelo 347",
     "parentfield": "model_values",
     "parenttype": "Hacienda Model",
-    "value_description": "Ventas totales a clientes",
+    "value_description": "Total Sales to Customers",
     "value_type": "Monetary Amount"
    },
    {
@@ -183,7 +183,7 @@
     "parent": "Modelo 347",
     "parentfield": "model_values",
     "parenttype": "Hacienda Model",
-    "value_description": "Proveedores totales",
+    "value_description": "Total Suppliers",
     "value_type": "Integer (count)"
    },
    {
@@ -191,17 +191,17 @@
     "parent": "Modelo 347",
     "parentfield": "model_values",
     "parenttype": "Hacienda Model",
-    "value_description": "Compras totales a proveedores",
+    "value_description": "Total Purchases from Suppliers",
     "value_type": "Monetary Amount"
    }
   ],
-  "modified": "2025-01-21 13:10:35.609970",
+  "modified": "2024-12-26 13:18:23.586030",
   "name": "Modelo 347",
   "period": "",
   "periodicity": "Quarterly"
  },
  {
-  "description": "Declaración trimestral de operaciones intracomunitarias\n",
+  "description": "Quarterly declaration of intra-EU operations",
   "docstatus": 0,
   "doctype": "Hacienda Model",
   "fiscal_year": "2024",
@@ -212,7 +212,7 @@
     "parent": "Modelo 349",
     "parentfield": "model_values",
     "parenttype": "Hacienda Model",
-    "value_description": "Total de bienes suministrados a clientes de la UE",
+    "value_description": "Total Goods Supplied to EU Customers",
     "value_type": "Monetary Amount"
    },
    {
@@ -220,7 +220,7 @@
     "parent": "Modelo 349",
     "parentfield": "model_values",
     "parenttype": "Hacienda Model",
-    "value_description": "Impuesto retenido sobre suministros de la UE",
+    "value_description": "Tax Withheld on EU Supplies",
     "value_type": "Monetary Amount"
    },
    {
@@ -228,7 +228,7 @@
     "parent": "Modelo 349",
     "parentfield": "model_values",
     "parenttype": "Hacienda Model",
-    "value_description": "Total de bienes adquiridos a proveedores de la UE",
+    "value_description": "Total Goods Purchased from EU Suppliers",
     "value_type": "Monetary Amount"
    },
    {
@@ -236,7 +236,7 @@
     "parent": "Modelo 349",
     "parentfield": "model_values",
     "parenttype": "Hacienda Model",
-    "value_description": "Impuesto retenido sobre compras en la UE",
+    "value_description": "Tax Withheld on EU Purchases",
     "value_type": "Monetary Amount"
    },
    {
@@ -244,7 +244,7 @@
     "parent": "Modelo 349",
     "parentfield": "model_values",
     "parenttype": "Hacienda Model",
-    "value_description": "Total de servicios prestados dentro de la UE",
+    "value_description": "Total Intra-EU Services Provided",
     "value_type": "Monetary Amount"
    },
    {
@@ -252,7 +252,7 @@
     "parent": "Modelo 349",
     "parentfield": "model_values",
     "parenttype": "Hacienda Model",
-    "value_description": "Impuesto retenido sobre servicios intracomunitarios",
+    "value_description": "Tax Withheld on Intra-EU Services",
     "value_type": "Monetary Amount"
    },
    {
@@ -260,7 +260,7 @@
     "parent": "Modelo 349",
     "parentfield": "model_values",
     "parenttype": "Hacienda Model",
-    "value_description": "Total de servicios recibidos dentro de la UE",
+    "value_description": "Total Intra-EU Services Received",
     "value_type": "Monetary Amount"
    },
    {
@@ -268,11 +268,11 @@
     "parent": "Modelo 349",
     "parentfield": "model_values",
     "parenttype": "Hacienda Model",
-    "value_description": "Impuesto retenido sobre ingresos intracomunitarios",
+    "value_description": "Tax Withheld on Intra-EU Received",
     "value_type": "Monetary Amount"
    }
   ],
-  "modified": "2025-01-21 13:28:21.664129",
+  "modified": "2025-01-09 13:25:59.424274",
   "name": "Modelo 349",
   "period": "4Q",
   "periodicity": "Quarterly"

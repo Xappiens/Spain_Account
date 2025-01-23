@@ -281,6 +281,15 @@
  {
   "docstatus": 0,
   "doctype": "Tipo de Amortizacion",
+  "modified": "2025-01-23 12:52:19.457049",
+  "name": "Subestaciones. Redes de transporte y distribución de energía",
+  "percentaje": 5.0,
+  "type": "Subestaciones. Redes de transporte y distribución de energía",
+  "years": 40
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Tipo de Amortizacion",
   "modified": "2025-01-16 13:47:26.694016",
   "name": "Mobiliario",
   "percentaje": 10.0,
