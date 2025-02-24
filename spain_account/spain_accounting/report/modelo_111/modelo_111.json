@@ -10,7 +10,7 @@
  "is_standard": "Yes",
  "json": "{}",
  "letterhead": null,
- "modified": "2024-11-20 13:20:55.771786",
+ "modified": "2025-01-21 10:31:08.628228",
  "modified_by": "Administrator",
  "module": "Spain Accounting",
  "name": "Modelo 111",
@@ -22,7 +22,9 @@
  "roles": [
   {
    "role": "System Manager"
+  },
+  {
+   "role": "Accounts Manager"
   }
- ],
- "timeout": 0
+ ]
 }

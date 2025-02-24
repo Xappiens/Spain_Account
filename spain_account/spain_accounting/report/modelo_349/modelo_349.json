@@ -9,7 +9,7 @@
  "idx": 0,
  "is_standard": "Yes",
  "letterhead": null,
- "modified": "2025-01-08 11:20:42.584042",
+ "modified": "2025-01-21 10:31:54.948240",
  "modified_by": "Administrator",
  "module": "Spain Accounting",
  "name": "Modelo 349",
@@ -21,7 +21,9 @@
  "roles": [
   {
    "role": "System Manager"
+  },
+  {
+   "role": "Accounts Manager"
   }
- ],
- "timeout": 0
+ ]
 }

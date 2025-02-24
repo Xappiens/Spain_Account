@@ -81,3 +81,46 @@
 2025-01-23 11:12:33,772 - spain_account.spain_accounting.doctype.amortization.amortization - INFO - GL Entries created successfully for AMR-2025-0000002, year: 2025
 2025-01-23 11:12:33,774 - spain_account.spain_accounting.doctype.amortization.amortization - INFO - GL Entry created successfully for AMR-2025-0000002, year 2025
 2025-01-23 11:17:10,122 - spain_account.spain_accounting.doctype.amortization.amortization - INFO - Not 31st December. Skipping amortization process.
+2025-01-23 11:58:18,920 - spain_account.spain_accounting.doctype.amortization.amortization - INFO - Processing GL Entries for AMR-2025-0000001, year 2024
+2025-01-23 11:58:20,358 - spain_account.spain_accounting.doctype.amortization.amortization - INFO - GL Entries created successfully for AMR-2025-0000001, year: 2024
+2025-01-23 11:58:20,362 - spain_account.spain_accounting.doctype.amortization.amortization - INFO - GL Entry created successfully for AMR-2025-0000001, year 2024
+2025-01-23 12:16:45,740 - spain_account.spain_accounting.doctype.amortization.amortization - INFO - Processing GL Entries for AMR-2025-0000002, year 2024
+2025-01-23 12:16:47,617 - spain_account.spain_accounting.doctype.amortization.amortization - INFO - GL Entries created successfully for AMR-2025-0000002, year: 2024
+2025-01-23 12:16:47,621 - spain_account.spain_accounting.doctype.amortization.amortization - INFO - GL Entry created successfully for AMR-2025-0000002, year 2024
+2025-01-28 20:11:49,289 - spain_account.spain_accounting.doctype.amortization.amortization - INFO - Processing GL Entries for AMR-2025-0000002, year 2024
+2025-01-28 20:11:49,296 - spain_account.spain_accounting.doctype.amortization.amortization - INFO - GL Entries already exist for AMR-2025-0000002, year 2024
+2025-01-28 20:12:15,386 - spain_account.spain_accounting.doctype.amortization.amortization - INFO - Processing GL Entries for AMR-2025-0000001, year 2024
+2025-01-28 20:12:15,391 - spain_account.spain_accounting.doctype.amortization.amortization - INFO - GL Entries already exist for AMR-2025-0000001, year 2024
+2025-01-28 20:15:55,156 - spain_account.spain_accounting.doctype.amortization.amortization - INFO - Processing GL Entries for AMR-2025-0000003, year 2024
+2025-01-28 20:15:56,413 - spain_account.spain_accounting.doctype.amortization.amortization - INFO - GL Entries created successfully for AMR-2025-0000003, year: 2024
+2025-01-28 20:15:56,415 - spain_account.spain_accounting.doctype.amortization.amortization - INFO - GL Entry created successfully for AMR-2025-0000003, year 2024
+2025-01-28 20:18:18,681 - spain_account.spain_accounting.doctype.amortization.amortization - INFO - Processing GL Entries for AMR-2025-0000004, year 2024
+2025-01-28 20:18:19,762 - spain_account.spain_accounting.doctype.amortization.amortization - INFO - GL Entries created successfully for AMR-2025-0000004, year: 2024
+2025-01-28 20:18:19,764 - spain_account.spain_accounting.doctype.amortization.amortization - INFO - GL Entry created successfully for AMR-2025-0000004, year 2024
+2025-01-28 22:57:13,107 - spain_account.spain_accounting.doctype.amortization.amortization - INFO - Processing GL Entries for AMR-2025-0000005, year 2024
+2025-01-28 22:57:14,354 - spain_account.spain_accounting.doctype.amortization.amortization - INFO - GL Entries created successfully for AMR-2025-0000005, year: 2024
+2025-01-28 22:57:14,357 - spain_account.spain_accounting.doctype.amortization.amortization - INFO - GL Entry created successfully for AMR-2025-0000005, year 2024
+2025-01-28 23:00:27,364 - spain_account.spain_accounting.doctype.amortization.amortization - INFO - Processing GL Entries for AMR-2025-0000006, year 2024
+2025-01-28 23:00:29,050 - spain_account.spain_accounting.doctype.amortization.amortization - INFO - GL Entries created successfully for AMR-2025-0000006, year: 2024
+2025-01-28 23:00:29,054 - spain_account.spain_accounting.doctype.amortization.amortization - INFO - GL Entry created successfully for AMR-2025-0000006, year 2024
+2025-01-28 23:03:06,166 - spain_account.spain_accounting.doctype.amortization.amortization - INFO - Processing GL Entries for AMR-2025-0000007, year 2024
+2025-01-28 23:03:07,058 - spain_account.spain_accounting.doctype.amortization.amortization - INFO - GL Entries created successfully for AMR-2025-0000007, year: 2024
+2025-01-28 23:03:07,061 - spain_account.spain_accounting.doctype.amortization.amortization - INFO - GL Entry created successfully for AMR-2025-0000007, year 2024
+2025-01-28 23:04:48,467 - spain_account.spain_accounting.doctype.amortization.amortization - INFO - Processing GL Entries for AMR-2025-0000008, year 2024
+2025-01-28 23:04:49,320 - spain_account.spain_accounting.doctype.amortization.amortization - INFO - GL Entries created successfully for AMR-2025-0000008, year: 2024
+2025-01-28 23:04:49,324 - spain_account.spain_accounting.doctype.amortization.amortization - INFO - GL Entry created successfully for AMR-2025-0000008, year 2024
+2025-01-28 23:06:56,183 - spain_account.spain_accounting.doctype.amortization.amortization - INFO - Processing GL Entries for AMR-2025-0000009, year 2024
+2025-01-28 23:06:57,310 - spain_account.spain_accounting.doctype.amortization.amortization - INFO - GL Entries created successfully for AMR-2025-0000009, year: 2024
+2025-01-28 23:06:57,312 - spain_account.spain_accounting.doctype.amortization.amortization - INFO - GL Entry created successfully for AMR-2025-0000009, year 2024
+2025-01-28 23:38:12,363 - spain_account.spain_accounting.doctype.amortization.amortization - INFO - Processing GL Entries for AMR-2025-0000011, year 2024
+2025-01-28 23:38:13,156 - spain_account.spain_accounting.doctype.amortization.amortization - INFO - GL Entries created successfully for AMR-2025-0000011, year: 2024
+2025-01-28 23:38:13,158 - spain_account.spain_accounting.doctype.amortization.amortization - INFO - GL Entry created successfully for AMR-2025-0000011, year 2024
+2025-01-28 23:40:15,137 - spain_account.spain_accounting.doctype.amortization.amortization - INFO - Processing GL Entries for AMR-2025-0000012, year 2024
+2025-01-28 23:40:16,049 - spain_account.spain_accounting.doctype.amortization.amortization - INFO - GL Entries created successfully for AMR-2025-0000012, year: 2024
+2025-01-28 23:40:16,052 - spain_account.spain_accounting.doctype.amortization.amortization - INFO - GL Entry created successfully for AMR-2025-0000012, year 2024
+2025-01-29 13:52:16,326 - spain_account.spain_accounting.doctype.amortization.amortization - INFO - Processing GL Entries for AMR-2025-0000013, year 2024
+2025-01-29 13:52:17,671 - spain_account.spain_accounting.doctype.amortization.amortization - INFO - GL Entries created successfully for AMR-2025-0000013, year: 2024
+2025-01-29 13:52:17,673 - spain_account.spain_accounting.doctype.amortization.amortization - INFO - GL Entry created successfully for AMR-2025-0000013, year 2024
+2025-01-29 13:55:09,508 - spain_account.spain_accounting.doctype.amortization.amortization - INFO - Processing GL Entries for AMR-2025-0000014, year 2024
+2025-01-29 13:55:10,889 - spain_account.spain_accounting.doctype.amortization.amortization - INFO - GL Entries created successfully for AMR-2025-0000014, year: 2024
+2025-01-29 13:55:10,892 - spain_account.spain_accounting.doctype.amortization.amortization - INFO - GL Entry created successfully for AMR-2025-0000014, year 2024

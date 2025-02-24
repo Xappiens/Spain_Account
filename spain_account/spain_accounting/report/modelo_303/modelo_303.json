@@ -10,7 +10,7 @@
  "is_standard": "Yes",
  "json": "{}",
  "letterhead": null,
- "modified": "2024-11-21 13:17:55.812387",
+ "modified": "2025-01-21 10:31:00.051407",
  "modified_by": "Administrator",
  "module": "Spain Accounting",
  "name": "Modelo 303",
@@ -22,7 +22,9 @@
  "roles": [
   {
    "role": "System Manager"
+  },
+  {
+   "role": "Accounts Manager"
   }
- ],
- "timeout": 0
+ ]
 }

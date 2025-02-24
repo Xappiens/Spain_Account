@@ -9,7 +9,7 @@
  "idx": 0,
  "is_standard": "Yes",
  "letterhead": null,
- "modified": "2025-01-02 08:32:11.382707",
+ "modified": "2025-01-21 10:32:32.722623",
  "modified_by": "Administrator",
  "module": "Spain Accounting",
  "name": "Modelo 115",
@@ -21,7 +21,9 @@
  "roles": [
   {
    "role": "System Manager"
+  },
+  {
+   "role": "Accounts Manager"
   }
- ],
- "timeout": 0
+ ]
 }

@@ -169,9 +169,9 @@ override_doctype_class = {
 
 
 doc_events = {
-    "Purchase Invoice": {
-        "validate": "spain_account.spain_accounting.py.purchase_invoice.modify_tds_tax_row"
-    },
+    # "Purchase Invoice": {
+    #     "validate": "spain_account.spain_accounting.py.purchase_invoice.modify_tds_tax_row"
+    # },
     "Company": {
         "before_insert": "spain_account.spain_accounting.py.company.create_account_enqueue",
         
