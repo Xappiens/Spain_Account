@@ -1,0 +1,73 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:action_name",
+ "creation": "2025-02-25 08:48:57.377609",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "action_name",
+  "adquired_date",
+  "column_break_goiu",
+  "adquired_value",
+  "actual_value",
+  "accumulated_rent"
+ ],
+ "fields": [
+  {
+   "fieldname": "action_name",
+   "fieldtype": "Data",
+   "label": "Nombre de la acci\u00f3n",
+   "unique": 1
+  },
+  {
+   "fieldname": "adquired_date",
+   "fieldtype": "Date",
+   "label": "Fecha de compra"
+  },
+  {
+   "fieldname": "column_break_goiu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "adquired_value",
+   "fieldtype": "Currency",
+   "label": "Valor de compra"
+  },
+  {
+   "fieldname": "actual_value",
+   "fieldtype": "Currency",
+   "label": "Valor actual"
+  },
+  {
+   "fieldname": "accumulated_rent",
+   "fieldtype": "Currency",
+   "label": "Rentabilidad acumulada"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-02-25 08:52:30.642183",
+ "modified_by": "Administrator",
+ "module": "Justification",
+ "name": "Acciones Bolsa",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
