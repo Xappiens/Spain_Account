@@ -1,0 +1,99 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-02-24 10:39:57.615608",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "detalles_section",
+  "company",
+  "account",
+  "interest_rate",
+  "interest",
+  "column_break_mmhd",
+  "grant_date",
+  "end_date",
+  "section_break_ztqb",
+  "amortization"
+ ],
+ "fields": [
+  {
+   "fieldname": "detalles_section",
+   "fieldtype": "Section Break",
+   "label": "Detalles"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Empresa",
+   "options": "Company"
+  },
+  {
+   "fieldname": "column_break_mmhd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "\n",
+   "fieldname": "grant_date",
+   "fieldtype": "Date",
+   "label": "Fecha de concesi\u00f3n"
+  },
+  {
+   "fieldname": "account",
+   "fieldtype": "Link",
+   "label": "Cuenta",
+   "options": "Account"
+  },
+  {
+   "fieldname": "interest_rate",
+   "fieldtype": "Select",
+   "label": "Tipo de Inter\u00e9s",
+   "options": "\nFijo\nVariable"
+  },
+  {
+   "depends_on": "eval:doc.interest_rate != \"\"",
+   "fieldname": "interest",
+   "fieldtype": "Percent",
+   "label": "Inter\u00e9s"
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "Fecha Fin"
+  },
+  {
+   "fieldname": "section_break_ztqb",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amortization",
+   "fieldtype": "Table",
+   "label": "Tabla de Amortizaci\u00f3n",
+   "options": "Linea de Prestamo"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-02-24 12:19:45.828582",
+ "modified_by": "Administrator",
+ "module": "Justification",
+ "name": "Prestamo",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
