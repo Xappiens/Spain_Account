@@ -218,7 +218,7 @@
    "property": "read_only_depends_on",
    "property_type": "Data",
    "row_name": null,
-   "value": "eval:doc.custom_no_cuenta_personalizado != 1;"
+   "value": "eval:!doc.custom_no_cuenta_personalizado || doc.custom_no_cuenta_personalizado != 1"
   },
   {
    "_assign": null,

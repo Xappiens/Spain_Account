@@ -2,13 +2,14 @@ frappe.ui.form.on("Account", {
     parent_account(frm) {
         set_account_number(frm);
     },
-    is_group(frm) {
-        set_account_number(frm);
-    },
+    // is_group(frm) {
+    //     set_account_number(frm);
+    // },
 });
 
 // * FUNCTION TO SET ACCOUNT NUMBER BASED ON PARENT ACCOUNT AND IS_GROUP 
 function set_account_number(frm) {
+    console.log("set_account_number", frm.doc);
     if (!frm.doc.custom_no_cuenta_personalizado) {
         
         // Use async/await to wait for the old parent account value
@@ -46,6 +47,7 @@ function set_account_number(frm) {
                         }
                     }
 
+                    console.log("new_account_number", new_account_number);
                     frm.set_value("account_number", new_account_number.toString());
                 }
             });

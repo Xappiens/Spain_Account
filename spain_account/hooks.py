@@ -176,9 +176,9 @@ doc_events = {
         "before_insert": "spain_account.spain_accounting.py.company.create_account_enqueue",
         
     },
-    "Employee": {
-        "after_insert": "spain_account.spain_accounting.py.employee.create_employee_account"
-    },
+    # "Employee": {
+    #     "after_insert": "spain_account.spain_accounting.py.employee.create_employee_account"
+    # },
     
 }
 
