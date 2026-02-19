@@ -19,8 +19,10 @@ def execute(filters=None):
     durante el año natural. La información se desglosa trimestralmente.
     
     Fuente de datos:
-    - Purchase Invoice (facturas de compra) -> Proveedores (excluye rectificativas)
-    - Sales Invoice (facturas de venta) -> Clientes (excluye abonos)
+    - Purchase Invoice (facturas de compra) -> Proveedores
+      * Incluye facturas normales (suman) y rectificativas (restan)
+    - Sales Invoice (facturas de venta) -> Clientes
+      * Incluye facturas normales (suman) y abonos (restan)
     """
     filters = prepare_filters(filters)
     columns = get_columns()
@@ -148,13 +150,13 @@ def get_data(filters):
     Obtiene los datos del reporte Modelo 347.
     
     Fuentes:
-    1. Purchase Invoice -> Proveedores (excluyendo rectificativas: is_return = 1)
-    2. Sales Invoice -> Clientes (excluyendo abonos: is_return = 1)
+    1. Purchase Invoice -> Proveedores (normales suman, rectificativas restan)
+    2. Sales Invoice -> Clientes (normales suman, abonos restan)
     
     Proceso:
-    1. Obtiene todas las facturas del período
+    1. Obtiene todas las facturas del período (incluidas las de retorno)
     2. Agrupa por tercero
-    3. Calcula importes trimestrales basándose en los GL Entry de cada factura
+    3. Calcula importes trimestrales NETOS (credit-debit o debit-credit según tipo)
     4. Filtra por umbral mínimo de 3.005,06€
     """
     company = filters.company
@@ -213,24 +215,24 @@ def get_purchase_invoice_data(company, from_date, to_date):
     """
     Obtiene los datos de las facturas de compra.
     
-    - Incluye todas las Purchase Invoice del período
-    - EXCLUYE las facturas rectificativas (is_return = 1)
+    - Incluye TODAS las Purchase Invoice del período (normales Y rectificativas)
+    - Las rectificativas (is_return = 1) tienen importes negativos que se restan
     - EXCLUYE las facturas marcadas con custom_347 = 1
     - Obtiene los importes de los GL Entry asociados
     """
-    # Obtener facturas de compra (excluyendo rectificativas y excluidas del 347)
+    # Obtener TODAS las facturas de compra (normales y rectificativas)
     invoices = frappe.db.sql("""
         SELECT 
             pi.name,
             pi.supplier,
             pi.posting_date,
             pi.grand_total,
-            pi.credit_to
+            pi.credit_to,
+            pi.is_return
         FROM `tabPurchase Invoice` pi
         WHERE pi.company = %(company)s
           AND pi.posting_date BETWEEN %(from_date)s AND %(to_date)s
           AND pi.docstatus = 1
-          AND pi.is_return = 0
           AND IFNULL(pi.custom_347, 0) = 0
     """, {
         "company": company,
@@ -256,15 +258,16 @@ def get_purchase_invoice_data(company, from_date, to_date):
         posting_date = getdate(invoice.posting_date)
         quarter = get_quarter(posting_date.month)
         
-        # Obtener el importe del GL Entry (credit en cuenta de proveedor)
-        amount = get_invoice_amount_from_gl(
+        # Obtener el importe del GL Entry
+        # Para proveedores: credit - debit (las rectificativas vienen en debit)
+        amount = get_invoice_amount_from_gl_net(
             gl_entries, 
             invoice.name, 
             invoice.credit_to,
-            "credit"
+            "supplier"
         )
         
-        # Si no hay GL Entry, usar grand_total
+        # Si no hay GL Entry, usar grand_total (ya viene con signo correcto)
         if amount == 0:
             amount = flt(invoice.grand_total)
         
@@ -280,24 +283,24 @@ def get_sales_invoice_data(company, from_date, to_date):
     """
     Obtiene los datos de las facturas de venta.
     
-    - Incluye todas las Sales Invoice del período
-    - EXCLUYE las facturas de abono (is_return = 1)
+    - Incluye TODAS las Sales Invoice del período (normales Y abonos)
+    - Los abonos (is_return = 1) tienen importes negativos que se restan
     - EXCLUYE las facturas marcadas con custom_347 = 1
     - Obtiene los importes de los GL Entry asociados
     """
-    # Obtener facturas de venta (excluyendo abonos y excluidas del 347)
+    # Obtener TODAS las facturas de venta (normales y abonos)
     invoices = frappe.db.sql("""
         SELECT 
             si.name,
             si.customer,
             si.posting_date,
             si.grand_total,
-            si.debit_to
+            si.debit_to,
+            si.is_return
         FROM `tabSales Invoice` si
         WHERE si.company = %(company)s
           AND si.posting_date BETWEEN %(from_date)s AND %(to_date)s
           AND si.docstatus = 1
-          AND si.is_return = 0
           AND IFNULL(si.custom_347, 0) = 0
     """, {
         "company": company,
@@ -323,15 +326,16 @@ def get_sales_invoice_data(company, from_date, to_date):
         posting_date = getdate(invoice.posting_date)
         quarter = get_quarter(posting_date.month)
         
-        # Obtener el importe del GL Entry (debit en cuenta de cliente)
-        amount = get_invoice_amount_from_gl(
+        # Obtener el importe del GL Entry
+        # Para clientes: debit - credit (los abonos vienen en credit)
+        amount = get_invoice_amount_from_gl_net(
             gl_entries, 
             invoice.name, 
             invoice.debit_to,
-            "debit"
+            "customer"
         )
         
-        # Si no hay GL Entry, usar grand_total
+        # Si no hay GL Entry, usar grand_total (ya viene con signo correcto)
         if amount == 0:
             amount = flt(invoice.grand_total)
         
@@ -366,18 +370,30 @@ def get_gl_entries_for_invoices(invoice_names, voucher_type, company):
     }, as_dict=True)
 
 
-def get_invoice_amount_from_gl(gl_entries, invoice_name, party_account, field):
+def get_invoice_amount_from_gl_net(gl_entries, invoice_name, party_account, party_type):
     """
-    Obtiene el importe de la factura desde los GL Entry.
+    Obtiene el importe NETO de la factura desde los GL Entry.
     
-    - Para Purchase Invoice: suma el credit de la cuenta credit_to (cuenta de proveedor)
-    - Para Sales Invoice: suma el debit de la cuenta debit_to (cuenta de cliente)
+    - Para Proveedores (Purchase Invoice): credit - debit
+      * Factura normal: credit > 0, debit = 0 → positivo
+      * Factura rectificativa: credit = 0, debit > 0 → negativo
+    
+    - Para Clientes (Sales Invoice): debit - credit
+      * Factura normal: debit > 0, credit = 0 → positivo
+      * Factura de abono: debit = 0, credit > 0 → negativo
     """
-    amount = 0
+    total_debit = 0
+    total_credit = 0
+    
     for entry in gl_entries:
         if entry.voucher_no == invoice_name and entry.account == party_account:
-            amount += flt(entry.get(field, 0))
-    return amount
+            total_debit += flt(entry.get("debit", 0))
+            total_credit += flt(entry.get("credit", 0))
+    
+    if party_type == "supplier":
+        return total_credit - total_debit
+    else:  # customer
+        return total_debit - total_credit
 
 
 def get_quarter(month):
