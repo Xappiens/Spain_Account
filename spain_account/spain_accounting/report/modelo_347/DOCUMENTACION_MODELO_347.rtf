@@ -1,0 +1,505 @@
+{\rtf1\ansi\deff0\nouicompat{\fonttbl{\f0\fswiss\fcharset0 Arial;}{\f1\fswiss\fcharset0 Arial Black;}{\f2\fmodern\fcharset0 Courier New;}}
+{\colortbl ;\red0\green51\blue102;\red51\green51\blue51;\red0\green102\blue0;\red153\green0\blue0;\red245\green245\blue245;\red255\green255\blue255;\red0\green0\blue128;\red128\green0\blue0;}
+\viewkind4\uc1
+
+\pard\qc\sb400\sa200
+{\f1\fs36\cf1 REPORTE MODELO 347\par}
+{\f0\fs24\cf2 Declaraci\'f3n Anual de Operaciones con Terceras Personas\par}
+{\f0\fs20\cf2 Documentaci\'f3n T\'e9cnica y Funcional\par}
+\pard\sb200\sa100
+{\f0\fs20\cf2 ____________________________________________________________________________________\par}
+
+\pard\sb300\sa100
+{\f1\fs28\cf1 1. \'bfQU\'c9 ES EL MODELO 347?\par}
+\pard\li300\sb100\sa100
+{\f0\fs22\cf2 El Modelo 347 es una declaraci\'f3n informativa que deben presentar ante la Agencia Tributaria (AEAT) todos los empresarios y profesionales que hayan realizado operaciones con terceras personas por importe superior a \b 3.005,06\u8364?\b0  (IVA incluido) durante el a\'f1o natural.\par}
+
+\pard\li300\sb100\sa100
+{\f0\fs22\cf3\b Caracter\'edsticas principales:\b0\cf2\par}
+\pard\li600\sb50\sa50
+{\f0\fs22\cf2 \bullet  \b Plazo de presentaci\'f3n:\b0  Febrero del a\'f1o siguiente\par}
+{\f0\fs22\cf2 \bullet  \b Umbral m\'ednimo:\b0  3.005,06\u8364? anuales por tercero\par}
+{\f0\fs22\cf2 \bullet  \b Desglose:\b0  Trimestral (T1, T2, T3, T4)\par}
+{\f0\fs22\cf2 \bullet  \b Clave A:\b0  Adquisiciones (proveedores)\par}
+{\f0\fs22\cf2 \bullet  \b Clave B:\b0  Entregas (clientes)\par}
+
+\pard\sb200\sa100
+{\f0\fs20\cf2 ____________________________________________________________________________________\par}
+
+\pard\sb300\sa100
+{\f1\fs28\cf1 2. FUENTES DE DATOS DEL REPORTE\par}
+
+\pard\li300\sb150\sa100
+{\f0\fs24\cf7\b 2.1 FACTURAS DE COMPRA (Proveedores)\b0\cf2\par}
+\pard\li300\sb100\sa100
+{\f0\fs22\cf2 El reporte obtiene los datos de proveedores desde el doctype:\par}
+
+\pard\li600\sb100\sa50
+{\f2\fs20\cf4\b Purchase Invoice\b0\cf2\par}
+\pard\li600\sb50\sa50
+{\f0\fs22\cf2 \bullet  Campo \b supplier\b0 : Identificador del proveedor\par}
+{\f0\fs22\cf2 \bullet  Campo \b posting_date\b0 : Fecha de contabilizaci\'f3n (determina el trimestre)\par}
+{\f0\fs22\cf2 \bullet  Campo \b grand_total\b0 : Importe total de la factura (IVA incluido)\par}
+{\f0\fs22\cf2 \bullet  Campo \b credit_to\b0 : Cuenta contable del proveedor\par}
+{\f0\fs22\cf2 \bullet  Campo \b is_return\b0 : Si es 1, es factura rectificativa (\b SE EXCLUYE\b0 )\par}
+{\f0\fs22\cf2 \bullet  Campo \b custom_347\b0 : Si es 1, la factura est\'e1 excluida del 347\par}
+
+\pard\li300\sb150\sa100
+{\f0\fs24\cf7\b 2.2 FACTURAS DE VENTA (Clientes)\b0\cf2\par}
+\pard\li300\sb100\sa100
+{\f0\fs22\cf2 El reporte obtiene los datos de clientes desde el doctype:\par}
+
+\pard\li600\sb100\sa50
+{\f2\fs20\cf4\b Sales Invoice\b0\cf2\par}
+\pard\li600\sb50\sa50
+{\f0\fs22\cf2 \bullet  Campo \b customer\b0 : Identificador del cliente\par}
+{\f0\fs22\cf2 \bullet  Campo \b posting_date\b0 : Fecha de contabilizaci\'f3n (determina el trimestre)\par}
+{\f0\fs22\cf2 \bullet  Campo \b grand_total\b0 : Importe total de la factura (IVA incluido)\par}
+{\f0\fs22\cf2 \bullet  Campo \b debit_to\b0 : Cuenta contable del cliente\par}
+{\f0\fs22\cf2 \bullet  Campo \b is_return\b0 : Si es 1, es factura de abono (\b SE EXCLUYE\b0 )\par}
+{\f0\fs22\cf2 \bullet  Campo \b custom_347\b0 : Si es 1, la factura est\'e1 excluida del 347\par}
+
+\pard\li300\sb150\sa100
+{\f0\fs24\cf7\b 2.3 IMPORTES CONTABLES\b0\cf2\par}
+\pard\li300\sb100\sa100
+{\f0\fs22\cf2 Los importes se validan contra los asientos contables:\par}
+
+\pard\li600\sb100\sa50
+{\f2\fs20\cf4\b GL Entry\b0\cf2\par}
+\pard\li600\sb50\sa50
+{\f0\fs22\cf2 \bullet  Para \b proveedores\b0 : Se toma el campo \b credit\b0  de la cuenta credit_to\par}
+{\f0\fs22\cf2 \bullet  Para \b clientes\b0 : Se toma el campo \b debit\b0  de la cuenta debit_to\par}
+{\f0\fs22\cf2 \bullet  Si no hay GL Entry, se usa el \b grand_total\b0  de la factura\par}
+
+\pard\sb200\sa100
+{\f0\fs20\cf2 ____________________________________________________________________________________\par}
+
+\pard\sb300\sa100
+{\f1\fs28\cf1 3. DATOS DEL TERCERO\par}
+
+\pard\li300\sb150\sa100
+{\f0\fs24\cf7\b 3.1 DATOS DE PROVEEDORES\b0\cf2\par}
+\pard\li300\sb100\sa100
+{\f0\fs22\cf2 Se obtienen del doctype:\par}
+
+\pard\li600\sb100\sa50
+{\f2\fs20\cf4\b Supplier\b0\cf2\par}
+\pard\li600\sb50\sa50
+{\f0\fs22\cf2 \bullet  Campo \b tax_id\b0 : NIF/CIF del proveedor\par}
+{\f0\fs22\cf2 \bullet  Campo \b supplier_name\b0 : Nombre o raz\'f3n social\par}
+{\f0\fs22\cf2 \bullet  Campo \b custom_cp\b0 : C\'f3digo postal (primeros 2 d\'edgitos = provincia)\par}
+
+\pard\li300\sb150\sa100
+{\f0\fs24\cf7\b 3.2 DATOS DE CLIENTES\b0\cf2\par}
+\pard\li300\sb100\sa100
+{\f0\fs22\cf2 Se obtienen del doctype:\par}
+
+\pard\li600\sb100\sa50
+{\f2\fs20\cf4\b Customer\b0\cf2\par}
+\pard\li600\sb50\sa50
+{\f0\fs22\cf2 \bullet  Campo \b tax_id\b0 : NIF/CIF del cliente\par}
+{\f0\fs22\cf2 \bullet  Campo \b customer_name\b0 : Nombre o raz\'f3n social\par}
+
+\pard\li300\sb150\sa100
+{\f0\fs24\cf7\b 3.3 DATOS DE CONTACTO\b0\cf2\par}
+\pard\li300\sb100\sa100
+{\f0\fs22\cf2 Se obtienen del doctype:\par}
+
+\pard\li600\sb100\sa50
+{\f2\fs20\cf4\b Address\b0\cf2  (vinculado mediante \b Dynamic Link\b0 )\par}
+\pard\li600\sb50\sa50
+{\f0\fs22\cf2 \bullet  Campo \b pincode\b0 : C\'f3digo postal (primeros 2 d\'edgitos = provincia)\par}
+{\f0\fs22\cf2 \bullet  Campo \b phone\b0 : Tel\'e9fono de contacto\par}
+{\f0\fs22\cf2 \bullet  Campo \b email_id\b0 : Correo electr\'f3nico\par}
+
+\pard\sb200\sa100
+{\f0\fs20\cf2 ____________________________________________________________________________________\par}
+
+\pard\sb300\sa100
+{\f1\fs28\cf1 4. REGLAS DE EXCLUSI\'d3N\par}
+
+\pard\li300\sb100\sa100
+{\f0\fs22\cf2 El reporte \b EXCLUYE\b0  autom\'e1ticamente:\par}
+
+\pard\li600\sb100\sa50
+{\f0\fs22\cf4\b 4.1 Facturas Rectificativas de Compra\b0\cf2\par}
+\pard\li900\sb50\sa50
+{\f0\fs22\cf2 Purchase Invoice con \b is_return = 1\b0\par}
+
+\pard\li600\sb100\sa50
+{\f0\fs22\cf4\b 4.2 Facturas de Abono de Venta\b0\cf2\par}
+\pard\li900\sb50\sa50
+{\f0\fs22\cf2 Sales Invoice con \b is_return = 1\b0\par}
+
+\pard\li600\sb100\sa50
+{\f0\fs22\cf4\b 4.3 Facturas Excluidas Manualmente\b0\cf2\par}
+\pard\li900\sb50\sa50
+{\f0\fs22\cf2 Facturas con \b custom_347 = 1\b0  (tanto Purchase como Sales Invoice)\par}
+
+\pard\li600\sb100\sa50
+{\f0\fs22\cf4\b 4.4 Terceros por Debajo del Umbral\b0\cf2\par}
+\pard\li900\sb50\sa50
+{\f0\fs22\cf2 Terceros cuyo total anual sea inferior a \b 3.005,06\u8364?\b0\par}
+
+\pard\li600\sb100\sa50
+{\f0\fs22\cf4\b 4.5 Facturas en Borrador o Canceladas\b0\cf2\par}
+\pard\li900\sb50\sa50
+{\f0\fs22\cf2 Solo se consideran facturas con \b docstatus = 1\b0  (validadas)\par}
+
+\pard\sb200\sa100
+{\f0\fs20\cf2 ____________________________________________________________________________________\par}
+
+\pard\sb300\sa100
+{\f1\fs28\cf1 5. \'bfD\'d3NDE COMPLETAR INFORMACI\'d3N FALTANTE?\par}
+
+\pard\li300\sb150\sa100
+{\f0\fs22\cf8\b IMPORTANTE:\b0\cf2  Si el reporte muestra campos vac\'edos, debes completar la informaci\'f3n en los siguientes lugares:\par}
+
+\pard\li300\sb150\sa100
+{\f0\fs24\cf7\b 5.1 NIF VACI\'d3\b0\cf2\par}
+\pard\li600\sb50\sa100
+{\f0\fs22\cf2 \b Proveedores:\b0  Ir a \b Compras > Proveedor > [Nombre]\b0  y completar el campo \b "Tax ID"\b0\par}
+{\f0\fs22\cf2 \b Clientes:\b0  Ir a \b Ventas > Cliente > [Nombre]\b0  y completar el campo \b "Tax ID"\b0\par}
+
+\pard\li300\sb150\sa100
+{\f0\fs24\cf7\b 5.2 PROVINCIA/C\'d3DIGO POSTAL VAC\'cdO\b0\cf2\par}
+\pard\li600\sb50\sa100
+{\f0\fs22\cf2 \b Opci\'f3n 1 (Proveedores):\b0  Ir a \b Compras > Proveedor > [Nombre]\b0  y completar \b "custom_cp"\b0\par}
+{\f0\fs22\cf2 \b Opci\'f3n 2 (Ambos):\b0  Ir a \b Configuraci\'f3n > Address\b0  y crear/editar la direcci\'f3n del tercero, completando el campo \b "Pincode"\b0  con el c\'f3digo postal completo (ej: 09001)\par}
+
+\pard\li300\sb150\sa100
+{\f0\fs24\cf7\b 5.3 TEL\'c9FONO VAC\'cdO\b0\cf2\par}
+\pard\li600\sb50\sa100
+{\f0\fs22\cf2 Ir a \b Configuraci\'f3n > Address\b0  y editar la direcci\'f3n del tercero, completando el campo \b "Phone"\b0\par}
+
+\pard\li300\sb150\sa100
+{\f0\fs24\cf7\b 5.4 EMAIL VAC\'cdO\b0\cf2\par}
+\pard\li600\sb50\sa100
+{\f0\fs22\cf2 Ir a \b Configuraci\'f3n > Address\b0  y editar la direcci\'f3n del tercero, completando el campo \b "Email ID"\b0\par}
+
+\pard\li300\sb150\sa100
+{\f0\fs24\cf7\b 5.5 EXCLUIR UNA FACTURA DEL 347\b0\cf2\par}
+\pard\li600\sb50\sa100
+{\f0\fs22\cf2 Ir a la factura (Purchase Invoice o Sales Invoice) y marcar el campo \b "custom_347"\b0  como activado (check)\par}
+
+\pard\sb200\sa100
+{\f0\fs20\cf2 ____________________________________________________________________________________\par}
+
+\pard\sb300\sa100
+{\f1\fs28\cf1 6. FILTROS DEL REPORTE\par}
+
+\pard\li300\sb100\sa100
+{\f0\fs22\cf2 El reporte cuenta con los siguientes filtros:\par}
+
+\pard\li600\sb100\sa50
+{\f0\fs22\cf2 \bullet  \b Empresa:\b0  Seleccionar la empresa para la que se genera el reporte\par}
+{\f0\fs22\cf2 \bullet  \b A\'f1o Fiscal:\b0  Seleccionar el ejercicio (por defecto: a\'f1o anterior)\par}
+{\f0\fs22\cf2 \bullet  \b Tipo de Tercero:\b0  Filtrar por Clientes, Proveedores o Todos\par}
+
+\pard\li300\sb150\sa100
+{\f0\fs22\cf3\b Navegaci\'f3n entre a\'f1os:\b0\cf2\par}
+\pard\li600\sb50\sa100
+{\f0\fs22\cf2 Use los botones \b "\u9664? A\'f1o Anterior"\b0  y \b "A\'f1o Siguiente \u9654?"\b0  para cambiar r\'e1pidamente de ejercicio.\par}
+
+\pard\sb200\sa100
+{\f0\fs20\cf2 ____________________________________________________________________________________\par}
+
+\pard\sb300\sa100
+{\f1\fs28\cf1 7. COLUMNAS DEL REPORTE\par}
+
+\pard\li300\sb100\sa100
+{\f0\fs22\cf2 El reporte muestra las siguientes columnas:\par}
+
+\trowd\trgaph108\trleft300
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs\cellx2500
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs\cellx9500
+\pard\intbl{\f0\fs20\b\cf1 Columna\cell Descripci\'f3n\cell}\row
+
+\trowd\trgaph108\trleft300
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs\cellx2500
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs\cellx9500
+\pard\intbl{\f0\fs20\cf2 Tipo\cell Cliente o Proveedor\cell}\row
+
+\trowd\trgaph108\trleft300
+\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs\cellx2500
+\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs\cellx9500
+\pard\intbl{\f0\fs20\cf2 Clave\cell A (Adquisiciones) o B (Entregas)\cell}\row
+
+\trowd\trgaph108\trleft300
+\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs\cellx2500
+\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs\cellx9500
+\pard\intbl{\f0\fs20\cf2 NIF\cell N\'famero de Identificaci\'f3n Fiscal\cell}\row
+
+\trowd\trgaph108\trleft300
+\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs\cellx2500
+\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs\cellx9500
+\pard\intbl{\f0\fs20\cf2 Nombre/Raz\'f3n Social\cell Nombre del tercero\cell}\row
+
+\trowd\trgaph108\trleft300
+\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs\cellx2500
+\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs\cellx9500
+\pard\intbl{\f0\fs20\cf2 Provincia\cell 2 primeros d\'edgitos del C.P.\cell}\row
+
+\trowd\trgaph108\trleft300
+\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs\cellx2500
+\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs\cellx9500
+\pard\intbl{\f0\fs20\cf2 1T, 2T, 3T, 4T\cell Importes trimestrales\cell}\row
+
+\trowd\trgaph108\trleft300
+\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs\cellx2500
+\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs\cellx9500
+\pard\intbl{\f0\fs20\cf2 Total Anual\cell Suma de los 4 trimestres\cell}\row
+
+\trowd\trgaph108\trleft300
+\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs\cellx2500
+\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs\cellx9500
+\pard\intbl{\f0\fs20\cf2 Tel\'e9fono\cell Tel\'e9fono de contacto\cell}\row
+
+\trowd\trgaph108\trleft300
+\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs\cellx2500
+\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs\cellx9500
+\pard\intbl{\f0\fs20\cf2 Email\cell Correo electr\'f3nico\cell}\row
+
+\pard\sb200\sa100
+{\f0\fs20\cf2 ____________________________________________________________________________________\par}
+
+\pard\sb300\sa100
+{\f1\fs28\cf1 8. DIAGRAMA DE FLUJO\par}
+
+\pard\li300\sb100\sa100
+{\f2\fs18\cf2
+\par
+   \u9484?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9488?
+\par
+   \u9474?     PURCHASE INVOICE  |  SALES INVOICE      \u9474?
+\par
+   \u9474?        (Proveedores)   |     (Clientes)       \u9474?
+\par
+   \u9492?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9496?
+\par
+                          \u9474?
+\par
+                          \u9660?
+\par
+   \u9484?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9488?
+\par
+   \u9474?              FILTROS APLICADOS                \u9474?
+\par
+   \u9474?  - docstatus = 1 (validadas)                  \u9474?
+\par
+   \u9474?  - is_return = 0 (no rectificativas/abonos)   \u9474?
+\par
+   \u9474?  - custom_347 = 0 (no excluidas)              \u9474?
+\par
+   \u9474?  - Fecha dentro del a\'f1o fiscal               \u9474?
+\par
+   \u9492?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9496?
+\par
+                          \u9474?
+\par
+                          \u9660?
+\par
+   \u9484?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9488?
+\par
+   \u9474?           OBTENER IMPORTES DE GL ENTRY        \u9474?
+\par
+   \u9474?  - Proveedores: campo CREDIT                  \u9474?
+\par
+   \u9474?  - Clientes: campo DEBIT                      \u9474?
+\par
+   \u9492?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9496?
+\par
+                          \u9474?
+\par
+                          \u9660?
+\par
+   \u9484?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9488?
+\par
+   \u9474?             AGRUPAR POR TERCERO               \u9474?
+\par
+   \u9474?  - Calcular totales por trimestre             \u9474?
+\par
+   \u9474?  - Sumar T1 + T2 + T3 + T4 = Total Anual      \u9474?
+\par
+   \u9492?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9496?
+\par
+                          \u9474?
+\par
+                          \u9660?
+\par
+   \u9484?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9488?
+\par
+   \u9474?        FILTRAR POR UMBRAL >= 3.005,06\u8364?       \u9474?
+\par
+   \u9492?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9496?
+\par
+                          \u9474?
+\par
+                          \u9660?
+\par
+   \u9484?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9488?
+\par
+   \u9474?         OBTENER DATOS DEL TERCERO             \u9474?
+\par
+   \u9474?  - NIF desde Supplier/Customer                \u9474?
+\par
+   \u9474?  - Provincia, Tel, Email desde Address        \u9474?
+\par
+   \u9492?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9496?
+\par
+                          \u9474?
+\par
+                          \u9660?
+\par
+   \u9484?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9488?
+\par
+   \u9474?              REPORTE MODELO 347               \u9474?
+\par
+   \u9492?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9496?
+\par
+}
+
+\pard\sb200\sa100
+{\f0\fs20\cf2 ____________________________________________________________________________________\par}
+
+\pard\sb300\sa100
+{\f1\fs28\cf1 9. RESUMEN DE DOCTYPES Y CAMPOS\par}
+
+\pard\li300\sb150\sa100
+{\f0\fs22\cf2 Tabla resumen de todos los doctypes y campos utilizados:\par}
+
+\trowd\trgaph108\trleft300
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs\cellx2800
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs\cellx5200
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs\cellx9500
+\pard\intbl{\f0\fs18\b\cf1 Doctype\cell Campo\cell Uso en el Reporte\cell}\row
+
+\trowd\trgaph108\trleft300
+\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs\cellx2800
+\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs\cellx5200
+\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs\cellx9500
+\pard\intbl{\f0\fs18\cf2 Purchase Invoice\cell supplier\cell Identificar proveedor\cell}\row
+
+\trowd\trgaph108\trleft300
+\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs\cellx2800
+\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs\cellx5200
+\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs\cellx9500
+\pard\intbl{\f0\fs18\cf2 Purchase Invoice\cell posting_date\cell Determinar trimestre\cell}\row
+
+\trowd\trgaph108\trleft300
+\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs\cellx2800
+\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs\cellx5200
+\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs\cellx9500
+\pard\intbl{\f0\fs18\cf2 Purchase Invoice\cell grand_total\cell Importe (si no hay GL)\cell}\row
+
+\trowd\trgaph108\trleft300
+\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs\cellx2800
+\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs\cellx5200
+\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs\cellx9500
+\pard\intbl{\f0\fs18\cf2 Purchase Invoice\cell is_return\cell Excluir rectificativas\cell}\row
+
+\trowd\trgaph108\trleft300
+\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs\cellx2800
+\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs\cellx5200
+\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs\cellx9500
+\pard\intbl{\f0\fs18\cf2 Purchase Invoice\cell custom_347\cell Excluir manualmente\cell}\row
+
+\trowd\trgaph108\trleft300
+\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs\cellx2800
+\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs\cellx5200
+\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs\cellx9500
+\pard\intbl{\f0\fs18\cf2 Sales Invoice\cell customer\cell Identificar cliente\cell}\row
+
+\trowd\trgaph108\trleft300
+\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs\cellx2800
+\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs\cellx5200
+\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs\cellx9500
+\pard\intbl{\f0\fs18\cf2 Sales Invoice\cell posting_date\cell Determinar trimestre\cell}\row
+
+\trowd\trgaph108\trleft300
+\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs\cellx2800
+\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs\cellx5200
+\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs\cellx9500
+\pard\intbl{\f0\fs18\cf2 Sales Invoice\cell grand_total\cell Importe (si no hay GL)\cell}\row
+
+\trowd\trgaph108\trleft300
+\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs\cellx2800
+\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs\cellx5200
+\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs\cellx9500
+\pard\intbl{\f0\fs18\cf2 Sales Invoice\cell is_return\cell Excluir abonos\cell}\row
+
+\trowd\trgaph108\trleft300
+\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs\cellx2800
+\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs\cellx5200
+\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs\cellx9500
+\pard\intbl{\f0\fs18\cf2 Sales Invoice\cell custom_347\cell Excluir manualmente\cell}\row
+
+\trowd\trgaph108\trleft300
+\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs\cellx2800
+\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs\cellx5200
+\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs\cellx9500
+\pard\intbl{\f0\fs18\cf2 GL Entry\cell credit\cell Importe proveedores\cell}\row
+
+\trowd\trgaph108\trleft300
+\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs\cellx2800
+\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs\cellx5200
+\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs\cellx9500
+\pard\intbl{\f0\fs18\cf2 GL Entry\cell debit\cell Importe clientes\cell}\row
+
+\trowd\trgaph108\trleft300
+\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs\cellx2800
+\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs\cellx5200
+\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs\cellx9500
+\pard\intbl{\f0\fs18\cf2 Supplier\cell tax_id\cell NIF del proveedor\cell}\row
+
+\trowd\trgaph108\trleft300
+\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs\cellx2800
+\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs\cellx5200
+\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs\cellx9500
+\pard\intbl{\f0\fs18\cf2 Supplier\cell supplier_name\cell Nombre proveedor\cell}\row
+
+\trowd\trgaph108\trleft300
+\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs\cellx2800
+\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs\cellx5200
+\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs\cellx9500
+\pard\intbl{\f0\fs18\cf2 Supplier\cell custom_cp\cell C\'f3digo postal proveedor\cell}\row
+
+\trowd\trgaph108\trleft300
+\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs\cellx2800
+\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs\cellx5200
+\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs\cellx9500
+\pard\intbl{\f0\fs18\cf2 Customer\cell tax_id\cell NIF del cliente\cell}\row
+
+\trowd\trgaph108\trleft300
+\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs\cellx2800
+\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs\cellx5200
+\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs\cellx9500
+\pard\intbl{\f0\fs18\cf2 Customer\cell customer_name\cell Nombre cliente\cell}\row
+
+\trowd\trgaph108\trleft300
+\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs\cellx2800
+\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs\cellx5200
+\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs\cellx9500
+\pard\intbl{\f0\fs18\cf2 Address\cell pincode\cell Provincia (2 d\'edgitos)\cell}\row
+
+\trowd\trgaph108\trleft300
+\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs\cellx2800
+\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs\cellx5200
+\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs\cellx9500
+\pard\intbl{\f0\fs18\cf2 Address\cell phone\cell Tel\'e9fono contacto\cell}\row
+
+\trowd\trgaph108\trleft300
+\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs\cellx2800
+\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs\cellx5200
+\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs\cellx9500
+\pard\intbl{\f0\fs18\cf2 Address\cell email_id\cell Correo electr\'f3nico\cell}\row
+
+\pard\sb400\sa200
+{\f0\fs20\cf2 ____________________________________________________________________________________\par}
+
+\pard\qc\sb300\sa100
+{\f0\fs18\cf2 Documento generado autom\'e1ticamente\par}
+{\f0\fs18\cf2 Reporte Modelo 347 - ERP Grupo ATU\par}
+{\f0\fs18\cf2 Febrero 2026\par}
+
+}
