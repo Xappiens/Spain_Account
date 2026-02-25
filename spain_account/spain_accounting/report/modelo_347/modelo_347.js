@@ -79,6 +79,9 @@ frappe.query_reports["Modelo 347"] = {
 			navigate_year(report, 1);
 		});
 		
+		// Añadir botón de exportación TXT para AEAT
+		add_export_buttons(report);
+		
 		// Añadir menú de acciones para envío de emails
 		report.page.add_menu_item(__("📧 Enviar Correo de Prueba"), function() {
 			show_test_email_dialog(report);
@@ -576,4 +579,134 @@ function show_email_stats(report) {
 			}
 		}
 	});
+}
+
+// ==================== FUNCIONES DE EXPORTACIÓN AEAT ====================
+
+function add_export_buttons(report) {
+	// Botón principal de exportación con dropdown
+	let dropdown = report.page.add_inner_button(__("📥 Exportar TXT (AEAT)"), function() {
+		show_export_txt_dialog(report);
+	}, __("Exportar"));
+	
+	// Estilizar el botón
+	if (dropdown && dropdown[0]) {
+		let button = dropdown[0].parentElement.parentElement.children[0];
+		if (button) {
+			button.className = "btn btn-primary dropdown-toggle";
+		}
+	}
+}
+
+function show_export_txt_dialog(report) {
+	let company = report.get_filter_value("company");
+	let fiscal_year = report.get_filter_value("fiscal_year");
+	let party_type = report.get_filter_value("party_type");
+	
+	if (!company || !fiscal_year) {
+		frappe.msgprint(__("Por favor, seleccione una empresa y un año fiscal"));
+		return;
+	}
+	
+	let data = frappe.query_report.data;
+	if (!data || data.length === 0) {
+		frappe.msgprint(__("No hay datos en el reporte para exportar. Ejecute primero el reporte."));
+		return;
+	}
+	
+	let dialog = new frappe.ui.Dialog({
+		title: __("Exportar Modelo 347 para AEAT"),
+		fields: [
+			{
+				fieldname: "info",
+				fieldtype: "HTML",
+				options: `<div class="alert alert-info">
+					<strong>📝 Archivo TXT para Hacienda:</strong><br>
+					Se generará un archivo de texto con el formato oficial de la AEAT 
+					para importar directamente en la plataforma de Hacienda.<br><br>
+					<strong>Registros a exportar:</strong> ${data.length} terceros
+				</div>`
+			},
+			{
+				fieldtype: "Section Break",
+				label: __("Datos del Representante Legal (Opcional)")
+			},
+			{
+				fieldname: "nombre_representante",
+				fieldtype: "Data",
+				label: __("Nombre del Representante"),
+				description: __("Persona de contacto para la declaración")
+			},
+			{
+				fieldname: "dni_representante",
+				fieldtype: "Data",
+				label: __("DNI/NIF del Representante"),
+				description: __("NIF del representante legal si es diferente al declarante")
+			},
+			{
+				fieldname: "tlf_contacto",
+				fieldtype: "Data",
+				label: __("Teléfono de Contacto"),
+				description: __("Teléfono para contacto por parte de la AEAT")
+			}
+		],
+		primary_action_label: __("Generar TXT"),
+		primary_action: function(values) {
+			dialog.hide();
+			
+			let filters = {
+				company: company,
+				fiscal_year: fiscal_year,
+				party_type: party_type || "",
+				nombre_representante: values.nombre_representante || "",
+				dni_representante: values.dni_representante || "",
+				tlf_contacto: values.tlf_contacto || ""
+			};
+			
+			frappe.call({
+				method: "spain_account.spain_accounting.report.modelo_347.modelo_347_utils.export_modelo_347_txt",
+				args: {
+					filters: filters
+				},
+				freeze: true,
+				freeze_message: __("Generando archivo TXT para AEAT..."),
+				callback: function(r) {
+					if (r.message) {
+						frappe.msgprint({
+							title: __("Archivo Generado Correctamente"),
+							indicator: "green",
+							message: `
+								<div style="padding: 10px;">
+									<p>✅ El archivo TXT se ha generado correctamente.</p>
+									<p>Puede descargarlo haciendo clic en el siguiente enlace:</p>
+									<p style="margin-top: 15px;">
+										<a href="${r.message}" target="_blank" class="btn btn-primary btn-sm">
+											📥 Descargar Modelo_347.txt
+										</a>
+									</p>
+									<div class="alert alert-warning" style="margin-top: 15px;">
+										<strong>Siguiente paso:</strong> Importe este archivo en la 
+										<a href="https://sede.agenciatributaria.gob.es" target="_blank">Sede Electrónica de la AEAT</a>
+										para presentar el Modelo 347.
+									</div>
+								</div>
+							`
+						});
+						
+						// También abrir directamente la descarga
+						window.open(r.message, "_blank");
+					}
+				},
+				error: function(r) {
+					frappe.msgprint({
+						title: __("Error"),
+						indicator: "red",
+						message: __("Hubo un error al generar el archivo. Por favor, revise los datos e intente nuevamente.")
+					});
+				}
+			});
+		}
+	});
+	
+	dialog.show();
 }
