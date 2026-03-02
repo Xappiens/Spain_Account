@@ -218,9 +218,11 @@ def get_purchase_invoice_data(company, from_date, to_date):
     - Incluye TODAS las Purchase Invoice del período (normales Y rectificativas)
     - Las rectificativas (is_return = 1) tienen importes negativos que se restan
     - EXCLUYE las facturas marcadas con custom_347 = 1
+    - EXCLUYE los proveedores marcados con custom_omitir_347 = 1
     - Obtiene los importes de los GL Entry asociados
     """
     # Obtener TODAS las facturas de compra (normales y rectificativas)
+    # Excluye proveedores con custom_omitir_347 = 1
     invoices = frappe.db.sql("""
         SELECT 
             pi.name,
@@ -230,10 +232,12 @@ def get_purchase_invoice_data(company, from_date, to_date):
             pi.credit_to,
             pi.is_return
         FROM `tabPurchase Invoice` pi
+        INNER JOIN `tabSupplier` sup ON sup.name = pi.supplier
         WHERE pi.company = %(company)s
           AND pi.posting_date BETWEEN %(from_date)s AND %(to_date)s
           AND pi.docstatus = 1
           AND IFNULL(pi.custom_347, 0) = 0
+          AND IFNULL(sup.custom_omitir_347, 0) = 0
     """, {
         "company": company,
         "from_date": from_date,
@@ -286,9 +290,11 @@ def get_sales_invoice_data(company, from_date, to_date):
     - Incluye TODAS las Sales Invoice del período (normales Y abonos)
     - Los abonos (is_return = 1) tienen importes negativos que se restan
     - EXCLUYE las facturas marcadas con custom_347 = 1
+    - EXCLUYE los clientes marcados con custom_omitir_347 = 1
     - Obtiene los importes de los GL Entry asociados
     """
     # Obtener TODAS las facturas de venta (normales y abonos)
+    # Excluye clientes con custom_omitir_347 = 1
     invoices = frappe.db.sql("""
         SELECT 
             si.name,
@@ -298,10 +304,12 @@ def get_sales_invoice_data(company, from_date, to_date):
             si.debit_to,
             si.is_return
         FROM `tabSales Invoice` si
+        INNER JOIN `tabCustomer` cust ON cust.name = si.customer
         WHERE si.company = %(company)s
           AND si.posting_date BETWEEN %(from_date)s AND %(to_date)s
           AND si.docstatus = 1
           AND IFNULL(si.custom_347, 0) = 0
+          AND IFNULL(cust.custom_omitir_347, 0) = 0
     """, {
         "company": company,
         "from_date": from_date,
