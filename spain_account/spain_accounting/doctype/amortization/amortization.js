@@ -1,4 +1,14 @@
 frappe.ui.form.on("Amortization", {
+    type: function(frm) {
+        // Precargar porcentaje desde Tipo de Amortizacion (el usuario puede editarlo después)
+        if (frm.doc.type) {
+            frappe.db.get_value("Tipo de Amortizacion", frm.doc.type, "percentaje", function(r) {
+                if (r && r.percentaje != null) {
+                    frm.set_value("percentage", r.percentaje);
+                }
+            });
+        }
+    },
     refresh: function(frm) {
         // Filtro dinámico para el campo de cuenta
         frm.set_query("asset_account", function() {

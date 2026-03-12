@@ -83,12 +83,10 @@
    "reqd": 1
   },
   {
-   "fetch_from": "type.percentaje",
    "fieldname": "percentage",
    "fieldtype": "Percent",
    "label": "Porcentaje de Amortizaci\u00f3n",
    "precision": "0",
-   "read_only": 1,
    "reqd": 1
   },
   {
@@ -180,8 +178,7 @@
    "fieldname": "amortization_expense_account",
    "fieldtype": "Link",
    "label": "Cuenta de Gastos de Amortizacion",
-   "options": "Account",
-   "reqd": 1
+   "options": "Account"
   },
   {
    "fieldname": "column_break_omvc",
@@ -192,20 +189,18 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Cuenta de Activo",
-   "options": "Account",
-   "reqd": 1
+   "options": "Account"
   },
   {
    "fieldname": "accumulated_amortization_account",
    "fieldtype": "Link",
    "label": "Cuenta de Amortizacion Acumulada",
-   "options": "Account",
-   "reqd": 1
+   "options": "Account"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-01-23 11:43:59.304729",
+ "modified": "2026-03-12 08:11:16.695839",
  "modified_by": "Administrator",
  "module": "Spain Accounting",
  "name": "Amortization",
